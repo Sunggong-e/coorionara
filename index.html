@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COORIONARA 珂莉安 — Korean Skincare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,300;1,9..40,400&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ══════════════════════════════════════
+       DESIGN TOKENS — matches spec v1.0
+    ══════════════════════════════════════ */
+    :root {
+      --bg:       #F8F5F0;   /* Off-White */
+      --bg-soft:  #EFE7DC;   /* Soft Beige */
+      --beige:    #E0D4C3;   /* borders / dividers */
+      --pink:     #F2D9D0;   /* Baby Pink */
+      --pink-dk:  #E4C5BB;   /* hover / darker pink */
+      --brown:    #8B6F5E;   /* Muted Brown — titles, borders */
+      --brown-dk: #5A3D2E;   /* hover dark brown */
+      --dark:     #2C1F14;   /* Warm Charcoal — body text */
+      --mid:      #7A6858;   /* secondary text */
+      --gold:     #B8935A;   /* ingredients accent */
+      --white:    #FDFAF6;   /* near-white cards */
+
+      --sans:    'DM Sans', system-ui, sans-serif;
+      --serif-ko: 'Noto Serif KR', serif;
+      --serif-zh: 'Noto Serif SC', 'Noto Serif TC', serif;
+      --max: 1320px;
+      --nav-h: 68px;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Language-level font switching */
+    body.lang-ko  { font-family: var(--serif-ko); }
+    body.lang-ko  .nav-logo,
+    body.lang-ko  .lang-btn,
+    body.lang-ko  .btn-primary,
+    body.lang-ko  .btn-ghost,
+    body.lang-ko  .hero-h1,
+    body.lang-ko  .section-h2,
+    body.lang-ko  .feat-h3,
+    body.lang-ko  .contact-h2,
+    body.lang-ko  .footer-logo,
+    body.lang-ko  .stat-num,
+    body.lang-ko  .ing-stat,
+    body.lang-ko  .mobile-menu-links a { font-family: var(--sans); }
+
+    body.lang-zh-cn { font-family: var(--serif-zh); }
+    body.lang-zh-cn .nav-logo,
+    body.lang-zh-cn .lang-btn,
+    body.lang-zh-cn .btn-primary,
+    body.lang-zh-cn .btn-ghost,
+    body.lang-zh-cn .hero-h1,
+    body.lang-zh-cn .section-h2,
+    body.lang-zh-cn .feat-h3,
+    body.lang-zh-cn .contact-h2,
+    body.lang-zh-cn .footer-logo,
+    body.lang-zh-cn .stat-num,
+    body.lang-zh-cn .ing-stat,
+    body.lang-zh-cn .mobile-menu-links a { font-family: var(--sans); }
+
+    body.lang-zh-tw { font-family: 'Noto Serif TC', 'Noto Serif SC', serif; }
+    body.lang-zh-tw .nav-logo,
+    body.lang-zh-tw .lang-btn,
+    body.lang-zh-tw .btn-primary,
+    body.lang-zh-tw .btn-ghost,
+    body.lang-zh-tw .hero-h1,
+    body.lang-zh-tw .section-h2,
+    body.lang-zh-tw .feat-h3,
+    body.lang-zh-tw .contact-h2,
+    body.lang-zh-tw .footer-logo,
+    body.lang-zh-tw .stat-num,
+    body.lang-zh-tw .ing-stat,
+    body.lang-zh-tw .mobile-menu-links a { font-family: var(--sans); }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ── Layout ── */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+
+    /* ── Placeholder boxes ── */
+    .ph {
+      background: var(--bg-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .ph::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg,
+        var(--beige) 0%,
+        rgba(242,217,208,0.6) 55%,
+        var(--pink) 100%);
+      opacity: 0.5;
+    }
+    .ph-label {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 2;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown);
+      background: rgba(248,245,240,0.88);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    .divider { width: 36px; height: 1px; background: var(--beige); margin: 1.5rem 0; }
+
+    /* ── Real product images ── */
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12%;
+      background: var(--white);
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-img img { transform: scale(1.06); }
+    .feat-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6%;
+      background: var(--white);
+      display: block;
+    }
+    .hero-product-img {
+      width: 100%;
+      height: 100%;
+      min-height: 640px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ══════════════════════════════════════
+       NAVIGATION
+    ══════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      transition: background 0.35s ease, box-shadow 0.35s ease;
+    }
+    nav.scrolled {
+      background: rgba(248,245,240,0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 var(--beige);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dark);
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 11.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--dark); }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--beige);
+      border-radius: 999px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      background: transparent;
+      border: none;
+      padding: 0.45rem 0.9rem;
+      transition: background 0.18s, color 0.18s;
+    }
+    .lang-btn.active { background: var(--dark); color: var(--white); }
+    .lang-btn:not(.active):hover { background: var(--bg-soft); color: var(--dark); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      padding: 6px;
+      background: none;
+      border: none;
+      width: 38px;
+      height: 38px;
+    }
+    .nav-hamburger span {
+      display: block;
+      height: 1.5px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 190;
+      background: var(--bg);
+      padding: calc(var(--nav-h) + 3rem) clamp(1.5rem, 6vw, 3rem) 3rem;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open { opacity: 1; }
+    .mobile-menu-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+    .mobile-menu-links a {
+      font-family: var(--sans);
+      font-size: clamp(2rem, 8vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .mobile-menu-links a:hover { color: var(--brown); border-color: var(--beige); }
+    .mobile-lang-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .mobile-lang-btn {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      padding: 0.55rem 1.2rem;
+      border: 1px solid var(--beige);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--mid);
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+    }
+    .mobile-lang-btn.active {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero {
+      padding-top: var(--nav-h);
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 4vw, 4rem) clamp(4rem, 8vw, 8rem) clamp(2rem, 6vw, 6rem);
+      position: relative;
+      z-index: 5;
+    }
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 2rem;
+    }
+    .hero-h1 {
+      font-family: var(--sans);
+      font-size: clamp(3.2rem, 5.5vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--dark);
+      margin-bottom: 0;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--brown);
+    }
+    .hero-sub {
+      font-size: clamp(0.88rem, 1.1vw, 1rem);
+      color: var(--mid);
+      max-width: 380px;
+      line-height: 1.88;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* CTA Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--dark);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--dark);
+      transition: background 0.22s, border-color 0.22s;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--brown-dk); border-color: var(--brown-dk); }
+    .btn-pink {
+      background: var(--pink);
+      color: var(--brown);
+      border-color: var(--pink);
+    }
+    .btn-pink:hover { background: var(--pink-dk); border-color: var(--pink-dk); color: var(--brown-dk); }
+    .btn-ghost {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      border-bottom: 1px solid var(--beige);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--dark); }
+
+    .hero-image { position: relative; }
+    .hero-image > .ph {
+      height: 100%;
+      min-height: 640px;
+    }
+    /* Centered placeholder label for hero */
+    .hero-ph-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brown);
+      opacity: 0.65;
+      text-align: center;
+      line-height: 2.2;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 3rem;
+      left: -3rem;
+      z-index: 10;
+      background: var(--white);
+      border: 1px solid var(--beige);
+      padding: 1.2rem 1.6rem;
+      border-radius: 1.2rem;
+      min-width: 152px;
+      box-shadow: 0 8px 36px rgba(44,31,20,0.1);
+    }
+    .hero-badge-num {
+      font-family: var(--sans);
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .hero-badge-num sup { font-size: 0.9rem; }
+    .hero-badge-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-top: 0.45rem;
+    }
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: clamp(2rem, 6vw, 6rem);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mid);
+      z-index: 5;
+    }
+    .hero-scroll-hint::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--beige);
+    }
+
+    /* ══════════════════════════════════════
+       TICKER
+    ══════════════════════════════════════ */
+    .ticker {
+      background: var(--dark);
+      color: rgba(248,245,240,0.65);
+      padding: 0.9rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-track {
+      display: inline-flex;
+      animation: ticker 36s linear infinite;
+    }
+    .ticker-item {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      padding: 0 2rem;
+    }
+    .ticker-dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background: var(--pink);
+      border-radius: 50%;
+      vertical-align: middle;
+      flex-shrink: 0;
+      align-self: center;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ══════════════════════════════════════
+       SECTION COMMONS
+    ══════════════════════════════════════ */
+    section { padding: clamp(5rem, 10vw, 10rem) 0; }
+    .section-kicker {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 0.85rem;
+    }
+    .section-h2 {
+      font-family: var(--sans);
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--dark);
+    }
+    .section-h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--brown);
+    }
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: clamp(3rem, 5vw, 5rem);
+      gap: 2rem;
+    }
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      border-bottom: 1px solid var(--beige);
+      padding-bottom: 2px;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .link-arrow:hover { color: var(--dark); }
+
+    /* ══════════════════════════════════════
+       BRAND STORY
+    ══════════════════════════════════════ */
+    .story { background: var(--bg-soft); }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: center;
+    }
+    .story-quote {
+      font-family: var(--sans);
+      font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.42;
+      color: var(--dark);
+      margin: 1.5rem 0;
+    }
+    .story-quote strong {
+      font-style: normal;
+      font-weight: 700;
+      color: var(--brown);
+    }
+    .story-body {
+      font-size: 0.94rem;
+      color: var(--mid);
+      line-height: 1.92;
+      max-width: 440px;
+    }
+    .story-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+    .kw-tag {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brown);
+      border: 1px solid var(--beige);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+    }
+    .story-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--beige);
+      border: 1px solid var(--beige);
+      margin-top: 2.5rem;
+    }
+    .stat-cell { background: var(--bg-soft); padding: 1.5rem; }
+    .stat-num {
+      font-family: var(--sans);
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .stat-num sup { font-size: 0.85rem; font-weight: 500; }
+    .stat-desc {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-top: 0.4rem;
+    }
+    /* Overlapping image layout */
+    .story-image-wrap {
+      position: relative;
+      padding-bottom: 3rem;
+    }
+    .story-img-main {
+      aspect-ratio: 3/4;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .story-img-main > .ph { height: 100%; }
+    .story-img-main img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: 62% center;
+      display: block;
+    }
+    .story-img-detail {
+      position: absolute;
+      bottom: 0;
+      left: -2rem;
+      width: 52%;
+      border: 4px solid var(--white);
+      border-radius: 3px;
+      box-shadow: 0 8px 32px rgba(44,31,20,0.12);
+      overflow: hidden;
+    }
+    .story-img-detail > .ph { aspect-ratio: 1/1; }
+    .story-img-detail img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      padding: 8%;
+      background: var(--white);
+      display: block;
+    }
+
+    /* Editorial banner — hanji concept */
+    .editorial-banner {
+      margin: 5rem 0 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+    }
+    .editorial-banner img {
+      width: 100%;
+      display: block;
+      max-height: 520px;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .editorial-banner-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2rem clamp(1.5rem, 4vw, 3rem);
+      background: linear-gradient(to top, rgba(44,31,20,0.55) 0%, transparent 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .editorial-caption-left { flex: 1; }
+    .editorial-caption-num {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: var(--pink);
+      margin-bottom: 0.35rem;
+    }
+    .editorial-caption-title {
+      font-family: var(--sans);
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .editorial-caption-right {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: rgba(248,245,240,0.65);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ══════════════════════════════════════
+       PRODUCTS
+    ══════════════════════════════════════ */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .product-card { cursor: pointer; }
+    .product-img {
+      aspect-ratio: 3/4;
+      border-radius: 3px;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .product-img { transform: scale(1.02); }
+    .product-img > .ph { height: 100%; }
+    .product-meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+    .product-name { font-size: 0.94rem; font-weight: 500; color: var(--dark); margin-bottom: 0.3rem; }
+    .product-sub  { font-size: 11.5px; color: var(--mid); }
+    .product-tag {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--brown);
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .product-tag.new { background: var(--pink); color: var(--brown); }
+
+    .products-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .feat-img { border-radius: 3px; overflow: hidden; }
+    .feat-img > .ph { aspect-ratio: 16/9; }
+    .feat-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 4vw, 3rem);
+      background: var(--bg-soft);
+      border-radius: 3px;
+    }
+    .feat-h3 {
+      font-family: var(--sans);
+      font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+    .feat-body { font-size: 0.9rem; color: var(--mid); line-height: 1.88; margin-bottom: 2rem; }
+
+    /* ══════════════════════════════════════
+       INGREDIENTS
+    ══════════════════════════════════════ */
+    .ingredients { background: var(--dark); color: var(--bg); }
+    .ingredients .section-kicker { color: var(--pink); }
+    .ingredients .section-h2   { color: var(--bg); }
+    .ingredients .section-h2 em { color: var(--pink); }
+    .ingredients .link-arrow { color: var(--gold); border-color: rgba(184,147,90,0.4); }
+    .ingredients .link-arrow:hover { color: var(--white); }
+
+    .ing-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      gap: 2rem;
+    }
+    .ing-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .ing-name {
+      font-family: var(--sans);
+      font-size: clamp(1.5rem, 2.8vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--bg);
+    }
+    .ing-name em {
+      font-style: italic;
+      font-weight: 300;
+      font-size: 0.68em;
+      color: var(--gold);
+    }
+    .ing-stat {
+      font-family: var(--sans);
+      font-size: clamp(2rem, 4.5vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--pink);
+      text-align: center;
+      white-space: nowrap;
+    }
+    .ing-stat small {
+      font-size: 0.32em;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      vertical-align: super;
+    }
+    .ing-desc-wrap { text-align: right; }
+    .ing-origin {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(184,147,90,0.35);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+    }
+    .ing-desc {
+      font-size: 0.82rem;
+      color: rgba(248,245,240,0.48);
+      line-height: 1.82;
+      max-width: 280px;
+      margin-left: auto;
+    }
+
+    /* ══════════════════════════════════════
+       COMPANY NEWS
+    ══════════════════════════════════════ */
+    .news { background: var(--bg-soft); }
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .news-card-img > .ph {
+      aspect-ratio: 4/3;
+      border-radius: 3px;
+      margin-bottom: 1.2rem;
+    }
+    .news-card--featured .news-card-img > .ph { aspect-ratio: 3/2; }
+    .news-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.65rem; }
+    .news-cat {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown);
+    }
+    .news-date { font-family: var(--sans); font-size: 11px; color: var(--mid); }
+    .news-title {
+      font-size: 0.97rem;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.42;
+      margin-bottom: 0.55rem;
+    }
+    .news-card--featured .news-title { font-size: clamp(1rem, 1.6vw, 1.28rem); }
+    .news-excerpt { font-size: 0.83rem; color: var(--mid); line-height: 1.78; }
+
+    /* ══════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════ */
+    .contact-strip { background: var(--pink); padding: clamp(3.5rem, 6vw, 6rem) 0; }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
+    }
+    .contact-h2 {
+      font-family: var(--sans);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--dark);
+    }
+    .contact-h2 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--brown);
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 0.5rem; text-align: right; }
+    .contact-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); }
+    .contact-email { font-size: 0.9rem; color: var(--dark); }
+    .contact-icons { display: flex; gap: 0.6rem; justify-content: flex-end; margin-top: 1rem; }
+    .contact-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(44,31,20,0.1);
+      color: var(--brown);
+      font-size: 17px;
+      transition: background 0.2s;
+    }
+    .contact-icon-btn:hover { background: rgba(44,31,20,0.2); }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: var(--dark);
+      color: rgba(248,245,240,0.48);
+      padding: clamp(3rem, 6vw, 5.5rem) 0 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-logo {
+      font-family: var(--sans);
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.9rem;
+    }
+    .footer-tagline { font-style: italic; font-size: 0.88rem; color: var(--gold); margin-bottom: 1rem; line-height: 1.65; }
+    .footer-desc { font-size: 12px; line-height: 1.88; }
+    .footer-col-title {
+      font-family: var(--sans);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-links a { font-size: 12px; color: rgba(248,245,240,0.48); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: var(--sans);
+      font-size: 11px;
+    }
+    .footer-lang-bar { display: flex; gap: 1.5rem; }
+    .footer-lang-bar a { font-size: 11px; color: rgba(248,245,240,0.38); transition: color 0.2s; }
+    .footer-lang-bar a:hover,
+    .footer-lang-bar a.active { color: var(--gold); }
+
+    /* ══════════════════════════════════════
+       SCROLL ANIMATIONS
+    ══════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+
+    /* Lang fade */
+    [data-i18n], [data-i18n-html] { transition: opacity 0.15s ease; }
+    body.lang-switching [data-i18n],
+    body.lang-switching [data-i18n-html] { opacity: 0; }
+
+    /* Mobile menu display fix */
+    .mobile-menu.open { display: flex; opacity: 1; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — 1024px (tablet)
+    ══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      /* Hero: 이미지 위 → 텍스트 아래 세로 스택 */
+      .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        min-height: 100svh;
+      }
+      .hero-image {
+        display: block;
+        order: -1;
+        height: 56vw;
+        min-height: 280px;
+        max-height: 440px;
+        overflow: hidden;
+      }
+      .hero-product-img {
+        min-height: unset !important;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center top;
+        padding: 0;
+        background: none;
+      }
+      .hero-badge { display: none; }
+      .hero-scroll-hint { display: none; }
+      .hero-text {
+        min-height: auto;
+        padding: 2.5rem clamp(1.5rem, 6vw, 3rem) 3.5rem;
+        justify-content: flex-start;
+      }
+      .hero-text::before { display: none; }
+
+      .story-grid { grid-template-columns: 1fr; }
+      .story-image-wrap { display: none; }
+
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — 768px (mobile)
+    ══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .nav-links, .lang-switcher { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .products-feature { grid-template-columns: 1fr; }
+      .feat-img > .ph { aspect-ratio: 4/3; }
+
+      .ing-row { grid-template-columns: 1fr 1fr; }
+      .ing-desc-wrap { display: none; }
+
+      .news-grid { grid-template-columns: 1fr; max-width: 480px; }
+
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-details { text-align: left; }
+      .contact-icons { justify-content: flex-start; }
+
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — 480px (small mobile)
+    ══════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .footer-lang-bar { flex-wrap: wrap; gap: 1rem; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">珂莉安 COORIONARA</a>
+    <ul class="nav-links">
+      <li><a href="#story"       data-i18n="nav.story"></a></li>
+      <li><a href="#products"    data-i18n="nav.products"></a></li>
+      <li><a href="#ingredients" data-i18n="nav.ingredients"></a></li>
+      <li><a href="#news"        data-i18n="nav.news"></a></li>
+      <li><a href="#contact"     data-i18n="nav.contact"></a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ko">KO</button>
+      <button class="lang-btn" data-lang="zh-cn">简</button>
+      <button class="lang-btn" data-lang="zh-tw">繁</button>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <ul class="mobile-menu-links">
+    <li><a href="#story"       data-i18n="nav.story"       onclick="closeMenu()"></a></li>
+    <li><a href="#products"    data-i18n="nav.products"    onclick="closeMenu()"></a></li>
+    <li><a href="#ingredients" data-i18n="nav.ingredients" onclick="closeMenu()"></a></li>
+    <li><a href="#news"        data-i18n="nav.news"        onclick="closeMenu()"></a></li>
+    <li><a href="#contact"     data-i18n="nav.contact"     onclick="closeMenu()"></a></li>
+  </ul>
+  <div class="mobile-lang-row">
+    <button class="mobile-lang-btn active" data-lang="en">English</button>
+    <button class="mobile-lang-btn" data-lang="ko">한국어</button>
+    <button class="mobile-lang-btn" data-lang="zh-cn">简体中文</button>
+    <button class="mobile-lang-btn" data-lang="zh-tw">繁體中文</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow" data-i18n="hero.eyebrow"></p>
+    <h1 class="hero-h1" data-i18n-html="hero.h1"></h1>
+    <p class="hero-sub" data-i18n="hero.sub"></p>
+    <div class="hero-cta-row">
+      <a href="#products" class="btn-primary btn-pink" data-i18n="hero.cta1"></a>
+      <a href="#story"    class="btn-ghost"            data-i18n="hero.cta2"></a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="images/hero%20image2.jpeg"
+         alt="COORIONARA – Korean Skincare"
+         class="hero-product-img" />
+    <div class="hero-badge">
+      <div class="hero-badge-num">200<sup>%</sup></div>
+      <div class="hero-badge-label" data-i18n="hero.badge"></div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" data-i18n="hero.scroll"></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     BRAND STORY
+══════════════════════════════════════ -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="story-grid">
+
+      <!-- Text column -->
+      <div>
+        <p class="section-kicker reveal" data-i18n="story.kicker"></p>
+        <blockquote class="story-quote reveal reveal-d1" data-i18n-html="story.quote"></blockquote>
+        <div class="divider reveal reveal-d2"></div>
+        <p class="story-body reveal reveal-d2" data-i18n="story.body1"></p>
+        <p class="story-body reveal reveal-d3" style="margin-top:1rem;" data-i18n="story.body2"></p>
+        <div class="story-keywords reveal reveal-d3">
+          <span class="kw-tag" data-i18n="story.kw1"></span>
+          <span class="kw-tag" data-i18n="story.kw2"></span>
+          <span class="kw-tag" data-i18n="story.kw3"></span>
+          <span class="kw-tag" data-i18n="story.kw4"></span>
+        </div>
+        <div class="story-stats reveal reveal-d4">
+          <div class="stat-cell">
+            <div class="stat-num">15<sup>+</sup></div>
+            <div class="stat-desc" data-i18n="story.stat1"></div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">0</div>
+            <div class="stat-desc" data-i18n="story.stat2"></div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">3</div>
+            <div class="stat-desc" data-i18n="story.stat3"></div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-num">4</div>
+            <div class="stat-desc" data-i18n="story.stat4"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image column -->
+      <div class="story-image-wrap">
+        <div class="story-img-main reveal reveal-d1">
+          <img src="images/concept04_hanji.webp"
+               alt="Youth Cohesion Radiant Cream on layered hanji paper — COORIONARA韩品美学" />
+        </div>
+        <div class="story-img-detail reveal reveal-d2">
+          <img src="images/产品白底图/凝萃芳华抗皱系列/1%20拷贝.png"
+               alt="凝萃芳华 Youth Cohesion Radiant Cream" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PRODUCTS
+══════════════════════════════════════ -->
+<section id="products">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="section-kicker reveal" data-i18n="products.kicker"></p>
+        <h2 class="section-h2 reveal reveal-d1" data-i18n-html="products.h2"></h2>
+      </div>
+      <a href="products.html" class="link-arrow reveal" data-i18n="products.viewAll"></a>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product 1: 花样年华赋活系列 -->
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="images/产品白底图/花样年华赋活系列/1%20拷贝.png"
+               alt="花样年华赋活系列 – Floral Revitalizing Series" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p1.name"></p>
+            <p class="product-sub"  data-i18n="products.p1.sub"></p>
+          </div>
+          <span class="product-tag" data-i18n="products.tag.best"></span>
+        </div>
+      </div>
+      <!-- Product 2: 桃颜悦色美白系列 -->
+      <div class="product-card reveal reveal-d1">
+        <div class="product-img">
+          <img src="images/产品白底图/桃颜悦色美白系列/1.png"
+               alt="桃颜悦色美白系列 – Brightening Series" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p2.name"></p>
+            <p class="product-sub"  data-i18n="products.p2.sub"></p>
+          </div>
+        </div>
+      </div>
+      <!-- Product 3: 凝萃芳华抗皱系列 -->
+      <div class="product-card reveal reveal-d2">
+        <div class="product-img">
+          <img src="images/产品白底图/凝萃芳华抗皱系列/综合%20拷贝.png"
+               alt="凝萃芳华抗皱系列 – Anti-Aging Series" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p3.name"></p>
+            <p class="product-sub"  data-i18n="products.p3.sub"></p>
+          </div>
+          <span class="product-tag new" data-i18n="products.tag.new"></span>
+        </div>
+      </div>
+      <!-- Product 4: 清洁调肌 -->
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="images/产品白底图/清洁调肌/1%20拷贝.png"
+               alt="清洁调肌 – Cleansing & Toning" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p4.name"></p>
+            <p class="product-sub"  data-i18n="products.p4.sub"></p>
+          </div>
+        </div>
+      </div>
+      <!-- Product 5: 肽魅力眼霜 -->
+      <div class="product-card reveal reveal-d1">
+        <div class="product-img">
+          <img src="images/产品白底图/肽魅力眼霜/肽魅力眼霜.png"
+               alt="肽魅力眼霜 – Peptide Eye Cream" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p5.name"></p>
+            <p class="product-sub"  data-i18n="products.p5.sub"></p>
+          </div>
+        </div>
+      </div>
+      <!-- Product 6: 鲟鱼子酱舒缓系列 -->
+      <div class="product-card reveal reveal-d2">
+        <div class="product-img">
+          <img src="images/产品白底图/鲟鱼子酱舒缓系列/精华液/1.png"
+               alt="鲟鱼子酱舒缓系列 – Caviar Soothing Series" />
+        </div>
+        <div class="product-meta">
+          <div>
+            <p class="product-name" data-i18n="products.p6.name"></p>
+            <p class="product-sub"  data-i18n="products.p6.sub"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Set -->
+    <div class="products-feature">
+      <div class="feat-img reveal">
+        <img src="images/产品白底图/膜焕新生/1%20拷贝.png"
+             alt="膜焕新生 – Renewal Mask Series" />
+      </div>
+      <div class="feat-text reveal reveal-d1">
+        <p class="section-kicker" data-i18n="products.feat.kicker"></p>
+        <h3 class="feat-h3" data-i18n-html="products.feat.h3"></h3>
+        <p class="feat-body" data-i18n="products.feat.body"></p>
+        <a href="#" class="btn-primary" style="align-self:flex-start;" data-i18n="products.feat.cta"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     EDITORIAL BANNER — 한지 레이어
+══════════════════════════════════════ -->
+<section style="padding: 0 0 6rem;">
+  <div class="container">
+    <div class="editorial-banner reveal">
+      <img src="images/concept04_hanji.webp"
+           alt="Youth Cohesion Radiant Cream on hanji Korean paper — COORIONARA brand editorial" />
+      <div class="editorial-banner-caption">
+        <div class="editorial-caption-left">
+          <div class="editorial-caption-num">04 · 한지 레이어</div>
+          <div class="editorial-caption-title" data-i18n="editorial.title"></div>
+        </div>
+        <div class="editorial-caption-right" data-i18n="editorial.sub"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CORE INGREDIENTS
+══════════════════════════════════════ -->
+<section class="ingredients" id="ingredients">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="section-kicker reveal" data-i18n="ing.kicker"></p>
+        <h2 class="section-h2 reveal reveal-d1" data-i18n-html="ing.h2"></h2>
+      </div>
+      <a href="#" class="link-arrow reveal" data-i18n="ing.link"></a>
+    </div>
+
+    <!-- Ingredient rows -->
+    <div class="ing-row reveal">
+      <div class="ing-name" data-i18n-html="ing.i1.name"></div>
+      <div class="ing-stat">200<small>%</small></div>
+      <div class="ing-desc-wrap">
+        <span class="ing-origin" data-i18n="ing.i1.origin"></span>
+        <p class="ing-desc" data-i18n="ing.i1.desc"></p>
+      </div>
+    </div>
+    <div class="ing-row reveal reveal-d1">
+      <div class="ing-name" data-i18n-html="ing.i2.name"></div>
+      <div class="ing-stat">98<small>%</small></div>
+      <div class="ing-desc-wrap">
+        <span class="ing-origin" data-i18n="ing.i2.origin"></span>
+        <p class="ing-desc" data-i18n="ing.i2.desc"></p>
+      </div>
+    </div>
+    <div class="ing-row reveal reveal-d2">
+      <div class="ing-name" data-i18n-html="ing.i3.name"></div>
+      <div class="ing-stat">3×</div>
+      <div class="ing-desc-wrap">
+        <span class="ing-origin" data-i18n="ing.i3.origin"></span>
+        <p class="ing-desc" data-i18n="ing.i3.desc"></p>
+      </div>
+    </div>
+    <div class="ing-row reveal reveal-d3">
+      <div class="ing-name" data-i18n-html="ing.i4.name"></div>
+      <div class="ing-stat">72h</div>
+      <div class="ing-desc-wrap">
+        <span class="ing-origin" data-i18n="ing.i4.origin"></span>
+        <p class="ing-desc" data-i18n="ing.i4.desc"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     COMPANY NEWS / 动态
+══════════════════════════════════════ -->
+<section class="news" id="news">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <p class="section-kicker reveal" data-i18n="news.kicker"></p>
+        <h2 class="section-h2 reveal reveal-d1" data-i18n-html="news.h2"></h2>
+      </div>
+      <a href="#" class="link-arrow reveal" data-i18n="news.link"></a>
+    </div>
+    <div class="news-grid">
+      <!-- Featured news -->
+      <div class="news-card news-card--featured reveal">
+        <div class="news-card-img"><div class="ph"><span class="ph-label">Feature Image</span></div></div>
+        <div class="news-meta">
+          <span class="news-cat"  data-i18n="news.n1.cat"></span>
+          <span class="news-date" data-i18n="news.n1.date"></span>
+        </div>
+        <h3 class="news-title"   data-i18n="news.n1.title"></h3>
+        <p  class="news-excerpt"  data-i18n="news.n1.excerpt"></p>
+      </div>
+      <!-- News 2 -->
+      <div class="news-card reveal reveal-d1">
+        <div class="news-card-img"><div class="ph" style="background:var(--beige);"><span class="ph-label">News Image</span></div></div>
+        <div class="news-meta">
+          <span class="news-cat"  data-i18n="news.n2.cat"></span>
+          <span class="news-date" data-i18n="news.n2.date"></span>
+        </div>
+        <h3 class="news-title"   data-i18n="news.n2.title"></h3>
+        <p  class="news-excerpt"  data-i18n="news.n2.excerpt"></p>
+      </div>
+      <!-- News 3 -->
+      <div class="news-card reveal reveal-d2">
+        <div class="news-card-img"><div class="ph" style="background:var(--pink);"><span class="ph-label">News Image</span></div></div>
+        <div class="news-meta">
+          <span class="news-cat"  data-i18n="news.n3.cat"></span>
+          <span class="news-date" data-i18n="news.n3.date"></span>
+        </div>
+        <h3 class="news-title"   data-i18n="news.n3.title"></h3>
+        <p  class="news-excerpt"  data-i18n="news.n3.excerpt"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<section class="contact-strip" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="reveal">
+        <p class="section-kicker" style="margin-bottom:1rem;" data-i18n="contact.kicker"></p>
+        <h2 class="contact-h2" data-i18n-html="contact.h2"></h2>
+      </div>
+      <div class="contact-details reveal reveal-d1">
+        <p class="contact-label" data-i18n="contact.korea"></p>
+        <p class="contact-email">korea@coorionara.com</p>
+        <div style="height:0.8rem;"></div>
+        <p class="contact-label" data-i18n="contact.china"></p>
+        <p class="contact-email">china@coorionara.com</p>
+        <!-- WeChat / WhatsApp icons (placeholder) -->
+        <div class="contact-icons">
+          <a href="#" class="contact-icon-btn" title="WeChat">💬</a>
+          <a href="#" class="contact-icon-btn" title="WhatsApp">📱</a>
+        </div>
+        <a href="mailto:korea@coorionara.com" class="btn-primary" style="margin-top:1.2rem; display:inline-flex;" data-i18n="contact.cta"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">珂莉安 COORIONARA</div>
+        <p class="footer-tagline" data-i18n="footer.tagline"></p>
+        <p class="footer-desc"    data-i18n="footer.desc"></p>
+      </div>
+      <div>
+        <p class="footer-col-title" data-i18n="footer.col1.title"></p>
+        <ul class="footer-links">
+          <li><a href="#story"       data-i18n="footer.col1.l1"></a></li>
+          <li><a href="#story"       data-i18n="footer.col1.l2"></a></li>
+          <li><a href="#ingredients" data-i18n="footer.col1.l3"></a></li>
+          <li><a href="#"            data-i18n="footer.col1.l4"></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title" data-i18n="footer.col2.title"></p>
+        <ul class="footer-links">
+          <li><a href="#products" data-i18n="footer.col2.l1"></a></li>
+          <li><a href="#products" data-i18n="footer.col2.l2"></a></li>
+          <li><a href="#products" data-i18n="footer.col2.l3"></a></li>
+          <li><a href="#products" data-i18n="footer.col2.l4"></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title" data-i18n="footer.col3.title"></p>
+        <ul class="footer-links">
+          <li><a href="#news"    data-i18n="footer.col3.l1"></a></li>
+          <li><a href="#"        data-i18n="footer.col3.l2"></a></li>
+          <li><a href="#contact" data-i18n="footer.col3.l3"></a></li>
+          <li><a href="#"        data-i18n="footer.col3.l4"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy"></p>
+      <div class="footer-lang-bar">
+        <a href="#" data-lang="en"    data-i18n="footer.lang.en"></a>
+        <a href="#" data-lang="ko"    data-i18n="footer.lang.ko"></a>
+        <a href="#" data-lang="zh-cn" data-i18n="footer.lang.zh-cn"></a>
+        <a href="#" data-lang="zh-tw" data-i18n="footer.lang.zh-tw"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   TRANSLATIONS  — EN / KO / ZH-CN / ZH-TW
+══════════════════════════════════════════════════════════════ */
+const T = {
+  en: {
+    "nav.story":       "Brand Story",
+    "nav.products":    "Products",
+    "nav.ingredients": "Ingredients",
+    "nav.news":        "News",
+    "nav.contact":     "Contact",
+
+    "hero.eyebrow": "Korean Skincare · 珂莉安 · 코리오나라",
+    "hero.h1":   "Skin<br/>Finds Its<br/><em>Natural</em><br/>Rhythm.",
+    "hero.sub":  "Inspired by the Korean philosophy of 여백 — the beauty of emptiness — our formulas breathe, rest, and restore.",
+    "hero.cta1": "Explore Collection →",
+    "hero.cta2": "Our Story",
+    "hero.badge": "Moisture Boost",
+    "hero.scroll": "Scroll to explore",
+
+    "story.kicker": "Brand Philosophy",
+    "story.quote":  "\"Silence is not empty —<br/>it is full of <strong>answers.</strong>\"",
+    "story.body1":  "Born from the ancient Korean aesthetic of 여백(餘白) — the deliberate embrace of empty space — COORIONARA creates skincare that lets your skin breathe. We believe the most powerful beauty ritual is restraint: fewer ingredients, deeper trust.",
+    "story.body2":  "Every formula is rooted in Korean botanical wisdom, sourced from pristine highland regions and crafted in certified Korean OEM facilities. Pure. Purposeful. Proven.",
+    "story.kw1": "韩品 K-Heritage",
+    "story.kw2": "三减 Less is More",
+    "story.kw3": "여백 Breathing Space",
+    "story.kw4": "Barrier Repair",
+    "story.stat1": "Core Botanicals",
+    "story.stat2": "Harmful Additives",
+    "story.stat3": "Product Lines",
+    "story.stat4": "Languages",
+
+    "products.kicker":   "Product Collection",
+    "products.h2":       "Crafted for <em>every</em><br/>skin story.",
+    "products.viewAll":  "View All Products →",
+    "products.p1.name":  "Floral Revitalizing Series",
+    "products.p1.sub":   "花样年华赋活系列",
+    "products.p2.name":  "Peach Glow Brightening Series",
+    "products.p2.sub":   "桃颜悦色美白系列",
+    "products.p3.name":  "Floral Anti-Aging Series",
+    "products.p3.sub":   "凝萃芳华抗皱系列",
+    "products.p4.name":  "Cleansing & Balancing",
+    "products.p4.sub":   "清洁调肌系列",
+    "products.p5.name":  "Peptide Eye Cream",
+    "products.p5.sub":   "肽魅力眼霜 · 30g",
+    "products.p6.name":  "Caviar Soothing Series",
+    "products.p6.sub":   "鲟鱼子酱舒缓系列",
+    "products.tag.best": "Best",
+    "products.tag.new":  "New",
+    "products.feat.kicker": "Renewal Collection",
+    "products.feat.h3":  "膜焕新生<br/>Renewal Mask Series",
+    "products.feat.body":"A complete renewal ritual inspired by Korean 여백 philosophy — stripping away excess to reveal your skin's natural radiance. Powered by fermented botanicals and barrier-strengthening actives.",
+    "products.feat.cta": "Explore the Series →",
+
+    "editorial.title": "Youth Cohesion Radiant Cream — 凝萃芳华",
+    "editorial.sub":   "韩品 · 한지 · Barrier Repair",
+
+    "ing.kicker": "Core Ingredients",
+    "ing.h2":     "What goes <em>in</em><br/>is what comes <em>out.</em>",
+    "ing.link":   "Full Formula Details →",
+    "ing.i1.name":   "Centella<br/><em>Asiatica</em>",
+    "ing.i1.origin": "Jeju Island, Korea",
+    "ing.i1.desc":   "Clinically proven 200% hydration boost. Harvested from volcanic soil for maximum bioavailability and soothing efficacy.",
+    "ing.i2.name":   "Fermented<br/><em>Rice Water</em>",
+    "ing.i2.origin": "Traditional Korean Recipe",
+    "ing.i2.desc":   "Ancient fermentation unlocks deep-acting amino acids that visibly brighten and even skin tone over 4 weeks.",
+    "ing.i3.name":   "Mugwort<br/><em>Extract</em>",
+    "ing.i3.origin": "Korean Highlands",
+    "ing.i3.desc":   "Three-times concentrated calming complex. Visibly reduces redness from the first application.",
+    "ing.i4.name":   "Hyaluronic<br/><em>Acid Complex</em>",
+    "ing.i4.origin": "Bio-identical Synthesis",
+    "ing.i4.desc":   "Multi-weight HA penetrates all dermal layers, sustaining plumpness for up to 72 continuous hours.",
+
+    "news.kicker": "Company News",
+    "news.h2":     "Stay in the <em>loop.</em>",
+    "news.link":   "All Updates →",
+    "news.n1.cat":     "Award",
+    "news.n1.date":    "June 2026",
+    "news.n1.title":   "COORIONARA Wins 2026 K-Beauty Innovation Award for Centella Complex Formula",
+    "news.n1.excerpt": "Our Deep Moisture Serum was recognized at the Seoul Cosmetic Expo for its pioneering fermentation technology and clean ingredient profile.",
+    "news.n2.cat":     "Launch",
+    "news.n2.date":    "May 2026",
+    "news.n2.title":   "New Barrier Repair Cream Launching in Vietnam This Summer",
+    "news.n2.excerpt": "Expanding our Southeast Asia line with a humidity-optimized formula tailored for tropical climates.",
+    "news.n3.cat":     "Partnership",
+    "news.n3.date":    "April 2026",
+    "news.n3.title":   "North America Distribution Agreement Signed with K-Beauty Retailer",
+    "news.n3.excerpt": "A milestone step in our entry into the US and Canadian market.",
+
+    "contact.kicker": "Get in Touch",
+    "contact.h2":     "Let's create<br/><em>something beautiful.</em>",
+    "contact.korea":  "Korea Office",
+    "contact.china":  "China Office",
+    "contact.cta":    "Send Inquiry →",
+
+    "footer.tagline":      "\"The art of doing more with less.\"",
+    "footer.desc":         "Korean skincare rooted in botanical heritage, crafted for the modern world. Available in English, 한국어, 简体中文, and 繁體中文.",
+    "footer.col1.title":   "Brand",
+    "footer.col1.l1": "Our Story",     "footer.col1.l2": "Philosophy",
+    "footer.col1.l3": "Ingredients",   "footer.col1.l4": "Sustainability",
+    "footer.col2.title":   "Products",
+    "footer.col2.l1": "Revitalizing Series","footer.col2.l2": "Brightening Series",
+    "footer.col2.l3": "Anti-Aging Series",  "footer.col2.l4": "Caviar Soothing",
+    "footer.col3.title":   "Info",
+    "footer.col3.l1": "Company News",  "footer.col3.l2": "Stockists",
+    "footer.col3.l3": "Contact",       "footer.col3.l4": "Privacy Policy",
+    "footer.copy":         "© 2026 COORIONARA 珂莉安. All rights reserved.",
+    "footer.lang.en":    "English",
+    "footer.lang.ko":    "한국어",
+    "footer.lang.zh-cn": "简体中文",
+    "footer.lang.zh-tw": "繁體中文",
+
+    "ticker": ["Korean Beauty","Natural Ingredients","여백의 미 Beauty of Space","Pure Formulation","K-Beauty","Barrier Repair","三减 Less is More","Skin First Philosophy"]
+  },
+
+  ko: {
+    "nav.story":"브랜드 스토리","nav.products":"제품","nav.ingredients":"성분","nav.news":"뉴스","nav.contact":"문의",
+
+    "hero.eyebrow": "코리아 스킨케어 · 珂莉安 · 코리오나라",
+    "hero.h1":   "피부가<br/>자신만의<br/><em>리듬을</em><br/>찾습니다.",
+    "hero.sub":  "",
+    "hero.cta1": "컬렉션 보기 →",
+    "hero.cta2": "브랜드 스토리",
+    "hero.badge": "수분 200% 증가",
+    "hero.scroll": "스크롤하여 탐색하기",
+
+    "story.kicker": "브랜드 철학",
+    "story.quote":  "\"침묵은 비어 있지 않습니다 —<br/>그 안에는 <strong>답</strong>이 가득합니다.\"",
+    "story.body1":  "한국의 미학 여백(餘白)에서 탄생한 코리오나라. 비움을 통해 피부가 스스로 숨 쉬고 회복하도록, 우리는 덜어냅니다 — 더 적은 성분, 더 깊은 신뢰.",
+    "story.body2":  "모든 포뮬라는 한국 식물학적 지혜에 뿌리를 두고, 인증된 OEM 시설에서 청정 원료로 만들어집니다.",
+    "story.kw1": "韩品 K-헤리티지",
+    "story.kw2": "三减 적을수록 좋다",
+    "story.kw3": "여백의 미",
+    "story.kw4": "장벽 회복",
+    "story.stat1": "핵심 식물 성분","story.stat2": "유해 첨가물","story.stat3": "제품 라인","story.stat4": "지원 언어",
+
+    "products.kicker": "제품 컬렉션",
+    "products.h2":      "<em>모든</em> 피부 이야기를<br/>위해 만들었습니다.",
+    "products.viewAll": "전체 제품 보기 →",
+    "products.p1.name": "화양연화 부활 시리즈","products.p1.sub": "花样年华赋活系列",
+    "products.p2.name": "복숭아빛 미백 시리즈","products.p2.sub": "桃颜悦色美白系列",
+    "products.p3.name": "화정 항노화 시리즈","products.p3.sub": "凝萃芳华抗皱系列",
+    "products.p4.name": "클렌징 조율 라인","products.p4.sub": "清洁调肌系列",
+    "products.p5.name": "펩타이드 아이 크림","products.p5.sub": "肽魅力眼霜 · 30g",
+    "products.p6.name": "캐비아 진정 시리즈","products.p6.sub": "鲟鱼子酱舒缓系列",
+    "products.tag.best": "베스트","products.tag.new": "신제품",
+    "products.feat.kicker": "리뉴얼 컬렉션",
+    "products.feat.h3":  "膜焕新生<br/>모 환신생 마스크 시리즈",
+    "products.feat.body":"여백(餘白)의 철학에서 영감을 받은 완벽한 리뉴얼 의식입니다. 불필요한 것을 걷어내고 피부 본연의 빛을 드러냅니다. 발효 식물 성분과 장벽 강화 액티브로 구성되었습니다.",
+    "products.feat.cta": "시리즈 자세히 보기 →",
+
+    "editorial.title": "유스 코히전 래디언트 크림 — 凝萃芳华",
+    "editorial.sub":   "韩品 · 한지 · 장벽 회복",
+
+    "ing.kicker": "핵심 성분",
+    "ing.h2":     "넣는 것이<br/><em>나오는 것</em>입니다.",
+    "ing.link":   "전체 성분 상세보기 →",
+    "ing.i1.name":   "센텔라<br/><em>아시아티카</em>","ing.i1.origin": "제주도, 대한민국",
+    "ing.i1.desc":   "임상적으로 입증된 수분 200% 증가 효과. 화산 토양에서 재배하여 최대 생체이용률과 진정 효능을 자랑합니다.",
+    "ing.i2.name":   "발효<br/><em>쌀뜨물</em>","ing.i2.origin": "한국 전통 레시피",
+    "ing.i2.desc":   "고대 발효 기술이 깊은 작용의 아미노산을 활성화하여 4주에 걸쳐 피부 톤을 눈에 띄게 밝히고 균일하게 만듭니다.",
+    "ing.i3.name":   "쑥<br/><em>추출물</em>","ing.i3.origin": "한국 고산지대",
+    "ing.i3.desc":   "3배 농축 진정 복합체. 첫 사용부터 눈에 띄게 붉기를 완화합니다.",
+    "ing.i4.name":   "히알루론산<br/><em>복합체</em>","ing.i4.origin": "바이오-아이덴티컬 합성",
+    "ing.i4.desc":   "다중 분자량 HA가 진피의 모든 층에 침투하여 최대 72시간 지속적으로 피부 탄력을 유지합니다.",
+
+    "news.kicker": "회사 소식","news.h2": "최신 소식을<br/><em>확인하세요.</em>","news.link": "전체 소식 보기 →",
+    "news.n1.cat":"수상","news.n1.date":"2026년 6월",
+    "news.n1.title":  "코리오나라, 센텔라 복합 포뮬라로 2026 K-뷰티 혁신상 수상",
+    "news.n1.excerpt":"딥 모이스처 세럼이 서울 코스메틱 엑스포에서 선구적인 발효 기술과 클린 성분 프로필로 인정받았습니다.",
+    "news.n2.cat":"출시","news.n2.date":"2026년 5월",
+    "news.n2.title":  "배리어 리페어 크림, 이번 여름 베트남 출시 예정",
+    "news.n2.excerpt":"고온다습한 기후에 최적화된 포뮬라로 동남아시아 라인을 확장합니다.",
+    "news.n3.cat":"파트너십","news.n3.date":"2026년 4월",
+    "news.n3.title":  "K-뷰티 리테일러와 북미 유통 계약 체결",
+    "news.n3.excerpt":"미국 및 캐나다 시장 진입을 위한 중요한 이정표가 되었습니다.",
+
+    "contact.kicker": "문의하기",
+    "contact.h2":     "함께<br/><em>아름다움을 만들어요.</em>",
+    "contact.korea":  "한국 사무소","contact.china": "중국 사무소","contact.cta": "문의 보내기 →",
+
+    "footer.tagline": "\"적은 것으로 더 많은 것을 하는 예술.\"",
+    "footer.desc":    "한국의 식물학적 유산에 뿌리를 두고 현대 세계를 위해 만든 스킨케어입니다. 영어, 한국어, 简体中文, 繁體中文을 지원합니다.",
+    "footer.col1.title":"브랜드",
+    "footer.col1.l1":"브랜드 스토리","footer.col1.l2":"철학","footer.col1.l3":"성분","footer.col1.l4":"지속가능성",
+    "footer.col2.title":"제품",
+    "footer.col2.l1":"화양연화 부활 시리즈","footer.col2.l2":"복숭아빛 미백 시리즈","footer.col2.l3":"화정 항노화 시리즈","footer.col2.l4":"캐비아 진정 시리즈",
+    "footer.col3.title":"정보",
+    "footer.col3.l1":"회사 소식","footer.col3.l2":"판매처","footer.col3.l3":"문의","footer.col3.l4":"개인정보처리방침",
+    "footer.copy":"© 2026 珂莉安 코리오나라. 모든 권리 보유.",
+    "footer.lang.en":"English","footer.lang.ko":"한국어","footer.lang.zh-cn":"简体中文","footer.lang.zh-tw":"繁體中文",
+
+    "ticker": ["코리안 뷰티","자연 성분","여백의 미","순수 포뮬라","K-뷰티","장벽 회복","三减 적을수록 좋다","피부 우선 철학"]
+  },
+
+  "zh-cn": {
+    "nav.story":"品牌故事","nav.products":"产品","nav.ingredients":"成分","nav.news":"动态","nav.contact":"联系我们",
+
+    "hero.eyebrow": "韩国护肤 · 珂莉安 · 코리오나라",
+    "hero.h1":   "肌肤，<br/>回归<br/><em>自然</em><br/>节律。",
+    "hero.sub":  "源于韩国哲学「여백」——留白之美——我们的配方让肌肤自由呼吸、休憩、修复。",
+    "hero.cta1": "探索系列 →","hero.cta2": "品牌故事",
+    "hero.badge": "水分提升200%","hero.scroll": "向下滚动探索",
+
+    "story.kicker": "品牌哲学",
+    "story.quote":  "\"沉默并非空洞——<br/>它充满了<strong>答案。</strong>\"",
+    "story.body1":  "珂莉安诞生于韩国古老美学「여백（餘白）」——对留白的刻意拥抱。我们相信最有力量的美容仪式在于克制：更少的成分，更深的信任。",
+    "story.body2":  "每一款配方都植根于韩国植物学智慧，原料采自清净高原，由认证韩国OEM工厂精心制造。纯粹、有目的、经过验证。",
+    "story.kw1":"韩品 K-传承","story.kw2":"三减 少即是多","story.kw3":"留白之美","story.kw4":"屏障修护",
+    "story.stat1":"核心植物成分","story.stat2":"有害添加剂","story.stat3":"产品系列","story.stat4":"支持语言",
+
+    "products.kicker":"产品系列","products.h2":"为<em>每一种</em><br/>肌肤故事而生。","products.viewAll":"查看全部产品 →",
+    "products.p1.name":"花样年华赋活系列","products.p1.sub":"赋活 · 多品",
+    "products.p2.name":"桃颜悦色美白系列","products.p2.sub":"美白 · 多品",
+    "products.p3.name":"凝萃芳华抗皱系列","products.p3.sub":"抗皱 · 多品",
+    "products.p4.name":"清洁调肌系列","products.p4.sub":"洁肤 · 调理",
+    "products.p5.name":"肽魅力眼霜","products.p5.sub":"眼部护理 · 30g",
+    "products.p6.name":"鲟鱼子酱舒缓系列","products.p6.sub":"舒缓 · 多品",
+    "products.tag.best":"热销","products.tag.new":"新品",
+    "products.feat.kicker":"焕新系列",
+    "products.feat.h3":"膜焕新生<br/>焕肤面膜系列",
+    "products.feat.body":"以韩国留白哲学为灵感，剥去多余，唤醒肌肤本来的光彩。融合发酵植物精华与屏障修护活性成分，给肌肤真正的焕新体验。",
+    "products.feat.cta":"查看系列详情 →",
+
+    "editorial.title": "活颜霜 — 凝萃芳华",
+    "editorial.sub":   "韩品 · 韩纸美学 · 屏障修护",
+
+    "ing.kicker":"核心成分","ing.h2":"投入什么，<br/>就<em>收获</em>什么。","ing.link":"查看完整配方详情 →",
+    "ing.i1.name":"积雪草<br/><em>提取物</em>","ing.i1.origin":"韩国济州岛",
+    "ing.i1.desc":"临床验证补水提升200%。采自火山土壤，具有最高的生物利用率与舒缓功效。",
+    "ing.i2.name":"发酵<br/><em>米水</em>","ing.i2.origin":"韩国传统工艺",
+    "ing.i2.desc":"古法发酵工艺激活深层氨基酸，4周内显著提亮并均匀肤色。",
+    "ing.i3.name":"艾草<br/><em>精华</em>","ing.i3.origin":"韩国高原",
+    "ing.i3.desc":"三倍浓缩舒缓复合物，从第一次使用起即可显著减少红肿。",
+    "ing.i4.name":"透明质酸<br/><em>复合物</em>","ing.i4.origin":"仿生合成",
+    "ing.i4.desc":"多分子量玻尿酸渗透真皮各层，持续保持肌肤饱满弹润长达72小时。",
+
+    "news.kicker":"公司动态","news.h2":"了解<em>最新动态。</em>","news.link":"查看全部动态 →",
+    "news.n1.cat":"获奖","news.n1.date":"2026年6月",
+    "news.n1.title":"珂莉安凭借积雪草复合配方荣获2026年K-beauty创新奖",
+    "news.n1.excerpt":"深层补水精华在首尔美妆博览会上，凭借创新发酵技术与清洁成分配方获得认可。",
+    "news.n2.cat":"新品上市","news.n2.date":"2026年5月",
+    "news.n2.title":"屏障修护面霜今夏即将在越南上市",
+    "news.n2.excerpt":"以针对高温高湿气候优化的配方，拓展我们的东南亚系列。",
+    "news.n3.cat":"合作伙伴","news.n3.date":"2026年4月",
+    "news.n3.title":"与K-beauty零售商签署北美经销协议",
+    "news.n3.excerpt":"迈向美国和加拿大市场的重要里程碑。",
+
+    "contact.kicker":"联系我们","contact.h2":"一起创造<br/><em>美好。</em>",
+    "contact.korea":"韩国办公室","contact.china":"中国办公室","contact.cta":"发送询盘 →",
+
+    "footer.tagline":"\"以少胜多的艺术。\"",
+    "footer.desc":"植根于韩国植物学遗产，为现代世界精心打造。支持英语、한국어、简体中文及繁體中文。",
+    "footer.col1.title":"品牌",
+    "footer.col1.l1":"品牌故事","footer.col1.l2":"品牌哲学","footer.col1.l3":"成分","footer.col1.l4":"可持续发展",
+    "footer.col2.title":"产品",
+    "footer.col2.l1":"花样年华赋活系列","footer.col2.l2":"桃颜悦色美白系列","footer.col2.l3":"凝萃芳华抗皱系列","footer.col2.l4":"鲟鱼子酱舒缓系列",
+    "footer.col3.title":"信息",
+    "footer.col3.l1":"公司动态","footer.col3.l2":"销售渠道","footer.col3.l3":"联系我们","footer.col3.l4":"隐私政策",
+    "footer.copy":"© 2026 珂莉安 COORIONARA. 版权所有。",
+    "footer.lang.en":"English","footer.lang.ko":"한국어","footer.lang.zh-cn":"简体中文","footer.lang.zh-tw":"繁體中文",
+
+    "ticker": ["韩国美妆","天然成分","留白之美","纯净配方","K-beauty","屏障修护","三减哲学","肌肤优先理念"]
+  },
+
+  "zh-tw": {
+    "nav.story":"品牌故事","nav.products":"產品","nav.ingredients":"成分","nav.news":"動態","nav.contact":"聯絡我們",
+
+    "hero.eyebrow": "韓國護膚 · 珂莉安 · 코리오나라",
+    "hero.h1":   "肌膚，<br/>回歸<br/><em>自然</em><br/>節律。",
+    "hero.sub":  "源於韓國哲學「여백」——留白之美——我們的配方讓肌膚自由呼吸、休憩、修復。",
+    "hero.cta1": "探索系列 →","hero.cta2": "品牌故事",
+    "hero.badge": "水分提升200%","hero.scroll": "向下捲動探索",
+
+    "story.kicker": "品牌哲學",
+    "story.quote":  "\"沉默並非空洞——<br/>它充滿了<strong>答案。</strong>\"",
+    "story.body1":  "珂莉安誕生於韓國古老美學「여백（餘白）」——對留白的刻意擁抱。我們相信最有力量的美容儀式在於克制：更少的成分，更深的信任。",
+    "story.body2":  "每一款配方都植根於韓國植物學智慧，原料採自清淨高原，由認證韓國OEM工廠精心製造。純粹、有目的、經過驗證。",
+    "story.kw1":"韓品 K-傳承","story.kw2":"三減 少即是多","story.kw3":"留白之美","story.kw4":"屏障修護",
+    "story.stat1":"核心植物成分","story.stat2":"有害添加劑","story.stat3":"產品系列","story.stat4":"支援語言",
+
+    "products.kicker":"產品系列","products.h2":"為<em>每一種</em><br/>肌膚故事而生。","products.viewAll":"查看全部產品 →",
+    "products.p1.name":"花樣年華賦活系列","products.p1.sub":"賦活 · 多品",
+    "products.p2.name":"桃顏悅色美白系列","products.p2.sub":"美白 · 多品",
+    "products.p3.name":"凝萃芳華抗皺系列","products.p3.sub":"抗皺 · 多品",
+    "products.p4.name":"清潔調肌系列","products.p4.sub":"潔膚 · 調理",
+    "products.p5.name":"肽魅力眼霜","products.p5.sub":"眼部護理 · 30g",
+    "products.p6.name":"鱘魚子醬舒緩系列","products.p6.sub":"舒緩 · 多品",
+    "products.tag.best":"熱銷","products.tag.new":"新品",
+    "products.feat.kicker":"煥新系列",
+    "products.feat.h3":"膜煥新生<br/>煥膚面膜系列",
+    "products.feat.body":"以韓國留白哲學為靈感，剝去多餘，喚醒肌膚本來的光采。融合發酵植物精華與屏障修護活性成分，給肌膚真正的煥新體驗。",
+    "products.feat.cta":"查看系列詳情 →",
+
+    "editorial.title": "活顏霜 — 凝萃芳華",
+    "editorial.sub":   "韓品 · 韓紙美學 · 屏障修護",
+
+    "ing.kicker":"核心成分","ing.h2":"投入什麼，<br/>就<em>收穫</em>什麼。","ing.link":"查看完整配方詳情 →",
+    "ing.i1.name":"積雪草<br/><em>提取物</em>","ing.i1.origin":"韓國濟州島",
+    "ing.i1.desc":"臨床驗證補水提升200%。採自火山土壤，具有最高的生物利用率與舒緩功效。",
+    "ing.i2.name":"發酵<br/><em>米水</em>","ing.i2.origin":"韓國傳統工藝",
+    "ing.i2.desc":"古法發酵工藝激活深層胺基酸，4週內顯著提亮並均勻膚色。",
+    "ing.i3.name":"艾草<br/><em>精華</em>","ing.i3.origin":"韓國高原",
+    "ing.i3.desc":"三倍濃縮舒緩複合物，從第一次使用起即可顯著減少紅腫。",
+    "ing.i4.name":"玻尿酸<br/><em>複合物</em>","ing.i4.origin":"仿生合成",
+    "ing.i4.desc":"多分子量玻尿酸滲透真皮各層，持續保持肌膚飽滿彈潤長達72小時。",
+
+    "news.kicker":"公司動態","news.h2":"了解<em>最新動態。</em>","news.link":"查看全部動態 →",
+    "news.n1.cat":"獲獎","news.n1.date":"2026年6月",
+    "news.n1.title":"珂莉安憑藉積雪草複合配方榮獲2026年K-beauty創新獎",
+    "news.n1.excerpt":"深層補水精華在首爾美妝博覽會上，憑藉創新發酵技術與清潔成分配方獲得認可。",
+    "news.n2.cat":"新品上市","news.n2.date":"2026年5月",
+    "news.n2.title":"屏障修護面霜今夏即將在越南上市",
+    "news.n2.excerpt":"以針對高溫高濕氣候最佳化的配方，拓展我們的東南亞系列。",
+    "news.n3.cat":"合作夥伴","news.n3.date":"2026年4月",
+    "news.n3.title":"與K-beauty零售商簽署北美經銷協議",
+    "news.n3.excerpt":"邁向美國和加拿大市場的重要里程碑。",
+
+    "contact.kicker":"聯絡我們","contact.h2":"一起創造<br/><em>美好。</em>",
+    "contact.korea":"韓國辦公室","contact.china":"中國辦公室","contact.cta":"發送詢盤 →",
+
+    "footer.tagline":"\"以少勝多的藝術。\"",
+    "footer.desc":"植根於韓國植物學遺產，為現代世界精心打造。支援英語、한국어、简体中文及繁體中文。",
+    "footer.col1.title":"品牌",
+    "footer.col1.l1":"品牌故事","footer.col1.l2":"品牌哲學","footer.col1.l3":"成分","footer.col1.l4":"永續發展",
+    "footer.col2.title":"產品",
+    "footer.col2.l1":"花樣年華賦活系列","footer.col2.l2":"桃顏悅色美白系列","footer.col2.l3":"凝萃芳華抗皺系列","footer.col2.l4":"鱘魚子醬舒緩系列",
+    "footer.col3.title":"資訊",
+    "footer.col3.l1":"公司動態","footer.col3.l2":"銷售通路","footer.col3.l3":"聯絡我們","footer.col3.l4":"隱私政策",
+    "footer.copy":"© 2026 珂莉安 COORIONARA. 版權所有。",
+    "footer.lang.en":"English","footer.lang.ko":"한국어","footer.lang.zh-cn":"简体中文","footer.lang.zh-tw":"繁體中文",
+
+    "ticker": ["韓國美妝","天然成分","留白之美","純淨配方","K-beauty","屏障修護","三減哲學","肌膚優先理念"]
+  }
+};
+
+/* ══════════════════════════════════════════════════════════════
+   STATE
+══════════════════════════════════════════════════════════════ */
+let currentLang = 'en';
+
+/* ══════════════════════════════════════════════════════════════
+   I18N ENGINE
+══════════════════════════════════════════════════════════════ */
+function buildTicker(lang) {
+  const items = T[lang]['ticker'];
+  const doubled = [...items, ...items];
+  return doubled.map(t =>
+    `<span class="ticker-item">${t}</span><span class="ticker-dot"></span>`
+  ).join('');
+}
+
+function applyLang(lang) {
+  const dict = T[lang];
+  if (!dict) return;
+  document.body.classList.add('lang-switching');
+  setTimeout(() => {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.getAttribute('data-i18n');
+      if (dict[k] !== undefined) el.textContent = dict[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const k = el.getAttribute('data-i18n-html');
+      if (dict[k] !== undefined) el.innerHTML = dict[k];
+    });
+    document.getElementById('ticker-track').innerHTML = buildTicker(lang);
+
+    // html lang attr
+    const htmlLang = { en:'en', ko:'ko', 'zh-cn':'zh-CN', 'zh-tw':'zh-TW' };
+    document.documentElement.lang = htmlLang[lang] || lang;
+
+    // footer lang bar active state
+    document.querySelectorAll('.footer-lang-bar a').forEach(a =>
+      a.classList.toggle('active', a.getAttribute('data-lang') === lang));
+
+    document.body.classList.remove('lang-switching');
+  }, 150);
+}
+
+function switchLang(lang) {
+  if (lang === currentLang) return;
+  currentLang = lang;
+
+  // body font class
+  document.body.className = document.body.className
+    .replace(/\blang-\S+/g, '').trim() + ' lang-' + lang;
+
+  // nav + mobile buttons
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+  document.querySelectorAll('.mobile-lang-btn').forEach(b =>
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang));
+
+  applyLang(lang);
+
+  // Persist preference
+  const url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  history.replaceState({}, '', url);
+}
+
+// Wire up all lang-switching controls
+document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => switchLang(btn.getAttribute('data-lang')));
+});
+document.querySelectorAll('.footer-lang-bar a').forEach(a => {
+  a.addEventListener('click', e => { e.preventDefault(); switchLang(a.getAttribute('data-lang')); });
+});
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE MENU
+══════════════════════════════════════════════════════════════ */
+const hamburger   = document.getElementById('hamburger');
+const mobileMenu  = document.getElementById('mobile-menu');
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+}
+
+hamburger.addEventListener('click', () => {
+  const isOpen = hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open', isOpen);
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+});
+
+document.addEventListener('click', e => {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+});
+
+/* ══════════════════════════════════════════════════════════════
+   SCROLL REVEAL — IntersectionObserver
+══════════════════════════════════════════════════════════════ */
+(function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+
+/* ════════════════�
