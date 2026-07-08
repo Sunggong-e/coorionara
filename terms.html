@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이용약관 | Terms of Service — COORIONARA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#f7f4ee;
+    --charcoal:#2b2926;
+    --charcoal-soft:#565049;
+    --gold:#a9895f;
+    --gold-line:#d8c7a8;
+    --hairline:#e4ddd0;
+    --caviar:#1c1a17;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--charcoal);
+    font-family:'Noto Sans KR','Inter',sans-serif;
+    font-weight:300;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    padding:64px 24px 40px;
+    text-align:center;
+    border-bottom:1px solid var(--hairline);
+  }
+  .brand{
+    font-family:'Cormorant Garamond', serif;
+    font-size:14px;
+    letter-spacing:0.42em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 18px;
+  }
+  h1{
+    font-family:'Noto Serif KR','Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(28px,4vw,42px);
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    color:var(--charcoal-soft);
+    font-size:14px;
+    letter-spacing:0.02em;
+  }
+  .lang-toggle{
+    display:inline-flex;
+    margin-top:28px;
+    border:1px solid var(--gold-line);
+    border-radius:999px;
+    overflow:hidden;
+  }
+  .lang-toggle button{
+    appearance:none;
+    border:none;
+    background:transparent;
+    padding:9px 22px;
+    font-size:13px;
+    letter-spacing:0.08em;
+    color:var(--charcoal-soft);
+    cursor:pointer;
+    font-family:'Inter',sans-serif;
+    transition:background .2s ease,color .2s ease;
+  }
+  .lang-toggle button.active{
+    background:var(--caviar);
+    color:var(--ivory);
+  }
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 24px 120px;
+  }
+  .updated{
+    font-size:13px;
+    color:var(--charcoal-soft);
+    margin-bottom:48px;
+    padding-bottom:24px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .fill{
+    background:#fbf8f1;
+    border:1px dashed var(--gold-line);
+    color:#8a6f3f;
+    padding:2px 8px;
+    border-radius:4px;
+    font-size:0.94em;
+    white-space:nowrap;
+  }
+  section{ margin-bottom:44px; }
+  h2{
+    font-family:'Noto Serif KR',serif;
+    font-weight:500;
+    font-size:19px;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin:0 0 16px;
+  }
+  h2 .num{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:16px;
+    font-weight:600;
+  }
+  p, li{
+    font-size:15px;
+    color:var(--charcoal);
+  }
+  ul, ol{ padding-left:20px; margin:10px 0; }
+  li{ margin-bottom:6px; }
+  .contact-box{
+    background:#f1ece1;
+    border-left:3px solid var(--gold);
+    padding:20px 24px;
+    font-size:14.5px;
+  }
+  .contact-box p{ margin:4px 0; }
+  footer{
+    text-align:center;
+    padding:40px 24px;
+    color:var(--charcoal-soft);
+    font-size:12.5px;
+    border-top:1px solid var(--hairline);
+  }
+  [data-lang]{ display:none; }
+  [data-lang].active{ display:block; }
+  header [data-lang]{ display:none; }
+  header [data-lang].active{ display:contents; }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="brand">COORIONARA</p>
+  <div data-lang="ko" class="active">
+    <h1>이용약관</h1>
+    <p class="subtitle">코리오나라(COORIONARA) 웹사이트 이용약관</p>
+  </div>
+  <div data-lang="en">
+    <h1>Terms of Service</h1>
+    <p class="subtitle">Terms governing use of the COORIONARA website</p>
+  </div>
+  <div class="lang-toggle">
+    <button id="btn-ko" class="active" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">ENGLISH</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= KOREAN ================= -->
+  <div data-lang="ko" class="active">
+
+    <div class="updated">
+      시행일자: <span class="fill">[YYYY년 MM월 DD일]</span> ・ 최종 개정일: <span class="fill">[YYYY년 MM월 DD일]</span>
+    </div>
+
+    <section>
+      <h2><span class="num">1</span>목적</h2>
+      <p>
+        본 약관은 <span class="fill">[회사명]</span>(이하 "회사")이 운영하는 웹사이트
+        <span class="fill">[도메인]</span>(이하 "웹사이트")이 제공하는 브랜드·제품 정보 제공 서비스(이하 "서비스")를
+        이용함에 있어 회사와 이용자의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">2</span>정의</h2>
+      <ul>
+        <li>"웹사이트"란 회사가 브랜드 및 제품 정보를 제공하기 위해 운영하는 인터넷 사이트를 말합니다.</li>
+        <li>"이용자"란 웹사이트에 접속하여 본 약관에 따라 회사가 제공하는 서비스를 이용하는 모든 방문자를 말합니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">3</span>약관의 효력 및 변경</h2>
+      <p>
+        본 약관은 웹사이트에 게시함으로써 효력이 발생합니다. 회사는 관련 법령을 위반하지 않는 범위에서 본 약관을
+        개정할 수 있으며, 개정 시 적용일자 및 개정사유를 명시하여 현행 약관과 함께 웹사이트에 최소 7일 전부터
+        공지합니다. 이용자에게 불리한 변경의 경우 최소 30일 전에 공지합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">4</span>서비스의 제공 및 변경</h2>
+      <p>
+        회사는 웹사이트를 통해 브랜드 소개, 제품 정보, 기타 관련 콘텐츠를 제공합니다. 회사는 서비스의 내용,
+        운영상 또는 기술상의 필요에 따라 제공하고 있는 서비스의 전부 또는 일부를 변경할 수 있으며, 이 경우 변경된
+        서비스의 내용 및 제공일자를 명시하여 웹사이트에 사전 공지합니다.
+      </p>
+      <p>
+        본 웹사이트는 현재 온라인 판매(전자상거래) 기능을 제공하지 않으며, 표시된 제품 정보는 정보 제공
+        목적이며 청약의 유인에 해당하지 않습니다. 향후 온라인 판매 기능이 추가되는 경우, 관련 이용약관을 별도로
+        개정·고지합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">5</span>서비스의 중단</h2>
+      <p>
+        회사는 컴퓨터 등 정보통신설비의 보수점검·교체 및 고장, 통신 두절 등의 사유가 발생한 경우 서비스의
+        제공을 일시적으로 중단할 수 있습니다. 회사는 이로 인하여 이용자가 입은 손해에 대하여 배상하지 않습니다.
+        단, 회사의 고의 또는 중과실로 인한 경우에는 그러하지 아니합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">6</span>지적재산권</h2>
+      <p>
+        웹사이트에 게시된 브랜드명, 로고, 제품 이미지, 텍스트, 디자인 등 모든 콘텐츠에 대한 저작권 및 지적재산권은
+        회사 또는 정당한 권리자에게 귀속됩니다. 이용자는 회사의 사전 서면 동의 없이 웹사이트의 콘텐츠를 복제,
+        전송, 출판, 배포, 방송, 기타 방법에 의하여 영리 목적으로 이용하거나 제3자에게 이용하게 하여서는 안 됩니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">7</span>이용자의 의무</h2>
+      <p>이용자는 다음 각 호에 해당하는 행위를 하여서는 안 됩니다.</p>
+      <ul>
+        <li>웹사이트에 게시된 정보의 무단 변경, 복제, 배포</li>
+        <li>회사 또는 제3자의 지적재산권을 침해하는 행위</li>
+        <li>웹사이트의 정상적인 운영을 방해하는 행위(해킹, 악성코드 유포 등)</li>
+        <li>기타 관계 법령에 위반되는 행위</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">8</span>면책조항</h2>
+      <p>
+        회사는 천재지변, 전쟁, 기간통신사업자의 서비스 중지 등 회사가 통제할 수 없는 불가항력적 사유로 서비스를
+        제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제됩니다. 회사는 웹사이트에 게재된 정보의 신뢰도,
+        정확성 등에 대해서는 보증하지 않으며, 이로 인해 발생한 이용자의 손해에 대하여 책임을 지지 않습니다.
+        단, 회사의 고의 또는 중대한 과실로 인한 경우는 예외로 합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">9</span>준거법 및 관할법원</h2>
+      <p>
+        본 약관의 해석 및 회사와 이용자 간의 분쟁에 대하여는 대한민국 법을 적용하며, 분쟁이 발생할 경우
+        민사소송법상의 관할법원에 소를 제기합니다. 회사가 미국 등 해외로 제품을 판매하는 경우, 해당 국가·주의
+        소비자보호 관련 강행법규가 우선 적용될 수 있습니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">10</span>문의처</h2>
+      <div class="contact-box">
+        <p><strong><span class="fill">[회사명]</span></strong></p>
+        <p>사업자등록번호: <span class="fill">[000-00-00000]</span></p>
+        <p>주소: <span class="fill">[사업장 주소]</span></p>
+        <p>이메일: <span class="fill">[contact@example.co.kr]</span></p>
+        <p>연락처: <span class="fill">[연락처]</span></p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ================= ENGLISH ================= -->
+  <div data-lang="en">
+
+    <div class="updated">
+      Effective date: <span class="fill">[Month DD, YYYY]</span> ・ Last revised: <span class="fill">[Month DD, YYYY]</span>
+    </div>
+
+    <section>
+      <h2><span class="num">1</span>Purpose</h2>
+      <p>
+        These Terms of Service ("Terms") govern the rights, obligations, and responsibilities of
+        <span class="fill">[Company Legal Name]</span> ("Company," "we," "us") and users in connection with
+        use of the brand and product information website located at <span class="fill">[domain]</span>
+        (the "Website").
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">2</span>Definitions</h2>
+      <ul>
+        <li>"Website" means the internet site operated by the Company to provide brand and product information.</li>
+        <li>"User" means any visitor who accesses the Website and uses the services provided by the Company under these Terms.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">3</span>Effect and Modification of Terms</h2>
+      <p>
+        These Terms take effect upon posting on the Website. The Company may amend these Terms to the extent
+        permitted by applicable law. Amendments will be posted at least 7 days before their effective date,
+        together with the reason for the change. Amendments unfavorable to users will be announced at least
+        30 days in advance.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">4</span>Provision and Modification of Services</h2>
+      <p>
+        The Company provides brand information, product information, and related content through the Website.
+        The Company may modify all or part of its services for operational or technical reasons, and will
+        provide advance notice of the content and date of such changes on the Website.
+      </p>
+      <p>
+        The Website currently does not offer online sales (e-commerce) functionality. Product information
+        displayed is provided for informational purposes only and does not constitute an offer to sell. If
+        online sales functionality is introduced in the future, revised Terms addressing such functionality
+        will be separately posted.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">5</span>Suspension of Service</h2>
+      <p>
+        The Company may temporarily suspend the service in the event of maintenance, equipment failure, or
+        communication outages. The Company is not liable for damages arising from such suspension, except
+        where caused by the Company's intentional misconduct or gross negligence.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">6</span>Intellectual Property</h2>
+      <p>
+        All content on the Website, including brand names, logos, product images, text, and design, is the
+        property of the Company or its rightful licensors. Users may not reproduce, transmit, publish,
+        distribute, broadcast, or otherwise use any Website content for commercial purposes, or allow a third
+        party to do so, without the Company's prior written consent.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">7</span>User Obligations</h2>
+      <p>Users shall not engage in any of the following:</p>
+      <ul>
+        <li>Unauthorized modification, copying, or distribution of information posted on the Website</li>
+        <li>Infringement of the intellectual property rights of the Company or third parties</li>
+        <li>Interfering with the normal operation of the Website (e.g., hacking, distributing malicious code)</li>
+        <li>Any other act that violates applicable law</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">8</span>Disclaimer</h2>
+      <p>
+        The Company is not liable for failure to provide service due to force majeure events beyond its
+        reasonable control, including natural disasters, war, or telecommunications outages. The Company does
+        not warrant the reliability or accuracy of information posted on the Website and is not liable for
+        resulting user damages, except where caused by the Company's intentional misconduct or gross negligence.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">9</span>Governing Law and Jurisdiction</h2>
+      <p>
+        These Terms are governed by the laws of the Republic of Korea, and any dispute between the Company and
+        a user shall be subject to the jurisdiction determined under the Korean Civil Procedure Act. Where the
+        Company sells products in the United States or other jurisdictions, applicable mandatory consumer
+        protection laws of that jurisdiction may take precedence.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">10</span>Contact</h2>
+      <div class="contact-box">
+        <p><strong><span class="fill">[Company Legal Name]</span></strong></p>
+        <p>Business Registration No.: <span class="fill">[000-00-00000]</span></p>
+        <p>Address: <span class="fill">[Business address]</span></p>
+        <p>Email: <span class="fill">[contact@example.co.kr]</span></p>
+        <p>Phone: <span class="fill">[Phone number]</span></p>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  <span data-lang="ko" class="active">© <span class="fill">[YYYY]</span> COORIONARA. All rights reserved.</span>
+  <span data-lang="en">© <span class="fill">[YYYY]</span> COORIONARA. All rights reserved.</span>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.querySelectorAll('[data-lang]').forEach(el=>{
+      el.classList.toggle('active', el.getAttribute('data-lang')===lang);
+    });
+    document.getElementById('btn-ko').classList.toggle('active', lang==='ko');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>

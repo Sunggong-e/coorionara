@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개인정보처리방침 | Privacy Policy — COORIONARA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#f7f4ee;
+    --charcoal:#2b2926;
+    --charcoal-soft:#565049;
+    --gold:#a9895f;
+    --gold-line:#d8c7a8;
+    --hairline:#e4ddd0;
+    --caviar:#1c1a17;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--charcoal);
+    font-family:'Noto Sans KR','Inter',sans-serif;
+    font-weight:300;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .lang-en body, [data-lang="en"]{ font-family:'Inter',sans-serif; }
+
+  header{
+    padding:64px 24px 40px;
+    text-align:center;
+    border-bottom:1px solid var(--hairline);
+  }
+  .brand{
+    font-family:'Cormorant Garamond', serif;
+    font-size:14px;
+    letter-spacing:0.42em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 18px;
+  }
+  h1{
+    font-family:'Noto Serif KR','Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(28px,4vw,42px);
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    color:var(--charcoal-soft);
+    font-size:14px;
+    letter-spacing:0.02em;
+  }
+  .lang-toggle{
+    display:inline-flex;
+    margin-top:28px;
+    border:1px solid var(--gold-line);
+    border-radius:999px;
+    overflow:hidden;
+  }
+  .lang-toggle button{
+    appearance:none;
+    border:none;
+    background:transparent;
+    padding:9px 22px;
+    font-size:13px;
+    letter-spacing:0.08em;
+    color:var(--charcoal-soft);
+    cursor:pointer;
+    font-family:'Inter',sans-serif;
+    transition:background .2s ease,color .2s ease;
+  }
+  .lang-toggle button.active{
+    background:var(--caviar);
+    color:var(--ivory);
+  }
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 24px 120px;
+  }
+  .updated{
+    font-size:13px;
+    color:var(--charcoal-soft);
+    margin-bottom:48px;
+    padding-bottom:24px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .fill{
+    background:#fbf8f1;
+    border:1px dashed var(--gold-line);
+    color:#8a6f3f;
+    padding:2px 8px;
+    border-radius:4px;
+    font-size:0.94em;
+    white-space:nowrap;
+  }
+  section{ margin-bottom:44px; }
+  h2{
+    font-family:'Noto Serif KR',serif;
+    font-weight:500;
+    font-size:19px;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin:0 0 16px;
+  }
+  h2 .num{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:16px;
+    font-weight:600;
+  }
+  p, li{
+    font-size:15px;
+    color:var(--charcoal);
+  }
+  ul{ padding-left:20px; margin:10px 0; }
+  li{ margin-bottom:6px; }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:16px 0;
+    font-size:14px;
+  }
+  th,td{
+    border:1px solid var(--hairline);
+    padding:10px 12px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:#f1ece1;
+    font-weight:500;
+    color:var(--charcoal-soft);
+  }
+  .contact-box{
+    background:#f1ece1;
+    border-left:3px solid var(--gold);
+    padding:20px 24px;
+    font-size:14.5px;
+  }
+  .contact-box p{ margin:4px 0; }
+  footer{
+    text-align:center;
+    padding:40px 24px;
+    color:var(--charcoal-soft);
+    font-size:12.5px;
+    border-top:1px solid var(--hairline);
+  }
+  [data-lang]{ display:none; }
+  [data-lang].active{ display:block; }
+  header [data-lang]{ display:none; }
+  header [data-lang].active{ display:contents; }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="brand">COORIONARA</p>
+  <div data-lang="ko" class="active">
+    <h1>개인정보처리방침</h1>
+    <p class="subtitle">코리오나라(COORIONARA)는 이용자의 개인정보를 소중히 다룹니다</p>
+  </div>
+  <div data-lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">COORIONARA respects and protects your personal information</p>
+  </div>
+  <div class="lang-toggle">
+    <button id="btn-ko" class="active" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">ENGLISH</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= KOREAN ================= -->
+  <div data-lang="ko" class="active">
+
+    <div class="updated">
+      시행일자: <span class="fill">[YYYY년 MM월 DD일]</span> ・ 최종 개정일: <span class="fill">[YYYY년 MM월 DD일]</span>
+    </div>
+
+    <section>
+      <h2><span class="num">1</span>총칙</h2>
+      <p>
+        <span class="fill">[회사명]</span>(이하 "회사")은 이용자의 개인정보를 중요시하며, 「개인정보 보호법」 등
+        관련 법령을 준수하고 있습니다. 회사는 개인정보처리방침을 통해 이용자가 제공하는 개인정보가 어떠한
+        목적과 방식으로 이용되고 있으며, 개인정보 보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+      </p>
+      <p>
+        현재 본 웹사이트(<span class="fill">[도메인 예: coorionara.co.kr]</span>)는 브랜드 및 제품 소개를
+        목적으로 운영되고 있으며, 별도의 회원가입, 온라인 구매, 문의 접수 기능을 통해 개인정보를 수집하고
+        있지 않습니다. 향후 문의하기, 뉴스레터 구독, 전자상거래 등 개인정보 수집이 수반되는 기능이
+        추가될 경우, 본 방침을 사전에 개정하여 고지합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">2</span>수집하는 개인정보 항목 및 방법</h2>
+      <p>회사는 원칙적으로 이용자가 자발적으로 제공하지 않는 한 개인을 식별할 수 있는 정보를 수집하지 않습니다. 다만 웹사이트 이용 과정에서 아래와 같은 정보가 자동으로 생성되어 수집될 수 있습니다.</p>
+      <table>
+        <tr><th>구분</th><th>수집 항목</th><th>수집 방법</th></tr>
+        <tr><td>자동 수집 정보</td><td>접속 IP, 쿠키, 방문 일시, 브라우저 종류, 서비스 이용 기록</td><td>웹사이트 접속 시 자동 생성·수집 (분석 도구 사용 시)</td></tr>
+        <tr><td>향후 추가 예정</td><td class="fill">[예: 이름, 이메일, 문의 내용]</td><td class="fill">[예: 문의 폼, 뉴스레터 구독]</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="num">3</span>개인정보의 수집 및 이용 목적</h2>
+      <ul>
+        <li>웹사이트 방문 통계 분석 및 서비스 품질 개선</li>
+        <li>부정 이용 방지 및 비인가 접근 탐지</li>
+        <li class="fill">[향후 기능 추가 시: 고객 문의 응대, 뉴스레터 발송, 주문 처리 및 배송 등]</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">4</span>개인정보의 보유 및 이용 기간</h2>
+      <p>
+        회사는 원칙적으로 개인정보 수집 및 이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.
+        단, 관계 법령에 따라 보존할 필요가 있는 경우 회사는 아래와 같이 관계 법령에서 정한 일정한 기간 동안
+        회원정보를 보관합니다.
+      </p>
+      <table>
+        <tr><th>보관 항목</th><th>보관 근거</th><th>보관 기간</th></tr>
+        <tr><td>계약 또는 청약철회 등에 관한 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률</td><td>5년</td></tr>
+        <tr><td>소비자의 불만 또는 분쟁처리에 관한 기록</td><td>전자상거래 등에서의 소비자보호에 관한 법률</td><td>3년</td></tr>
+        <tr><td>웹사이트 방문 기록(로그)</td><td>통신비밀보호법</td><td>3개월</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="num">5</span>개인정보의 제3자 제공</h2>
+      <p>
+        회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만 아래의 경우에는 예외로 합니다.
+      </p>
+      <ul>
+        <li>이용자가 사전에 제3자 제공에 동의한 경우</li>
+        <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">6</span>개인정보 처리 위탁</h2>
+      <p>
+        회사는 서비스 향상을 위해 아래와 같이 개인정보 처리 업무를 외부 전문업체에 위탁하여 운영할 수 있습니다.
+      </p>
+      <table>
+        <tr><th>수탁업체</th><th>위탁업무 내용</th></tr>
+        <tr><td class="fill">[예: GitHub, Inc. (GitHub Pages)]</td><td>웹사이트 호스팅 및 운영</td></tr>
+        <tr><td class="fill">[예: Google LLC (Google Analytics)]</td><td>웹사이트 방문 통계 분석</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="num">7</span>쿠키(Cookie)의 운영</h2>
+      <p>
+        회사는 이용자에게 맞춤화된 서비스를 제공하기 위해 쿠키(cookie)를 사용할 수 있습니다. 쿠키는 웹사이트를
+        운영하는 데 이용되는 서버가 이용자의 브라우저에게 보내는 소량의 정보이며 이용자의 PC 또는 모바일 기기 내
+        하드디스크에 저장되기도 합니다. 이용자는 웹브라우저 옵션 설정을 통해 쿠키 허용, 차단 등의 설정을 할
+        수 있습니다. 단, 쿠키 저장을 거부할 경우 일부 서비스 이용에 어려움이 발생할 수 있습니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">8</span>정보주체의 권리와 행사 방법</h2>
+      <p>
+        이용자는 개인정보주체로서 다음과 같은 권리를 행사할 수 있습니다.
+      </p>
+      <ul>
+        <li>개인정보 열람, 정정, 삭제 요구</li>
+        <li>개인정보 처리 정지 요구</li>
+        <li>개인정보 수집·이용에 대한 동의 철회</li>
+      </ul>
+      <p>위 권리 행사는 아래 개인정보 보호책임자에게 서면, 전화, 이메일 등을 통해 하실 수 있으며 회사는 이에 대해 지체 없이 조치하겠습니다.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">9</span>개인정보의 파기 절차 및 방법</h2>
+      <p>
+        회사는 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 전자적 파일 형태로
+        저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제하며, 종이 문서에 기록·저장된
+        개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">10</span>개인정보 보호책임자</h2>
+      <div class="contact-box">
+        <p><strong>개인정보 보호책임자</strong></p>
+        <p>성명: <span class="fill">[담당자명]</span></p>
+        <p>직책: <span class="fill">[직책]</span></p>
+        <p>이메일: <span class="fill">[privacy@example.co.kr]</span></p>
+        <p>연락처: <span class="fill">[연락처]</span></p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">11</span>미국 등 해외 이용자에 대한 안내</h2>
+      <p>
+        회사는 향후 미국 등 해외 시장으로의 제품 판매를 계획하고 있으며, 해외 이용자의 개인정보를 처리하게
+        되는 경우 California Consumer Privacy Act(CCPA) 등 해당 국가·주(州)의 개인정보 보호 법령을 함께
+        준수할 예정입니다. 관련 서비스가 개시되는 시점에 본 방침을 개정하여 구체적인 처리 근거와 이용자의
+        권리(예: 정보 판매 거부권 등)를 명시합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">12</span>고지의 의무</h2>
+      <p>
+        본 개인정보처리방침의 내용 추가, 삭제 및 수정이 있을 경우 개정 최소 7일 전부터 웹사이트를 통해
+        공지합니다. 다만 개인정보의 수집 및 활용 등 이용자 권리의 중요한 변경이 있을 경우에는 최소 30일 전에
+        고지합니다.
+      </p>
+    </section>
+
+  </div>
+
+  <!-- ================= ENGLISH ================= -->
+  <div data-lang="en">
+
+    <div class="updated">
+      Effective date: <span class="fill">[Month DD, YYYY]</span> ・ Last revised: <span class="fill">[Month DD, YYYY]</span>
+    </div>
+
+    <section>
+      <h2><span class="num">1</span>Overview</h2>
+      <p>
+        <span class="fill">[Company Legal Name]</span> ("Company," "we," "us") respects your privacy and is
+        committed to protecting your personal information in accordance with Korea's Personal Information
+        Protection Act ("PIPA") and, where applicable, the privacy laws of jurisdictions in which we operate.
+      </p>
+      <p>
+        This website (<span class="fill">[domain, e.g. coorionara.co.kr]</span>) is currently operated for
+        brand and product information purposes only. We do not currently collect personal information through
+        account registration, online purchases, or contact forms. If features that involve collecting personal
+        information (such as a contact form, newsletter signup, or e-commerce) are added in the future, this
+        Policy will be updated and re-posted in advance.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">2</span>Information We Collect</h2>
+      <p>As a rule, we do not collect personally identifiable information unless you voluntarily provide it. The following information may be generated automatically as you use the website.</p>
+      <table>
+        <tr><th>Category</th><th>Data collected</th><th>Method</th></tr>
+        <tr><td>Automatically collected</td><td>IP address, cookies, visit timestamps, browser type, usage logs</td><td>Generated automatically during site visits (if analytics tools are used)</td></tr>
+        <tr><td>Planned in future</td><td class="fill">[e.g. name, email, message]</td><td class="fill">[e.g. contact form, newsletter signup]</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="num">3</span>Purpose of Collection and Use</h2>
+      <ul>
+        <li>Analyzing website traffic and improving service quality</li>
+        <li>Preventing fraudulent use and detecting unauthorized access</li>
+        <li class="fill">[If features are added: responding to inquiries, sending newsletters, processing orders and shipping, etc.]</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">4</span>Retention Period</h2>
+      <p>
+        We destroy personal information without delay once the purpose of collection has been achieved, except
+        where retention is required by applicable law, as summarized below.
+      </p>
+      <table>
+        <tr><th>Record type</th><th>Legal basis</th><th>Retention period</th></tr>
+        <tr><td>Contract / withdrawal records</td><td>Act on Consumer Protection in E-Commerce</td><td>5 years</td></tr>
+        <tr><td>Consumer complaint / dispute records</td><td>Act on Consumer Protection in E-Commerce</td><td>3 years</td></tr>
+        <tr><td>Website visit logs</td><td>Protection of Communications Secrets Act</td><td>3 months</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="num">5</span>Disclosure to Third Parties</h2>
+      <p>We do not share personal information with third parties, except:</p>
+      <ul>
+        <li>Where you have given prior consent, or</li>
+        <li>Where required by law or requested by an investigative agency following the procedures prescribed by law</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">6</span>Outsourcing of Data Processing</h2>
+      <p>We may outsource certain data-processing operations to the following external providers to operate and improve our services.</p>
+      <table>
+        <tr><th>Provider</th><th>Scope of outsourced work</th></tr>
+        <tr><td class="fill">[e.g. GitHub, Inc. (GitHub Pages)]</td><td>Website hosting and operation</td></tr>
+        <tr><td class="fill">[e.g. Google LLC (Google Analytics)]</td><td>Website traffic analysis</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="num">7</span>Use of Cookies</h2>
+      <p>
+        We may use cookies to provide a more tailored browsing experience. Cookies are small pieces of data
+        sent from our server to your browser and may be stored on your device. You may configure your browser
+        to accept or block cookies; note that blocking cookies may limit certain website functions.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">8</span>Your Rights</h2>
+      <ul>
+        <li>Right to request access, correction, or deletion of your personal information</li>
+        <li>Right to request suspension of processing</li>
+        <li>Right to withdraw consent to collection and use</li>
+      </ul>
+      <p>You may exercise these rights by contacting our Privacy Officer below in writing, by phone, or by email, and we will respond without undue delay.</p>
+    </section>
+
+    <section>
+      <h2><span class="num">9</span>Destruction of Personal Information</h2>
+      <p>
+        We destroy personal information without delay once the purpose of collection and use has been
+        fulfilled. Electronic files are deleted using methods that prevent recovery, and paper records are
+        shredded or incinerated.
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">10</span>Privacy Officer</h2>
+      <div class="contact-box">
+        <p><strong>Privacy Officer</strong></p>
+        <p>Name: <span class="fill">[Name]</span></p>
+        <p>Title: <span class="fill">[Title]</span></p>
+        <p>Email: <span class="fill">[privacy@example.co.kr]</span></p>
+        <p>Phone: <span class="fill">[Phone number]</span></p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">11</span>Notice to International (including U.S.) Users</h2>
+      <p>
+        We plan to expand sales to markets including the United States. If and when we begin processing
+        personal information of users in other jurisdictions, we will also comply with applicable local
+        privacy laws, including the California Consumer Privacy Act (CCPA) where relevant. This Policy will be
+        revised prior to launch of such services to specify the legal basis for processing and applicable user
+        rights (e.g., the right to opt out of the sale of personal information).
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="num">12</span>Changes to This Policy</h2>
+      <p>
+        Any additions, deletions, or amendments to this Policy will be posted on our website at least 7 days
+        before taking effect. Material changes affecting user rights, such as changes to how personal
+        information is collected or used, will be announced at least 30 days in advance.
+      </p>
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  <span data-lang="ko" class="active">© <span class="fill">[YYYY]</span> COORIONARA. All rights reserved.</span>
+  <span data-lang="en">© <span class="fill">[YYYY]</span> COORIONARA. All rights reserved.</span>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.querySelectorAll('[data-lang]').forEach(el=>{
+      el.classList.toggle('active', el.getAttribute('data-lang')===lang);
+    });
+    document.getElementById('btn-ko').classList.toggle('active', lang==='ko');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>

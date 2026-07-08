@@ -837,12 +837,7 @@ hamburger.addEventListener('click', () => {
 ════════════════════════════════════════════════ */
 (function init() {
   const urlLang = new URLSearchParams(location.search).get('lang');
-  const bl = navigator.language.toLowerCase();
-  let lang = 'en';
-  if (urlLang && T[urlLang]) lang = urlLang;
-  else if (bl.startsWith('ko')) lang = 'ko';
-  else if (bl.startsWith('zh-tw') || bl.startsWith('zh-hant')) lang = 'zh-tw';
-  else if (bl.startsWith('zh')) lang = 'zh-cn';
+  let lang = (urlLang && T[urlLang]) ? urlLang : 'en';
   currentLang = lang;
   document.body.classList.add('lang-' + lang);
   document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(b =>
