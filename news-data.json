@@ -1,0 +1,40 @@
+[
+  {
+    "id": "001",
+    "date": "2026-05-13",
+    "category_en": "Trade Show",
+    "category_ko": "박람회",
+    "category_zh": "展会",
+    "category_zh_tw": "展會",
+    "title_en": "COORIONARA Exhibits at China Beauty Expo (CBE) 2026 in Shanghai",
+    "title_ko": "코리오나라, 2026 중국미용박람회(CBE) 상하이 참가",
+    "title_zh": "珂莉安亮相2026年中国美容博览会（CBE）上海展",
+    "title_zh_tw": "珂莉安亮相2026年中國美容博覽會（CBE）上海展",
+    "summary_en": "We showcased our centella-based skincare line at the 30th China Beauty Expo, held May 12-14 at the Shanghai New International Expo Centre, connecting with distributors and retailers from across the region.",
+    "summary_ko": "5월 12일부터 14일까지 상하이 뉴 인터내셔널 엑스포 센터에서 열린 제30회 중국미용박람회(CBE)에 참가해 센텔라 기반 스킨케어 라인을 소개하고, 각지의 유통사 및 리테일러들과 교류했습니다.",
+    "summary_zh": "我们参加了5月12日至14日于上海新国际博览中心举办的第30届中国美容博览会（CBE），展示了以积雪草为核心的护肤系列，并与各地经销商及零售商进行了深入交流。",
+    "summary_zh_tw": "我們參加了5月12日至14日於上海新國際博覽中心舉辦的第30屆中國美容博覽會（CBE），展示了以積雪草為核心的護膚系列，並與各地經銷商及零售商進行了深入交流。",
+    "thumbnail": "news/news%20image-%E7%BE%8E%E5%8D%9A%E4%BC%9A(6).jpg",
+    "link": "#",
+    "featured": true
+  },
+  {
+    "id": "002",
+    "date": "2026-06-05",
+    "category_en": "Award",
+    "category_ko": "수상",
+    "category_zh": "获奖",
+    "category_zh_tw": "獲獎",
+    "title_en": "Coorionara Wins 2026 K-Beauty Innovation Award for Centella Complex Formula",
+    "title_ko": "코리오나라, 센텔라 복합 포뮬라로 2026 K-뷰티 혁신상 수상",
+    "title_zh": "珂莉安娜凭借积雪草复合配方荣获2026年K-beauty创新奖",
+    "title_zh_tw": "珂莉安娜憑藉積雪草複合配方榮獲2026年K-beauty創新獎",
+    "summary_en": "Our Deep Moisture Serum was recognized at the Seoul Cosmetic Expo for its pioneering fermentation technology and clean ingredient profile.",
+    "summary_ko": "딥 모이스처 세럼이 서울 코스메틱 엑스포에서 선구적인 발효 기술과 클린 성분 프로필로 인정받았습니다.",
+    "summary_zh": "深层补水精华在首尔美妆博览会上，凭借创新发酵技术与清洁成分配方获得认可。",
+    "summary_zh_tw": "深層補水精華在首爾美妝博覽會上，憑藉創新發酵技術與清潔成分配方獲得認可。",
+    "thumbnail": "",
+    "link": "#",
+    "featured": false
+  }
+]
