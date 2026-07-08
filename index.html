@@ -134,12 +134,13 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      padding: 12%;
+      padding: 8%;
       background: var(--white);
       display: block;
       transition: transform 0.4s ease;
     }
     .product-card:hover .product-img img { transform: scale(1.06); }
+    .product-img img.portrait-img { padding: 4%; }
     .feat-img img {
       width: 100%;
       height: 100%;
@@ -1284,7 +1285,8 @@
       <div class="product-card reveal" data-lb-img="images/Full%20Bloom%20Moistyre%20Toner.png">
         <div class="product-img">
           <img src="images/Full%20Bloom%20Moistyre%20Toner.png"
-               alt="花样年华赋活系列 – Floral Revitalizing Series" />
+               alt="花样年华赋活系列 – Floral Revitalizing Series"
+               onload="if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait-img')" />
         </div>
         <div class="product-meta">
           <div>
@@ -1298,7 +1300,8 @@
       <div class="product-card reveal reveal-d1" data-lb-img="images/Persica-ro%20Treatment%20Essence.png">
         <div class="product-img">
           <img src="images/Persica-ro%20Treatment%20Essence.png"
-               alt="桃颜悦色美白系列 – Brightening Series" />
+               alt="桃颜悦色美白系列 – Brightening Series"
+               onload="if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait-img')" />
         </div>
         <div class="product-meta">
           <div>
@@ -1311,7 +1314,8 @@
       <div class="product-card reveal reveal-d2" data-lb-img="images/Youth%20Cohesion%20Radiant%20Cream.png">
         <div class="product-img">
           <img src="images/Youth%20Cohesion%20Radiant%20Cream.png"
-               alt="凝萃芳华抗皱系列 – Anti-Aging Series" />
+               alt="凝萃芳华抗皱系列 – Anti-Aging Series"
+               onload="if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait-img')" />
         </div>
         <div class="product-meta">
           <div>
@@ -1325,7 +1329,8 @@
       <div class="product-card reveal" data-lb-img="images/Refreshing%20Cleansing%20Foam.png">
         <div class="product-img">
           <img src="images/Refreshing%20Cleansing%20Foam.png"
-               alt="清洁调肌 – Cleansing & Toning" />
+               alt="清洁调肌 – Cleansing & Toning"
+               onload="if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait-img')" />
         </div>
         <div class="product-meta">
           <div>
@@ -1338,7 +1343,8 @@
       <div class="product-card reveal reveal-d1" data-lb-img="images/Peptide%20Charming%20Eye%20Cream.png">
         <div class="product-img">
           <img src="images/Peptide%20Charming%20Eye%20Cream.png"
-               alt="肽魅力眼霜 – Peptide Eye Cream" />
+               alt="肽魅力眼霜 – Peptide Eye Cream"
+               onload="if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait-img')" />
         </div>
         <div class="product-meta">
           <div>
@@ -1351,7 +1357,8 @@
       <div class="product-card reveal reveal-d2" data-lb-img="images/Caviar%20Ampoule.png">
         <div class="product-img">
           <img src="images/Caviar%20Ampoule.png"
-               alt="鲟鱼子酱舒缓系列 – Caviar Soothing Series" />
+               alt="鲟鱼子酱舒缓系列 – Caviar Soothing Series"
+               onload="if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait-img')" />
         </div>
         <div class="product-meta">
           <div>

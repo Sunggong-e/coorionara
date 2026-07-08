@@ -206,10 +206,11 @@
     .product-card:hover .product-img { box-shadow: 0 8px 28px rgba(44,31,20,.1); }
     .product-img img {
       width: 100%; height: 100%; object-fit: contain;
-      padding: 10%; display: block;
+      padding: 6%; display: block;
       transition: transform .4s ease;
     }
     .product-card:hover .product-img img { transform: scale(1.05); }
+    .product-img img.portrait-img { padding: 2%; }
     /* fallback placeholder if no image */
     .product-img.no-img {
       background: linear-gradient(145deg, var(--bg-soft) 0%, var(--pink) 100%);
@@ -805,6 +806,7 @@ function renderAll(lang) {
                data-lb-img="${p.img}" data-lb-name="${info.name}" data-lb-size="${info.size}">
             <div class="product-img">
               <img src="${p.img}" alt="${info.name}" loading="lazy"
+                   onload="if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait-img')"
                    onerror="this.parentElement.classList.add('no-img'); this.style.display='none'" />
             </div>
             <p class="product-name">${info.name}</p>
