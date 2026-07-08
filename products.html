@@ -431,6 +431,16 @@
   </div>
 </footer>
 
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Product image">
+  <button id="lightbox-close" aria-label="Close">&#x2715;</button>
+  <img id="lightbox-img" src="" alt="" />
+  <div id="lightbox-caption">
+    <div class="lb-name" id="lb-name"></div>
+    <div class="lb-size" id="lb-size"></div>
+  </div>
+</div>
+
 <script>
 /* ════════════════════════════════════════════════
    PRODUCT DATA
@@ -946,16 +956,6 @@ document.getElementById('series-container').addEventListener('click', e => {
   renderAll(lang);
 })();
 </script>
-
-<!-- Lightbox -->
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Product image">
-  <button id="lightbox-close" aria-label="Close">&#x2715;</button>
-  <img id="lightbox-img" src="" alt="" />
-  <div id="lightbox-caption">
-    <div class="lb-name" id="lb-name"></div>
-    <div class="lb-size" id="lb-size"></div>
-  </div>
-</div>
 
 </body>
 </html>
