@@ -945,6 +945,45 @@
     }
     .contact-icon-btn:hover { background: rgba(44,31,20,0.2); }
 
+    .contact-form {
+      margin-top: 3rem;
+      display: grid;
+      gap: 1rem;
+      max-width: 640px;
+    }
+    .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      padding: 0.9rem 1.1rem;
+      border: 1px solid rgba(44,31,20,0.18);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--brown); }
+    .contact-form textarea { min-height: 120px; resize: vertical; font-family: inherit; }
+    .contact-form button[type="submit"] {
+      justify-self: start;
+      border: none;
+      cursor: pointer;
+    }
+    .contact-form-status {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      min-height: 1.2em;
+    }
+    .contact-form-status.success { color: #4B7A4B; }
+    .contact-form-status.error   { color: #B3543F; }
+    @media (max-width: 560px) {
+      .contact-form-row { grid-template-columns: 1fr; }
+    }
+
     /* ══════════════════════════════════════
        FOOTER
     ══════════════════════════════════════ */
@@ -1503,6 +1542,21 @@
         <a href="mailto:coorionara@coorionara.com" class="btn-primary" style="margin-top:1.2rem; display:inline-flex;" data-i18n="contact.cta"></a>
       </div>
     </div>
+
+    <!-- Contact form — submits to Web3Forms (https://web3forms.com), no backend required.
+         Access Key configured below. To rotate the key, get a new one at web3forms.com
+         and replace the value of the hidden "access_key" input. -->
+    <form id="contact-form" class="contact-form reveal reveal-d2">
+      <input type="hidden" name="access_key" value="d00a7d2b-5447-40b5-950c-b9f6b507ee1f" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="contact-form-row">
+        <input type="text"  name="name"  data-i18n-placeholder="contact.form.name"  required />
+        <input type="email" name="email" data-i18n-placeholder="contact.form.email" required />
+      </div>
+      <textarea name="message" data-i18n-placeholder="contact.form.message" required></textarea>
+      <button type="submit" class="btn-primary btn-pink" data-i18n="contact.form.submit"></button>
+      <p class="contact-form-status" id="contact-form-status"></p>
+    </form>
   </div>
 </section>
 
@@ -1646,6 +1700,13 @@ const T = {
     "contact.email.ko": "Korea Email",  "contact.email.cn": "China Email",
     "contact.phone":  "Phone",
     "contact.cta":    "Send Inquiry →",
+    "contact.form.name":    "Your name",
+    "contact.form.email":   "Your email",
+    "contact.form.message": "How can we help?",
+    "contact.form.submit":  "Send Message →",
+    "contact.form.sending": "Sending…",
+    "contact.form.success": "Thank you — your message has been sent. We'll be in touch soon.",
+    "contact.form.error":   "Something went wrong. Please try again, or email us directly.",
 
     "footer.tagline":      "\"The art of doing more with less.\"",
     "footer.desc":         "Korean skincare rooted in botanical heritage, crafted for the modern world. Available in English, 한국어, 简体中文, and 繁體中文.",
@@ -1724,6 +1785,10 @@ const T = {
     "contact.kicker": "문의하기",
     "contact.h2":     "함께<br/><em>아름다움을 만들어요.</em>",
     "contact.email.ko":"한국 이메일","contact.email.cn":"중국 이메일","contact.phone":"전화","contact.cta":"문의 보내기 →",
+    "contact.form.name":"이름","contact.form.email":"이메일","contact.form.message":"문의 내용을 입력해 주세요",
+    "contact.form.submit":"메시지 보내기 →","contact.form.sending":"전송 중…",
+    "contact.form.success":"감사합니다 — 메시지가 전송되었습니다. 곧 답변드리겠습니다.",
+    "contact.form.error":"전송 중 문제가 발생했습니다. 다시 시도하시거나 이메일로 직접 문의해 주세요.",
 
     "footer.tagline": "\"적은 것으로 더 많은 것을 하는 예술.\"",
     "footer.desc":    "한국의 식물학적 유산에 뿌리를 두고 현대 세계를 위해 만든 스킨케어입니다. 영어, 한국어, 简体中文, 繁體中文을 지원합니다.",
@@ -1786,6 +1851,10 @@ const T = {
 
     "contact.kicker":"联系我们","contact.h2":"一起创造<br/><em>美好。</em>",
     "contact.email.ko":"韩国邮箱","contact.email.cn":"中国邮箱","contact.phone":"电话","contact.cta":"发送询盘 →",
+    "contact.form.name":"您的姓名","contact.form.email":"您的邮箱","contact.form.message":"请输入咨询内容",
+    "contact.form.submit":"发送消息 →","contact.form.sending":"发送中…",
+    "contact.form.success":"感谢您的留言，我们会尽快与您联系。",
+    "contact.form.error":"发送失败，请重试，或直接发送邮件与我们联系。",
 
     "footer.tagline":"\"以少胜多的艺术。\"",
     "footer.desc":"植根于韩国植物学遗产，为现代世界精心打造。支持英语、한국어、简体中文及繁體中文。",
@@ -1848,6 +1917,10 @@ const T = {
 
     "contact.kicker":"聯絡我們","contact.h2":"一起創造<br/><em>美好。</em>",
     "contact.email.ko":"韓國電郵","contact.email.cn":"中國電郵","contact.phone":"電話","contact.cta":"發送詢盤 →",
+    "contact.form.name":"您的姓名","contact.form.email":"您的電郵","contact.form.message":"請輸入諮詢內容",
+    "contact.form.submit":"發送訊息 →","contact.form.sending":"發送中…",
+    "contact.form.success":"感謝您的留言，我們會盡快與您聯繫。",
+    "contact.form.error":"發送失敗，請重試，或直接發送電郵與我們聯繫。",
 
     "footer.tagline":"\"以少勝多的藝術。\"",
     "footer.desc":"植根於韓國植物學遺產，為現代世界精心打造。支援英語、한국어、简体中文及繁體中文。",
@@ -1892,6 +1965,10 @@ function applyLang(lang) {
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
       const k = el.getAttribute('data-i18n-html');
       if (dict[k] !== undefined) el.innerHTML = dict[k];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const k = el.getAttribute('data-i18n-placeholder');
+      if (dict[k] !== undefined) el.placeholder = dict[k];
     });
     document.getElementById('ticker-track').innerHTML = buildTicker(lang);
 
@@ -2012,6 +2089,61 @@ function loadNews(lang) {
   }
   renderNews(lang);
 }
+
+/* ══════════════════════════════════════════════════════════════
+   CONTACT FORM — submits to Web3Forms (https://web3forms.com).
+   Static sites (like this one on GitHub Pages) have no backend, so
+   Web3Forms relays the submission to the configured email address.
+   Access Key is set on the form's hidden "access_key" input above.
+   To rotate the key, get a new one at web3forms.com and swap it in.
+══════════════════════════════════════════════════════════════ */
+(function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const status = document.getElementById('contact-form-status');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const dict = T[currentLang] || T.en;
+    const accessKey = form.access_key.value;
+
+    if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+      status.textContent = dict['contact.form.error'];
+      status.className = 'contact-form-status error';
+      console.warn('[contact-form] Web3Forms access_key is not set — replace YOUR_WEB3FORMS_ACCESS_KEY with your own key from web3forms.com.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    status.textContent = dict['contact.form.sending'];
+    status.className = 'contact-form-status';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          status.textContent = dict['contact.form.success'];
+          status.className = 'contact-form-status success';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'submission failed');
+        }
+      })
+      .catch(err => {
+        console.warn('[contact-form] submission failed:', err);
+        status.textContent = dict['contact.form.error'];
+        status.className = 'contact-form-status error';
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
+  });
+})();
 
 // Wire up all lang-switching controls
 document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
