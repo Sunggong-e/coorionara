@@ -162,7 +162,7 @@
       height: 100%;
       min-height: 640px;
       object-fit: cover;
-      object-position: center;
+      object-position: right center;
       display: block;
     }
 
@@ -1044,7 +1044,7 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
-        object-position: center top;
+        object-position: right top;
         padding: 0;
         background: none;
       }
@@ -1152,7 +1152,7 @@
 ══════════════════════════════════════ -->
 <nav id="main-nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">珂莉安 COORIONARA</a>
+    <a href="#" class="nav-logo" data-i18n="brand.logo">珂莉安 COORIONARA</a>
     <ul class="nav-links">
       <li><a href="#story"       data-i18n="nav.story"></a></li>
       <li><a href="#products"    data-i18n="nav.products"></a></li>
@@ -1203,7 +1203,7 @@
     </div>
   </div>
   <div class="hero-image">
-    <img src="images/hero%20image2.jpeg"
+    <img src="images/hero%20image.png"
          alt="COORIONARA – Korean Skincare"
          class="hero-product-img" />
     <div class="hero-badge">
@@ -1471,7 +1471,7 @@
         <p class="section-kicker reveal" data-i18n="news.kicker"></p>
         <h2 class="section-h2 reveal reveal-d1" data-i18n-html="news.h2"></h2>
       </div>
-      <a href="#" class="link-arrow reveal" data-i18n="news.link"></a>
+      <a href="news.html" class="link-arrow reveal" data-i18n="news.link"></a>
     </div>
     <!-- Cards are rendered dynamically from news-data.json — see renderNews() in the script below.
          To add/update news, edit news-data.json directly (no code changes needed). -->
@@ -1513,7 +1513,7 @@
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="footer-logo">珂莉安 COORIONARA</div>
+        <div class="footer-logo" data-i18n="brand.logo">珂莉安 COORIONARA</div>
         <p class="footer-tagline" data-i18n="footer.tagline"></p>
         <p class="footer-desc"    data-i18n="footer.desc"></p>
       </div>
@@ -1559,19 +1559,23 @@
 </footer>
 
 
+<!-- News data — loaded as a plain <script> (not fetch) so it also
+     works when this file is opened directly via file:// (double-click) -->
+<script src="news-data.js"></script>
 <script>
 /* ══════════════════════════════════════════════════════════════
    TRANSLATIONS  — EN / KO / ZH-CN / ZH-TW
 ══════════════════════════════════════════════════════════════ */
 const T = {
   en: {
+    "brand.logo":      "COORIONARA",
     "nav.story":       "Brand Story",
     "nav.products":    "Products",
     "nav.ingredients": "Ingredients",
     "nav.news":        "News",
     "nav.contact":     "Contact",
 
-    "hero.eyebrow": "Korean Skincare · 珂莉安 · 코리오나라",
+    "hero.eyebrow": "Korean Skincare · 코리오나라",
     "hero.h1":   "Skin<br/>Finds Its<br/><em>Natural</em><br/>Rhythm.",
     "hero.sub":  "Inspired by the Korean philosophy of 여백 — the beauty of emptiness — our formulas breathe, rest, and restore.",
     "hero.cta1": "Explore Collection →",
@@ -1583,8 +1587,8 @@ const T = {
     "story.quote":  "\"Silence is not empty —<br/>it is full of <strong>answers.</strong>\"",
     "story.body1":  "Born from the ancient Korean aesthetic of 여백(餘白) — the deliberate embrace of empty space — COORIONARA creates skincare that lets your skin breathe. We believe the most powerful beauty ritual is restraint: fewer ingredients, deeper trust.",
     "story.body2":  "Every formula is rooted in Korean botanical wisdom, sourced from pristine highland regions and crafted in certified Korean OEM facilities. Pure. Purposeful. Proven.",
-    "story.kw1": "韩品 K-Heritage",
-    "story.kw2": "三减 Less is More",
+    "story.kw1": "K-Heritage",
+    "story.kw2": "Less is More",
     "story.kw3": "여백 Breathing Space",
     "story.kw4": "Barrier Repair",
     "story.stat1": "Core Botanicals",
@@ -1610,12 +1614,12 @@ const T = {
     "products.tag.best": "Best",
     "products.tag.new":  "New",
     "products.feat.kicker": "Renewal Collection",
-    "products.feat.h3":  "膜焕新生<br/>Renewal Mask Series",
+    "products.feat.h3":  "Renewal Mask Series",
     "products.feat.body":"A complete renewal ritual inspired by Korean 여백 philosophy — stripping away excess to reveal your skin's natural radiance. Powered by fermented botanicals and barrier-strengthening actives.",
     "products.feat.cta": "Explore the Series →",
 
-    "editorial.title": "Youth Cohesion Radiant Cream — 凝萃芳华",
-    "editorial.sub":   "韩品 · 한지 · Barrier Repair",
+    "editorial.title": "Youth Cohesion Radiant Cream",
+    "editorial.sub":   "한지 · Barrier Repair",
 
     "ing.kicker": "Core Ingredients",
     "ing.h2":     "What goes <em>in</em><br/>is what comes <em>out.</em>",
@@ -1654,16 +1658,17 @@ const T = {
     "footer.col3.title":   "Info",
     "footer.col3.l1": "Company News",  "footer.col3.l2": "Stockists",
     "footer.col3.l3": "Contact",       "footer.col3.l4": "Privacy Policy",  "footer.col3.l5": "Terms of Use",
-    "footer.copy":         "© 2026 COORIONARA 珂莉安. All rights reserved.",
+    "footer.copy":         "© 2026 COORIONARA. All rights reserved.",
     "footer.lang.en":    "English",
     "footer.lang.ko":    "한국어",
     "footer.lang.zh-cn": "简体中文",
     "footer.lang.zh-tw": "繁體中文",
 
-    "ticker": ["Korean Beauty","Natural Ingredients","여백의 미 Beauty of Space","Pure Formulation","K-Beauty","Barrier Repair","三减 Less is More","Skin First Philosophy"]
+    "ticker": ["Korean Beauty","Natural Ingredients","여백의 미 Beauty of Space","Pure Formulation","K-Beauty","Barrier Repair","Less is More","Skin First Philosophy"]
   },
 
   ko: {
+    "brand.logo": "珂莉安 COORIONARA",
     "nav.story":"브랜드 스토리","nav.products":"제품","nav.ingredients":"성분","nav.news":"뉴스","nav.contact":"문의",
 
     "hero.eyebrow": "코리아 스킨케어 · 珂莉安 · 코리오나라",
@@ -1735,6 +1740,7 @@ const T = {
   },
 
   "zh-cn": {
+    "brand.logo": "珂莉安 COORIONARA",
     "nav.story":"品牌故事","nav.products":"产品","nav.ingredients":"成分","nav.news":"动态","nav.contact":"联系我们",
 
     "hero.eyebrow": "韩国护肤 · 珂莉安 · 코리오나라",
@@ -1796,6 +1802,7 @@ const T = {
   },
 
   "zh-tw": {
+    "brand.logo": "珂莉安 COORIONARA",
     "nav.story":"品牌故事","nav.products":"產品","nav.ingredients":"成分","nav.news":"動態","nav.contact":"聯絡我們",
 
     "hero.eyebrow": "韓國護膚 · 珂莉安 · 코리오나라",
@@ -1992,15 +1999,14 @@ function renderNews(lang) {
 }
 
 function loadNews(lang) {
-  fetch('news-data.json')
-    .then(res => res.ok ? res.json() : Promise.reject(new Error('HTTP ' + res.status)))
-    .then(data => {
-      newsItems = Array.isArray(data) ? data : [];
-      renderNews(lang);
-    })
-    .catch(err => {
-      console.warn('[news] could not load news-data.json (the page must be served over http/https, not file://):', err);
-    });
+  // news-data.js is loaded via a plain <script> tag (see just above this
+  // <script> block), so it works whether the page is opened via file://
+  // (double-click) or http(s) — no fetch() / CORS restriction involved.
+  newsItems = Array.isArray(window.NEWS_DATA) ? window.NEWS_DATA : [];
+  if (!newsItems.length) {
+    console.warn('[news] window.NEWS_DATA is empty or missing — check that news-data.js is present and loaded before this script.');
+  }
+  renderNews(lang);
 }
 
 // Wire up all lang-switching controls

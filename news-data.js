@@ -1,0 +1,41 @@
+/* ══════════════════════════════════════════════════════════════
+   COORIONARA — Company News data
+   이 파일을 직접 편집해서 뉴스를 추가·수정·삭제하세요 (CMS 불필요).
+   각 뉴스 항목은 아래 배열(window.NEWS_DATA)에 하나의 { ... } 객체로 추가합니다.
+   맨 앞 항목이 "featured"(대표 뉴스)이며, featured가 없으면 날짜 최신순으로 정렬됩니다.
+
+   필드 설명:
+   - id            : 고유 번호 (문자열, 예: "002")
+   - date          : "YYYY-MM-DD" 형식
+   - category_*    : 카테고리 (en/ko/zh/zh_tw)
+   - title_*       : 제목 (en/ko/zh/zh_tw)
+   - summary_*     : 요약 (en/ko/zh/zh_tw)
+   - thumbnail     : 썸네일 이미지 경로 (news/파일명.jpg)
+   - link          : 클릭 시 이동할 링크 ("#"이면 링크 없음)
+   - featured      : true/false — 대표 뉴스로 강조 표시할지 여부
+
+   ※ index.html과 news.html이 이 파일(news-data.js)을 <script>로 직접
+      불러오기 때문에, 브라우저에서 파일을 더블클릭해서 열어도(file://)
+      뉴스가 정상적으로 보입니다.
+══════════════════════════════════════════════════════════════ */
+window.NEWS_DATA = [
+  {
+    "id": "001",
+    "date": "2026-05-13",
+    "category_en": "Trade Show",
+    "category_ko": "박람회",
+    "category_zh": "展会",
+    "category_zh_tw": "展會",
+    "title_en": "COORIONARA at the 30th CBE China Beauty Expo, Shanghai",
+    "title_ko": "코리오나라, 제30회 CBE 중국미용박람회 상하이 참가",
+    "title_zh": "珂莉安亮相第30届CBE中国美容博览会，开启美业新征程",
+    "title_zh_tw": "珂莉安亮相第30屆CBE中國美容博覽會，開啟美業新征程",
+    "summary_en": "COORIONARA presented its full skincare line at Booth E2-J09, Shanghai New International Expo Centre, May 12–14. Under the philosophy of 'Simplified Beauty · Scientific Skincare,' our team engaged with distributors, salon owners, and industry partners across China, with multiple partnership discussions initiated on-site.",
+    "summary_ko": "5월 12일부터 14일까지 상하이 뉴 인터내셔널 엑스포 센터 E2-J09 부스에서 코리오나라 전 제품 라인을 선보였습니다. '감미 스킨케어·과학적 피부 관리' 철학을 바탕으로 전국 대리상, 미용원 원장, 업계 파트너들과 깊이 있는 교류를 나눴으며, 현장에서 다수의 초기 협력 의향이 체결됐습니다.",
+    "summary_zh": "2026年5月12—14日，珂莉安携全线护肤产品亮相上海新国际博览中心E2-J09展位，以「减美护肤·科学理肤」核心主张与全国美业从业者深度交流。展会期间，渠道客商、美容院店主络绎不绝，现场洽谈氛围热烈，达成多组初步合作意向。",
+    "summary_zh_tw": "2026年5月12—14日，珂莉安攜全線護膚產品亮相上海新國際博覽中心E2-J09展位，以「減美護膚·科學理膚」核心主張與全國美業從業者深度交流。展會期間，渠道客商、美容院店主絡繹不絕，現場洽談氛圍熱烈，達成多組初步合作意向。",
+    "thumbnail": "news/cbe-2026-shanghai.jpg",
+    "link": "#",
+    "featured": true
+  }
+];
