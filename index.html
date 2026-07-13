@@ -1471,7 +1471,7 @@
         <p class="section-kicker reveal" data-i18n="news.kicker"></p>
         <h2 class="section-h2 reveal reveal-d1" data-i18n-html="news.h2"></h2>
       </div>
-      <a href="news.html" class="link-arrow reveal" data-i18n="news.link"></a>
+      <a href="news.html?lang=en" id="news-all-link" class="link-arrow reveal" data-i18n="news.link"></a>
     </div>
     <!-- Cards are rendered dynamically from news-data.json — see renderNews() in the script below.
          To add/update news, edit news-data.json directly (no code changes needed). -->
@@ -1898,6 +1898,10 @@ function applyLang(lang) {
     // html lang attr
     const htmlLang = { en:'en', ko:'ko', 'zh-cn':'zh-CN', 'zh-tw':'zh-TW' };
     document.documentElement.lang = htmlLang[lang] || lang;
+
+    // "All Updates →" link should open news.html in the same language
+    const newsAllLink = document.getElementById('news-all-link');
+    if (newsAllLink) newsAllLink.href = 'news.html?lang=' + lang;
 
     // footer lang bar active state
     document.querySelectorAll('.footer-lang-bar a').forEach(a =>

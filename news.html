@@ -195,7 +195,7 @@
       <button class="lang-btn" data-lang="zh-cn" onclick="switchLang('zh-cn')">简</button>
       <button class="lang-btn" data-lang="zh-tw" onclick="switchLang('zh-tw')">繁</button>
     </div>
-    <a href="index.html#news" class="back-link" data-i18n="back">← Back to home</a>
+    <a href="index.html?lang=en#news" id="back-link" class="back-link" data-i18n="back">← Back to home</a>
   </div>
 </header>
 
@@ -235,13 +235,12 @@
   let currentLang = 'en';
   let newsItems = null;
 
+  // Default language is English. The only override is an explicit
+  // URL ?lang= param (e.g. ?lang=ko) — browser language is ignored,
+  // matching index.html's language-detection policy.
   function detectLang() {
     const urlLang = new URL(window.location).searchParams.get('lang');
     if (urlLang && T[urlLang]) return urlLang;
-    const nav = (navigator.language || 'en').toLowerCase();
-    if (nav.startsWith('ko')) return 'ko';
-    if (nav.startsWith('zh-tw') || nav.startsWith('zh-hk')) return 'zh-tw';
-    if (nav.startsWith('zh')) return 'zh-cn';
     return 'en';
   }
 
@@ -257,6 +256,10 @@
     document.body.className = document.body.className.replace(/\blang-\S+/g, '').trim() + ' lang-' + lang;
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
     document.documentElement.lang = lang;
+
+    // "Back to home" link should return to index.html in the same language
+    const backLink = document.getElementById('back-link');
+    if (backLink) backLink.href = 'index.html?lang=' + lang + '#news';
   }
 
   function switchLang(lang) {
