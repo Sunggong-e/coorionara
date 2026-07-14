@@ -1534,10 +1534,11 @@
         <div style="height:0.8rem;"></div>
         <p class="contact-label" data-i18n="contact.email.cn"></p>
         <p class="contact-email"><a href="mailto:coorionara@coorionara.top" style="color:inherit;">coorionara@coorionara.top</a></p>
-        <!-- WeChat / WhatsApp icons (placeholder) -->
+        <!-- TikTok (Douyin) / RedNote (Xiaohongshu) QR codes — click opens the
+             existing lightbox (see "Lightbox" script) with the QR image enlarged. -->
         <div class="contact-icons">
-          <a href="#" class="contact-icon-btn" title="WeChat">💬</a>
-          <a href="#" class="contact-icon-btn" title="WhatsApp">📱</a>
+          <a href="#" class="contact-icon-btn" title="TikTok · 抖音" data-lb-img="images/tiktok.jpg">🎵</a>
+          <a href="#" class="contact-icon-btn" title="RedNote · 小红书" data-lb-img="images/rednote.jpg">📕</a>
         </div>
         <a href="mailto:coorionara@coorionara.com" class="btn-primary" style="margin-top:1.2rem; display:inline-flex;" data-i18n="contact.cta"></a>
       </div>
@@ -2258,9 +2259,14 @@ function detectInitialLang() {
   document.getElementById('lightbox').addEventListener('click', closeLightbox);
   document.getElementById('lightbox-close').addEventListener('click', e => { e.stopPropagation(); closeLightbox(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-  document.getElementById('products').addEventListener('click', e => {
+  // Document-wide so both product cards (#products) and other triggers
+  // (e.g. the Contact section's TikTok/RedNote QR icons) can use data-lb-img.
+  document.addEventListener('click', e => {
     const card = e.target.closest('[data-lb-img]');
-    if (card) openLightbox(card.dataset.lbImg);
+    if (card) {
+      e.preventDefault(); // avoid href="#" jumping the page when the trigger is a link
+      openLightbox(card.dataset.lbImg);
+    }
   });
 }());
 </script>
