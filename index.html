@@ -1544,10 +1544,14 @@
     </div>
 
     <!-- Contact form — submits to Web3Forms (https://web3forms.com), no backend required.
-         Access Key configured below. To rotate the key, get a new one at web3forms.com
-         and replace the value of the hidden "access_key" input. -->
+         Web3Forms' free plan sends each submission to ONE inbox per Access Key, so to
+         reach both coorionara@coorionara.com and coorionara@coorionara.top we submit the
+         form twice — once per Access Key (see initContactForm() below). Both keys are
+         configured; submissions now reach both inboxes. To rotate either key, get a new
+         one at web3forms.com and swap the corresponding hidden input value below. -->
     <form id="contact-form" class="contact-form reveal reveal-d2">
       <input type="hidden" name="access_key" value="d00a7d2b-5447-40b5-950c-b9f6b507ee1f" />
+      <input type="hidden" id="access_key_top" value="d7a63455-973e-49d9-9315-bf7769b2bf31" />
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
       <div class="contact-form-row">
         <input type="text"  name="name"  data-i18n-placeholder="contact.form.name"  required />
@@ -2094,24 +2098,43 @@ function loadNews(lang) {
    CONTACT FORM — submits to Web3Forms (https://web3forms.com).
    Static sites (like this one on GitHub Pages) have no backend, so
    Web3Forms relays the submission to the configured email address.
-   Access Key is set on the form's hidden "access_key" input above.
-   To rotate the key, get a new one at web3forms.com and swap it in.
+   Web3Forms' free plan delivers each submission to ONE inbox per
+   Access Key, so to reach both coorionara@coorionara.com and
+   coorionara@coorionara.top we submit the form twice — once with
+   each Access Key. See the two hidden inputs on the form above.
 ══════════════════════════════════════════════════════════════ */
 (function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
   const status = document.getElementById('contact-form-status');
   const submitBtn = form.querySelector('button[type="submit"]');
+  const PLACEHOLDER_KEYS = ['YOUR_WEB3FORMS_ACCESS_KEY', 'YOUR_WEB3FORMS_ACCESS_KEY_TOP'];
+
+  function submitWithKey(accessKey, payload) {
+    return fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ ...payload, access_key: accessKey })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (!data.success) throw new Error(data.message || 'submission failed');
+        return data;
+      });
+  }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     const dict = T[currentLang] || T.en;
-    const accessKey = form.access_key.value;
+    const payload = Object.fromEntries(new FormData(form));
 
-    if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+    const accessKeys = [form.access_key.value, document.getElementById('access_key_top').value]
+      .filter(key => key && !PLACEHOLDER_KEYS.includes(key));
+
+    if (!accessKeys.length) {
       status.textContent = dict['contact.form.error'];
       status.className = 'contact-form-status error';
-      console.warn('[contact-form] Web3Forms access_key is not set — replace YOUR_WEB3FORMS_ACCESS_KEY with your own key from web3forms.com.');
+      console.warn('[contact-form] No Web3Forms access_key is set — add your key(s) from web3forms.com to the hidden inputs on the form.');
       return;
     }
 
@@ -2119,19 +2142,20 @@ function loadNews(lang) {
     status.textContent = dict['contact.form.sending'];
     status.className = 'contact-form-status';
 
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(Object.fromEntries(new FormData(form)))
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
+    Promise.allSettled(accessKeys.map(key => submitWithKey(key, payload)))
+      .then(results => {
+        const anySucceeded = results.some(r => r.status === 'fulfilled');
+        if (anySucceeded) {
           status.textContent = dict['contact.form.success'];
           status.className = 'contact-form-status success';
           form.reset();
+          results.forEach((r, i) => {
+            if (r.status === 'rejected') {
+              console.warn('[contact-form] submission with access key #' + (i + 1) + ' failed:', r.reason);
+            }
+          });
         } else {
-          throw new Error(data.message || 'submission failed');
+          throw new Error('all submissions failed');
         }
       })
       .catch(err => {
