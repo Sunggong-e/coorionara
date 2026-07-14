@@ -1613,6 +1613,15 @@
   </div>
 </footer>
 
+<!-- Lightbox — must stay before the <script> below: the script runs
+     synchronously and calls document.getElementById('lightbox') etc.
+     while parsing, so if this markup came after the script those lookups
+     would return null and silently break all lightbox click handling. -->
+<div id="lightbox" role="dialog" aria-modal="true">
+  <button id="lightbox-close" aria-label="Close">&#x2715;</button>
+  <img id="lightbox-img" src="" alt="" />
+  <div id="lightbox-caption"><div class="lb-name" id="lb-name"></div></div>
+</div>
 
 <!-- News data — loaded as a plain <script> (not fetch) so it also
      works when this file is opened directly via file:// (double-click) -->
@@ -2270,13 +2279,6 @@ function detectInitialLang() {
   });
 }());
 </script>
-
-<!-- Lightbox -->
-<div id="lightbox" role="dialog" aria-modal="true">
-  <button id="lightbox-close" aria-label="Close">&#x2715;</button>
-  <img id="lightbox-img" src="" alt="" />
-  <div id="lightbox-caption"><div class="lb-name" id="lb-name"></div></div>
-</div>
 
 </body>
 </html>
