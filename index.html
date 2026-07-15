@@ -1141,47 +1141,97 @@
       position: fixed;
       inset: 0;
       z-index: 9000;
-      background: rgba(44,31,20,.88);
+      background: rgba(44,31,20,.82);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       align-items: center;
       justify-content: center;
-      cursor: zoom-out;
+      padding: 1.5rem;
+      animation: lb-fade .2s ease;
     }
-    #lightbox.open { display: flex; animation: lb-fade .2s ease; }
+    #lightbox.open { display: flex; }
     @keyframes lb-fade { from { opacity:0 } to { opacity:1 } }
-    #lightbox-img {
-      max-width: min(88vw, 520px);
-      max-height: 78vh;
-      object-fit: contain;
-      border-radius: 6px;
-      box-shadow: 0 32px 80px rgba(0,0,0,.45);
-      pointer-events: none;
+
+    /* 2-column product detail panel */
+    #lightbox-panel {
+      display: flex;
+      max-width: min(92vw, 900px);
+      width: 100%;
+      max-height: 88vh;
+      background: #FDFAF6;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 40px 100px rgba(0,0,0,.5);
+      cursor: default;
       animation: lb-scale .22s cubic-bezier(.22,1,.36,1);
     }
-    @keyframes lb-scale { from { transform:scale(.92); opacity:0 } to { transform:scale(1); opacity:1 } }
-    #lightbox-caption {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: #FDFAF6;
-      white-space: nowrap;
+    @keyframes lb-scale { from { transform:scale(.94); opacity:0 } to { transform:scale(1); opacity:1 } }
+
+    /* Simple image-only panel (for QR codes etc.) */
+    #lightbox.lb-img-only #lightbox-panel { display: none; }
+    #lightbox.lb-img-only { cursor: zoom-out; }
+    #lightbox-img-solo {
+      display: none;
+      max-width: min(82vw, 360px);
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+      animation: lb-scale .22s cubic-bezier(.22,1,.36,1);
       pointer-events: none;
     }
-    #lightbox-caption .lb-name { font-size: 1rem; font-weight: 500; }
-    #lightbox-caption .lb-size { font-size: .82rem; opacity: .65; margin-top: .25rem; }
-    #lightbox-close {
-      position: absolute;
-      top: 1.25rem; right: 1.5rem;
-      background: none; border: none;
-      color: #FDFAF6; font-size: 1.75rem;
-      line-height: 1; cursor: pointer;
-      opacity: .7; transition: opacity .15s; padding: .25rem;
+    #lightbox.lb-img-only #lightbox-img-solo { display: block; }
+
+    .lb-img-wrap {
+      width: 40%; min-width: 40%;
+      background: #EFE7DC;
+      display: flex; align-items: center; justify-content: center;
+      padding: 2.5rem 2rem; flex-shrink: 0;
     }
-    #lightbox-close:hover { opacity: 1; }
-    .product-card { cursor: zoom-in; }
+    #lightbox-img {
+      max-width: 100%; max-height: calc(88vh - 5rem);
+      object-fit: contain; display: block;
+    }
+    #lightbox-detail {
+      flex: 1; overflow-y: auto;
+      padding: 2.5rem 2.2rem 2rem;
+      display: flex; flex-direction: column; gap: 1.1rem;
+    }
+    #lightbox-detail::-webkit-scrollbar { width: 4px; }
+    #lightbox-detail::-webkit-scrollbar-thumb { background: #E0D4C3; border-radius: 4px; }
+    .lb-series-badge {
+      display: inline-block; font-size: .72rem; letter-spacing: .12em;
+      text-transform: uppercase; color: #8B6F5E; background: #EFE7DC;
+      padding: .25rem .7rem; border-radius: 20px; width: fit-content;
+    }
+    #lb-name { font-family: 'DM Sans', sans-serif; font-size: 1.35rem; font-weight: 700; color: #2C1F14; line-height: 1.3; }
+    #lb-size-tag { font-size: .8rem; color: #7A6858; letter-spacing: .04em; }
+    #lb-tagline { font-size: .97rem; color: #8B6F5E; font-style: italic; line-height: 1.55; border-left: 3px solid #F2D9D0; padding-left: .9rem; }
+    .lb-section-title { font-family: 'DM Sans', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8B6F5E; margin-bottom: .5rem; }
+    #lb-features { list-style: none; display: flex; flex-direction: column; gap: .35rem; }
+    #lb-features li { font-size: .9rem; color: #2C1F14; padding-left: 1rem; position: relative; line-height: 1.55; }
+    #lb-features li::before { content: ''; position: absolute; left: 0; top: .65em; width: 5px; height: 5px; border-radius: 50%; background: #B8935A; }
+    #lb-ingredients { display: flex; flex-direction: column; gap: .45rem; }
+    .lb-ing-item { font-size: .88rem; line-height: 1.5; }
+    .lb-ing-name { font-weight: 600; color: #5A3D2E; }
+    .lb-ing-benefit { color: #7A6858; }
+    #lb-usage { font-size: .88rem; color: #7A6858; line-height: 1.65; }
+    .lb-divider { border: none; border-top: 1px solid #EFE7DC; margin: 0; }
+    #lightbox-close {
+      position: absolute; top: 1rem; right: 1.2rem;
+      background: rgba(255,255,255,.15); border: none; color: #FDFAF6;
+      font-size: 1.4rem; line-height: 1; cursor: pointer; opacity: .8;
+      transition: opacity .15s; padding: .35rem .5rem; border-radius: 6px; z-index: 1;
+    }
+    #lightbox-close:hover { opacity: 1; background: rgba(255,255,255,.25); }
+    @media (max-width: 640px) {
+      #lightbox { padding: 0; align-items: flex-end; }
+      #lightbox-panel { flex-direction: column; max-width: 100%; width: 100%; max-height: 92vh; border-radius: 16px 16px 0 0; }
+      .lb-img-wrap { width: 100%; min-width: unset; max-height: 45vw; padding: 1.5rem; }
+      #lightbox-img { max-height: 38vw; }
+      #lightbox-detail { padding: 1.5rem 1.25rem 2rem; }
+    }
+    .product-card { cursor: pointer; }
   </style>
 </head>
 <body class="lang-en">
@@ -1329,7 +1379,7 @@
 
     <div class="products-grid">
       <!-- Product 1: 花样年华赋活系列 -->
-      <div class="product-card reveal" data-lb-img="images/Full%20Bloom%20Moisture%20Toner.png">
+      <div class="product-card reveal" data-lb-img="images/Full%20Bloom%20Moisture%20Toner.png" data-lb-product="balancing-toner">
         <div class="product-img">
           <img src="images/Full%20Bloom%20Moisture%20Toner.png"
                alt="花样年华赋活系列 – Floral Revitalizing Series"
@@ -1344,7 +1394,7 @@
         </div>
       </div>
       <!-- Product 2: 桃颜悦色美白系列 -->
-      <div class="product-card reveal reveal-d1" data-lb-img="images/Persica-ro%20Treatment%20Essence.png">
+      <div class="product-card reveal reveal-d1" data-lb-img="images/Persica-ro%20Treatment%20Essence.png" data-lb-product="brightening-essence">
         <div class="product-img">
           <img src="images/Persica-ro%20Treatment%20Essence.png"
                alt="桃颜悦色美白系列 – Brightening Series"
@@ -1358,7 +1408,7 @@
         </div>
       </div>
       <!-- Product 3: 凝萃芳华抗皱系列 -->
-      <div class="product-card reveal reveal-d2" data-lb-img="images/Youth%20Cohesion%20Radiant%20Cream.png">
+      <div class="product-card reveal reveal-d2" data-lb-img="images/Youth%20Cohesion%20Radiant%20Cream.png" data-lb-product="antiaging-cream">
         <div class="product-img">
           <img src="images/Youth%20Cohesion%20Radiant%20Cream.png"
                alt="凝萃芳华抗皱系列 – Anti-Aging Series"
@@ -1373,7 +1423,7 @@
         </div>
       </div>
       <!-- Product 4: 清洁调肌 -->
-      <div class="product-card reveal" data-lb-img="images/Refreshing%20Cleansing%20Foam.png">
+      <div class="product-card reveal" data-lb-img="images/Refreshing%20Cleansing%20Foam.png" data-lb-product="cleansing-foam">
         <div class="product-img">
           <img src="images/Refreshing%20Cleansing%20Foam.png"
                alt="清洁调肌 – Cleansing & Toning"
@@ -1387,7 +1437,7 @@
         </div>
       </div>
       <!-- Product 5: 肽魅力眼霜 -->
-      <div class="product-card reveal reveal-d1" data-lb-img="images/Peptide%20Charming%20Eye%20Cream.png">
+      <div class="product-card reveal reveal-d1" data-lb-img="images/Peptide%20Charming%20Eye%20Cream.png" data-lb-product="eye-cream">
         <div class="product-img">
           <img src="images/Peptide%20Charming%20Eye%20Cream.png"
                alt="肽魅力眼霜 – Peptide Eye Cream"
@@ -1401,7 +1451,7 @@
         </div>
       </div>
       <!-- Product 6: 鲟鱼子酱舒缓系列 -->
-      <div class="product-card reveal reveal-d2" data-lb-img="images/Caviar%20Ampoule.png">
+      <div class="product-card reveal reveal-d2" data-lb-img="images/Caviar%20Ampoule.png" data-lb-product="caviar-ampoule">
         <div class="product-img">
           <img src="images/Caviar%20Ampoule.png"
                alt="鲟鱼子酱舒缓系列 – Caviar Soothing Series"
@@ -1537,8 +1587,8 @@
         <!-- TikTok (Douyin) / RedNote (Xiaohongshu) QR codes — click opens the
              existing lightbox (see "Lightbox" script) with the QR image enlarged. -->
         <div class="contact-icons">
-          <a href="#" class="contact-icon-btn" title="TikTok · 抖音" data-lb-img="images/TicTok.jpg">🎵</a>
-          <a href="#" class="contact-icon-btn" title="RedNote · 小红书" data-lb-img="images/RedNote.jpg">📕</a>
+          <a href="#" class="contact-icon-btn" title="TikTok · 抖音" data-lb-img="images/TicTok.jpg" data-lb-img-only="true">🎵</a>
+          <a href="#" class="contact-icon-btn" title="RedNote · 小红书" data-lb-img="images/RedNote.jpg" data-lb-img-only="true">📕</a>
         </div>
         <a href="mailto:coorionara@coorionara.com" class="btn-primary" style="margin-top:1.2rem; display:inline-flex;" data-i18n="contact.cta"></a>
       </div>
@@ -1619,8 +1669,26 @@
      would return null and silently break all lightbox click handling. -->
 <div id="lightbox" role="dialog" aria-modal="true">
   <button id="lightbox-close" aria-label="Close">&#x2715;</button>
-  <img id="lightbox-img" src="" alt="" />
-  <div id="lightbox-caption"><div class="lb-name" id="lb-name"></div></div>
+  <!-- 2-column product detail panel -->
+  <div id="lightbox-panel">
+    <div class="lb-img-wrap">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+    <div id="lightbox-detail">
+      <span class="lb-series-badge" id="lb-series-badge"></span>
+      <h3 id="lb-name"></h3>
+      <p id="lb-size-tag"></p>
+      <p id="lb-tagline"></p>
+      <hr class="lb-divider" />
+      <div><p class="lb-section-title" id="lb-title-features"></p><ul id="lb-features"></ul></div>
+      <hr class="lb-divider" />
+      <div><p class="lb-section-title" id="lb-title-ingredients"></p><div id="lb-ingredients"></div></div>
+      <hr class="lb-divider" />
+      <div><p class="lb-section-title" id="lb-title-usage"></p><p id="lb-usage"></p></div>
+    </div>
+  </div>
+  <!-- Image-only (for QR codes) -->
+  <img id="lightbox-img-solo" src="" alt="" />
 </div>
 
 <!-- News data — loaded as a plain <script> (not fetch) so it also
@@ -2256,25 +2324,136 @@ function detectInitialLang() {
 
 /* ── Lightbox ── */
 (function () {
-  function openLightbox(src) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').classList.add('open');
+  // Mini product detail data for the 6 featured products on this page
+  const FEATURED = {
+    'balancing-toner': {
+      img: 'images/Full%20Bloom%20Moisture%20Toner.png',
+      series: { en:'Full Bloom', ko:'花样年华', zh:'花样年华', tw:'花樣年華' },
+      en:  { name:'Full Bloom Moisture Toner', size:'130ml', tagline:'Sebum-balancing, pore-tightening toner that revitalizes maturing skin.', features:['Balances oil, tightens and refines pores','Calms, softens, and accelerates skin renewal'], ingredients:[{n:'Botanical Essence Water (plum fruit + tea tree leaf)',b:'Natural antibacterial, regulates sebum, tightens pores'},{n:'7-Herb Patented Formula',b:'Soothes and maintains skin balance'},{n:'Niacinamide · Adenosine · Tocopherol',b:'Fast-absorbing, lasting hydration'}], usage:'After cleansing, apply with cotton pad or pat onto face.' },
+      ko:  { name:'풀 블럼 모이스처 토너', size:'130ml', tagline:'피지 밸런스 조절, 모공 수축 — 어린 성숙 피부를 위한 토너', features:['유분 밸런스 조절, 모공 수축 및 정돈','피부 진정·보습, 피부 재생 촉진'], ingredients:[{n:'천연 한방 정수 (매실수 + 티트리잎수)',b:'천연 항균, 피지 조절, 모공 수축'},{n:'7종 한방 특허 배합',b:'진정 효과, 피부 균형 유지'},{n:'나이아신아미드·아데노신·비타민E',b:'빠른 흡수, 지속 보습'}], usage:'아침저녁 세안 후, 화장솜에 적셔 닦아내거나 가볍게 두드려 흡수.' },
+      zh:  { name:'花样年华保湿爽肤水', size:'130ml', tagline:'控油平衡，紧致收敛，让肌肤恢复活力与平衡', features:['调节油脂平衡，收敛细致毛孔','安肌柔润维稳，加速肌肤焕新'], ingredients:[{n:'天然草本精粹水（梅果水 + 互生叶白千层叶水）',b:'天然抗菌，调节皮脂，紧致收敛'},{n:'7种草本专利配方',b:'安肌舒缓，平衡健康'},{n:'烟酰胺·腺苷·生育酚',b:'快速渗透，持续保湿'}], usage:'早晚洁面后，用化妆棉顺纹理擦拭或轻拍至吸收。' },
+      tw:  { name:'花樣年華保濕爽膚水', size:'130ml', tagline:'控油平衡，緊致收斂，讓肌膚恢復活力與平衡', features:['調節油脂平衡，收斂細緻毛孔','安肌柔潤維穩，加速肌膚煥新'], ingredients:[{n:'天然草本精粹水（梅果水 + 互生葉白千層葉水）',b:'天然抗菌，調節皮脂，緊致收斂'},{n:'7種草本專利配方',b:'安肌舒緩，平衡健康'},{n:'菸鹼醯胺·腺苷·生育酚',b:'快速滲透，持續保濕'}], usage:'早晚潔面後，用化妝棉順紋理擦拭或輕拍至吸收。' },
+    },
+    'brightening-essence': {
+      img: 'images/Persica-ro%20Treatment%20Essence.png',
+      series: { en:'Peach Glow', ko:'桃颜悦色', zh:'桃颜悦色', tw:'桃顏悅色' },
+      en:  { name:'Persica-ro Treatment Essence', size:'130ml', tagline:'A peachy essence that opens skin\'s absorption channels for layered brightening.', features:['Silky honey texture, opens absorption channels','Soothes, evens skin tone, reveals inner luminosity'], ingredients:[{n:'Niacinamide',b:'Whitens and blocks melanin'},{n:'α-Arbutin',b:'Inhibits tyrosinase'},{n:'Triple Hyaluronic Acid Complex (patent)',b:'Multi-depth hydration'},{n:'Corn Kernel Extract',b:'β-glucan locks moisture, repairs barrier'}], usage:'After cleansing, apply an appropriate amount along skin texture.' },
+      ko:  { name:'페르시카로 트리트먼트 에센스', size:'130ml', tagline:'흡수 채널을 열어 층층이 미백하는 복숭아빛 에센스', features:['실키 꿀 텍스처로 흡수 채널 개방','진정 및 균일한 피부톤, 빛나는 피부'], ingredients:[{n:'나이아신아미드',b:'미백·멜라닌 차단'},{n:'알파-알부틴',b:'티로시나제 활성 억제'},{n:'3중 히알루론산 복합체 (특허)',b:'다층 보습'},{n:'옥수수알 추출물',b:'베타글루칸 보습 잠금, 장벽 수복'}], usage:'세안 후 적당량을 피부결 따라 도포 후 흡수.' },
+      zh:  { name:'桃颜悦色修护蜜露', size:'130ml', tagline:'调理型精华蜜露，层层焕白，水润透亮', features:['桃红色精华质地，丝滑沁润，打开肌肤吸收通道','舒缓安肌，均匀肤色，由内而外透润有光泽'], ingredients:[{n:'烟酰胺',b:'美白阻黑'},{n:'α-熊果苷',b:'抑制酪氨酸酶'},{n:'三重复配玻尿酸（专利）',b:'多层次补水保湿'},{n:'玉米仁提取物',b:'β-葡聚糖保湿锁水，修护屏障'}], usage:'洁面后取适量沿皮肤纹理涂抹吸收。' },
+      tw:  { name:'桃顏悅色修護蜜露', size:'130ml', tagline:'調理型精華蜜露，層層煥白，水潤透亮', features:['桃紅色精華質地，絲滑沁潤，打開吸收通道','舒緩安肌，均勻膚色，透潤有光澤'], ingredients:[{n:'菸鹼醯胺',b:'美白阻黑'},{n:'α-熊果苷',b:'抑制酪氨酸酶'},{n:'三重複配玻尿酸（專利）',b:'多層次補水保濕'},{n:'玉米仁提取物',b:'β-葡聚糖保濕鎖水，修護屏障'}], usage:'潔面後取適量沿皮膚紋理塗抹吸收。' },
+    },
+    'antiaging-cream': {
+      img: 'images/Youth%20Cohesion%20Radiant%20Cream.png',
+      series: { en:'Youth Cohesion', ko:'凝萃芳华', zh:'凝萃芳华', tw:'凝萃芳華' },
+      en:  { name:'Youth Cohesion Radiant Cream', size:'50g', tagline:'A cheese-soft cream that re-energizes cells and fights aging.', features:['Anti-wrinkle, reshapes skin for silky texture','Stimulates collagen synthesis, improves elasticity'], ingredients:[{n:'Concentrated Fermented Red Ginseng',b:'Dual-fermented, stimulates collagen and elastin'},{n:'Adenosine',b:'Boosts cellular energy, promotes collagen synthesis'},{n:'Radiance Oil Complex',b:'Smooths fine lines, revives youthful skin'},{n:'Herbal Ferment Complex',b:'Antioxidant, promotes cell regeneration'}], usage:'Final step of morning and evening skincare — apply and massage into face.' },
+      ko:  { name:'유스코히즌 레디언트 크림', size:'50g', tagline:'세포 에너지를 재충전하고 콜라겐 합성을 촉진하는 항노화 크림', features:['항주름·항노화, 매끄럽고 탄탄한 피부결 재건','콜라겐 합성 촉진, 탄력 향상'], ingredients:[{n:'농축 발효 홍삼 원액',b:'이중 발효, 콜라겐·탄성섬유 촉진'},{n:'아데노신',b:'세포 에너지 대사 가속, 콜라겐 합성 촉진'},{n:'광채 오일 복합체',b:'잔주름 개선, 피부 매끄러움 재건'},{n:'한방 발효 복합체',b:'항산화, 세포 재생 촉진'}], usage:'아침저녁 스킨케어 마지막 단계에 소량 도포 후 마사지.' },
+      zh:  { name:'凝萃芳华焕颜霜', size:'50g', tagline:'奶酪般丝滑质地，高能酵醒，抗衰御龄，焕活细胞青春力', features:['抗皱御龄，重塑肌肤细腻柔滑','促胶原合成，提升弹韧力'], ingredients:[{n:'浓缩红参发酵原浆',b:'双重发酵，促胶原弹性纤维生成'},{n:'腺苷',b:'加速细胞能量代谢，促胶原合成'},{n:'复配焕颜油',b:'抚平干纹，焕活青春力'},{n:'草本发酵复合物',b:'抗氧化，促细胞再生'}], usage:'每日早晚护肤最后阶段，取适量涂抹面部轻按至吸收。' },
+      tw:  { name:'凝萃芳華煥顏霜', size:'50g', tagline:'奶酪般絲滑質地，高能酵醒，抗衰御齡，煥活細胞青春力', features:['抗皺御齡，重塑肌膚細膩柔滑','促膠原合成，提升彈韌力'], ingredients:[{n:'濃縮紅參發酵原漿',b:'促膠原彈性纖維生成'},{n:'腺苷',b:'加速細胞能量代謝，促膠原合成'},{n:'複配煥顏油',b:'撫平乾紋，煥活青春力'},{n:'草本發酵複合物',b:'抗氧化，促細胞再生'}], usage:'每日護膚最後階段，取適量塗抹面部輕按至吸收。' },
+    },
+    'cleansing-foam': {
+      img: 'images/Refreshing%20Cleansing%20Foam.png',
+      series: { en:'Cleansing', ko:'클렌징', zh:'清洁调肌', tw:'清潔調肌' },
+      en:  { name:'Refreshing Cleansing Foam', size:'120g', tagline:'Deeply purifying yet 0 tightness — regulates sebum and soothes.', features:['Rich fine lather deep-cleanses without stripping','Balances sebum and tightens pores'], ingredients:[{n:'Patented 17-Amino Acid Complex',b:'Reinforces keratin barrier against cleansing damage'},{n:'Botanical Complex (white willow bark, green tea, centella, etc.)',b:'Regulates sebum, soothes skin'}], usage:'Lather with water, massage face and neck gently, rinse clean.' },
+      ko:  { name:'리프레싱 클렌징 폼', size:'120g', tagline:'깔끔하고 산뜻한 클렌징, 당김 0 — 피지 조절에 특화', features:['풍성하고 세밀한 거품, 딥클렌징, 당김 없음','피지 분비 조절, 모공 수축'], ingredients:[{n:'17종 특허 아미노산 복합체',b:'각질 장벽 강화, 과도한 클렌징 손상 방지'},{n:'복합 식물 추출물 (버드나무껍질·녹차·병풀 등)',b:'피지 조절, 진정'}], usage:'물과 풍성하게 거품 내어 얼굴·목 마사지 후 세안.' },
+      zh:  { name:'净肤舒爽洁面膏', size:'120g', tagline:'净澈更舒爽，亲肤0紧绷，深层清洁调节皮脂', features:['奶油般细腻泡沫，深层清洁，0紧绷0拔干','调节皮脂分泌，收敛安肌'], ingredients:[{n:'17种专利氨基酸复合体',b:'强韧角质屏障'},{n:'复配植物提取物（白柳树皮·绿茶·积雪草等）',b:'调节皮脂，收敛安肌'}], usage:'加水打出丰富泡沫，轻按面颈部，清水洗净。' },
+      tw:  { name:'淨膚舒爽潔面膏', size:'120g', tagline:'淨澈更舒爽，親膚0緊繃，深層清潔調節皮脂', features:['奶油般細膩泡沫，深層清潔，0緊繃','調節皮脂分泌，收斂安肌'], ingredients:[{n:'17種專利氨基酸複合體',b:'強韌角質屏障'},{n:'複配植物提取物（白柳樹皮·綠茶·積雪草等）',b:'調節皮脂，收斂安肌'}], usage:'加水打出豐富泡沫，輕按面頸部，清水洗淨。' },
+    },
+    'eye-cream': {
+      img: 'images/Peptide%20Charming%20Eye%20Cream.png',
+      series: { en:'Peptide Eye Care', ko:'아이케어', zh:'肽魅力', tw:'肽魅力' },
+      en:  { name:'Peptide Charming Eye Cream', size:'30g', tagline:'4 peptides + herbal ferment — eye cream and mask in one, with blue-light protection.', features:['4 peptides, anti-wrinkle, firming, plumping','Promotes circulation, eliminates puffiness, prevents milia'], ingredients:[{n:'4 Peptides (acetyl hexapeptide-8 · copper tripeptide-1 · palmitoyl tetrapeptide-7 · palmitoyl pentapeptide-4)',b:'Stimulates collagen and elastin regeneration'},{n:'Cocoa Extract',b:'Reduces puffiness, firms eye contour'},{n:'Korean Fermented Rice Extract',b:'Anti-blue-light, fades dark circles'}], usage:'【Cream】 Dot and massage eye area. 【Mask】 Apply thick layer, 10–15 min, massage — no rinse.' },
+      ko:  { name:'펩타이드 매력 아이크림', size:'30g', tagline:'4종 펩타이드 + 한방 발효 — 아이 크림 겸 마스크, 블루라이트 차단', features:['4종 펩타이드, 항주름·탄력·탱탱함','순환 촉진, 붓기 제거, 비립종 예방'], ingredients:[{n:'4종 펩타이드',b:'콜라겐·탄성섬유 재생 자극'},{n:'코코아 추출물',b:'붓기 해소, 눈 주위 탄력'},{n:'한방 쌀 발효 정수',b:'블루라이트 차단, 다크서클 완화'}], usage:'【크림으로】 눈 주위에 점찍어 마사지. 【마스크로】 두텁게 도포 10~15분 후 마사지.' },
+      zh:  { name:'肽魅力眼霜', size:'30g', tagline:'全效型眼霜，多肽复配，眼霜兼眼膜，对抗蓝光', features:['4种多肽，全面抗皱紧致嘭润','促循环消浮肿，预防脂肪粒'], ingredients:[{n:'4种多肽',b:'刺激胶原和弹力纤维再生'},{n:'可可提取物',b:'促代谢排水肿，紧致眼周'},{n:'韩方米循环发酵精粹',b:'抗蓝光，淡化黑眼圈'}], usage:'【眼霜】点涂眼周打圈按摩。【眼膜】厚涂停留10-15分钟按摩至吸收。' },
+      tw:  { name:'肽魅力眼霜', size:'30g', tagline:'全效型眼霜，多肽複配，眼霜兼眼膜，對抗藍光', features:['4種多肽，全面抗皺緊致澎潤','促循環消浮腫，預防脂肪粒'], ingredients:[{n:'4種多肽',b:'刺激膠原和彈力纖維再生'},{n:'可可提取物',b:'促代謝排水腫，緊致眼周'},{n:'韓方米循環發酵精粹',b:'抗藍光，淡化黑眼圈'}], usage:'【眼霜】點塗眼周打圈按摩。【眼膜】厚塗停留10-15分鐘按摩至吸收。' },
+    },
+    'caviar-ampoule': {
+      img: 'images/Caviar%20Ampoule.png',
+      series: { en:'Caviar Soothing', ko:'캐비아 수딩', zh:'鲟鱼子酱', tw:'鱘魚子醬' },
+      en:  { name:'Caviar Ampoule', size:'50ml', tagline:'A serum that soothes, energizes, and activates skin\'s self-healing power.', features:['Energizes skin cells, soothes and repairs','Builds resilience against environmental stressors'], ingredients:[{n:'Caviar Extract (Caspian Sea sturgeon, cold-pressed 24h)',b:'High-concentration nourishing essence'},{n:'Aloe barbadensis',b:'Soothes and moisturizes'},{n:'Adenosine',b:'Boosts cellular energy, activates repair'},{n:'β-Glucan',b:'"Immune gold" — promotes healing, reduces inflammation'}], usage:'Morning and evening after toning — apply along skin texture, massage until absorbed.' },
+      ko:  { name:'캐비아 앰플', size:'50ml', tagline:'진정 앰플 — 피부 에너지를 보충하고 자기 회복력을 깨웁니다', features:['피부 세포 에너지 보충, 진정 및 수복','외부 자극에 대한 피부 저항력 강화'], ingredients:[{n:'철갑상어알 추출물 (카스피해, 24시간 저온 압착)',b:'고농도 영양 활성화 에센스'},{n:'쿠라소 알로에베라',b:'진정 보습'},{n:'아데노신',b:'세포 에너지 보충, 수복 활성화'},{n:'베타글루칸',b:'「면역의 황금」— 상처 치유, 염증 완화'}], usage:'아침저녁 토너 후 소량을 피부결 따라 도포하고 마사지.' },
+      zh:  { name:'鲟鱼子酱精华液', size:'50ml', tagline:'精华凝露质地，舒缓肌肤，激活肌肤自愈力', features:['补充肌肤能量，安肌修护','持续帮助肌肤对抗外界伤害'], ingredients:[{n:'鲟鱼子酱提取物（俄罗斯里海，24h低温压榨）',b:'高营养活化精华'},{n:'库拉索芦荟提取物',b:'保湿修护'},{n:'腺苷',b:'补充细胞能量，激活修复'},{n:'β-葡聚糖',b:'「免疫黄金」，促愈合，缓解炎症'}], usage:'每日早晚爽肤水后，取适量顺肌肤纹理涂抹，轻揉至吸收。' },
+      tw:  { name:'鱘魚子醬精華液', size:'50ml', tagline:'精華凝露質地，舒緩肌膚，激活肌膚自愈力', features:['補充肌膚能量，安肌修護','持續幫助肌膚對抗外界傷害'], ingredients:[{n:'鱘魚子醬提取物（俄羅斯裡海，24h低溫壓榨）',b:'高營養活化精華'},{n:'庫拉索蘆薈提取物',b:'保濕修護'},{n:'腺苷',b:'補充細胞能量，激活修復'},{n:'β-葡聚糖',b:'「免疫黃金」，促愈合，緩解炎症'}], usage:'每日早晚爽膚水後，取適量順肌膚紋理塗抹，輕揉至吸收。' },
+    },
+  };
+
+  const LB_LABELS = {
+    en: { features:'Key Benefits', ingredients:'Core Ingredients', usage:'How to Use' },
+    ko: { features:'핵심 효과', ingredients:'주요 성분', usage:'사용 방법' },
+    'zh-cn': { features:'核心卖点', ingredients:'核心成分', usage:'使用方法' },
+    'zh-tw': { features:'核心賣點', ingredients:'核心成分', usage:'使用方法' },
+  };
+
+  function getLang(obj, lang) {
+    if (lang === 'zh-cn') return obj.zh || obj.en;
+    if (lang === 'zh-tw') return obj.tw || obj.zh || obj.en;
+    return obj[lang] || obj.en;
+  }
+
+  function openProductLightbox(productKey, lang) {
+    const p = FEATURED[productKey];
+    if (!p) return;
+    const d = getLang(p, lang);
+    const labels = LB_LABELS[lang] || LB_LABELS.en;
+    const seriesName = getLang(p.series, lang);
+
+    document.getElementById('lightbox-img').src = p.img;
+    document.getElementById('lightbox-img').alt = d.name;
+    document.getElementById('lb-series-badge').textContent = seriesName;
+    document.getElementById('lb-name').textContent = d.name;
+    document.getElementById('lb-size-tag').textContent = d.size;
+    document.getElementById('lb-tagline').textContent = d.tagline || '';
+    document.getElementById('lb-title-features').textContent = labels.features;
+    document.getElementById('lb-title-ingredients').textContent = labels.ingredients;
+    document.getElementById('lb-title-usage').textContent = labels.usage;
+    document.getElementById('lb-features').innerHTML = (d.features || []).map(f => `<li>${f}</li>`).join('');
+    document.getElementById('lb-ingredients').innerHTML = (d.ingredients || []).map(i =>
+      `<div class="lb-ing-item"><span class="lb-ing-name">${i.n}</span> <span class="lb-ing-benefit">— ${i.b}</span></div>`
+    ).join('');
+    document.getElementById('lb-usage').textContent = d.usage || '';
+
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('lb-img-only');
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const det = document.getElementById('lightbox-detail');
+    if (det) det.scrollTop = 0;
+  }
+
+  function openImgOnlyLightbox(src) {
+    document.getElementById('lightbox-img-solo').src = src;
+    const lb = document.getElementById('lightbox');
+    lb.classList.add('open', 'lb-img-only');
     document.body.style.overflow = 'hidden';
   }
+
   function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('open', 'lb-img-only');
     document.body.style.overflow = '';
   }
+
   document.getElementById('lightbox').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox-panel').addEventListener('click', e => e.stopPropagation());
   document.getElementById('lightbox-close').addEventListener('click', e => { e.stopPropagation(); closeLightbox(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-  // Document-wide so both product cards (#products) and other triggers
-  // (e.g. the Contact section's TikTok/RedNote QR icons) can use data-lb-img.
+
   document.addEventListener('click', e => {
     const card = e.target.closest('[data-lb-img]');
-    if (card) {
-      e.preventDefault(); // avoid href="#" jumping the page when the trigger is a link
-      openLightbox(card.dataset.lbImg);
+    if (!card) return;
+    e.preventDefault();
+    // QR codes and image-only triggers
+    if (card.dataset.lbImgOnly === 'true') {
+      openImgOnlyLightbox(card.dataset.lbImg);
+      return;
+    }
+    // Product cards with detail
+    const productKey = card.dataset.lbProduct;
+    if (productKey && FEATURED[productKey]) {
+      const lang = (document.body.className.match(/lang-(\S+)/) || [])[1] || 'en';
+      openProductLightbox(productKey, lang);
+    } else {
+      // Fallback: image-only
+      openImgOnlyLightbox(card.dataset.lbImg);
     }
   });
 }());
