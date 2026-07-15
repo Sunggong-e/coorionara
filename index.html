@@ -2121,6 +2121,14 @@ function applyLang(lang) {
     const newsAllLink = document.getElementById('news-all-link');
     if (newsAllLink) newsAllLink.href = 'news.html?lang=' + lang;
 
+    // Keep all subpage links in sync with the current language
+    document.querySelectorAll('a[href*="products.html"]').forEach(a => {
+      a.href = 'products.html?lang=' + lang;
+    });
+    document.querySelectorAll('a[href*="news.html"]').forEach(a => {
+      a.href = 'news.html?lang=' + lang;
+    });
+
     // footer lang bar active state
     document.querySelectorAll('.footer-lang-bar a').forEach(a =>
       a.classList.toggle('active', a.getAttribute('data-lang') === lang));
@@ -2266,26 +2274,26 @@ function loadNews(lang) {
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(Object.fromEntries(new FormData(form)))
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          status.textContent = dict['contact.form.success'];
-          status.className = 'contact-form-status success';
-          form.reset();
-        } else {
-          throw new Error(data.message || 'submission failed');
-        }
-      })
-      .catch(err => {
-        console.warn('[contact-form] submission failed:', err);
+    .then(r => r.json())
+    .then(data => {
+      submitBtn.disabled = false;
+      if (data.success) {
+        form.reset();
+        status.textContent = dict['contact.form.success'];
+        status.className = 'contact-form-status success';
+        setTimeout(() => { status.textContent = ''; status.className = 'contact-form-status'; }, 6000);
+      } else {
         status.textContent = dict['contact.form.error'];
         status.className = 'contact-form-status error';
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-      });
+      }
+    })
+    .catch(() => {
+      submitBtn.disabled = false;
+      status.textContent = dict['contact.form.error'];
+      status.className = 'contact-form-status error';
+    });
   });
-})();
+}());
 
 // Wire up all lang-switching controls
 document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {

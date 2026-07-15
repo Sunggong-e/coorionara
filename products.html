@@ -490,7 +490,7 @@
 <!-- NAV -->
 <nav id="main-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">珂莉安 COORIONARA</a>
+    <a href="index.html" class="nav-logo" data-i18n="brand.logo">珂莉安 COORIONARA</a>
     <ul class="nav-links">
       <li><a href="index.html#story"       data-i18n="nav.story"></a></li>
       <li><a href="#"                       data-i18n="nav.products" class="active"></a></li>
@@ -711,135 +711,37 @@ const SERIES = [
           ko: { tagline:'「안정 타입」 피지막 수복 에센스 — 지성·민감 피부의 필수템', features:['피지막 강효 수복, 진정·수복·탄력 3가지 기능 인증','피부 속 염증 정화, 홍조 해소, 밝은 피부톤'], ingredients:[{n:'마이크로바이옴 밸런싱 복합체 (유산균/우유 발효물 + 효모 발효물)',b:'피부 균형 마이크로바이옴 조절'},{n:'동백씨유 + 호호바씨유 + 해바라기씨유',b:'항산화, 매끄러운 피부, 장벽 수복'},{n:'7종 한방 특허 배합',b:'진정 및 균일한 피부톤'}], usage:'【토너 전】 토너 전 사용. 【습포】 세안 후 8~10분 또는 에센스와 겹쳐 10~15분. 【미스트】 수시로 분사. 3병 1코스.' },
         },
       },
-      {
-        img: 'images/Sebum%20Enhancing%20Essense%20Glow%2080ml.png',
-        en:  { name:'Sebum Enhancing Essence (Glow)', size:'80ml', desc:'Oxygenates for plump, luminous skin — travel size.' },
-        ko:  { name:'시범인헨싱 에센스 (글로우)',   size:'80ml', desc:'피지막 보호 + 산소 공급으로 탱탱 물광 피부. 여행용.' },
-        zh:  { name:'膜焕液（柔光）',              size:'80ml', desc:'强效修护皮脂膜，肌肤注氧，打造水光肌。便携装。' },
-        tw:  { name:'膜煥液（柔光）',              size:'80ml', desc:'強效修護皮脂膜，肌膚注氧，打造水光肌。便攜裝。' },
-        detail: {
-          zh: { tagline:'「水光型」皮脂膜修护液 — 便携旅行装', features:['强效修护皮脂膜，舒缓·修护·抗皱','肌肤注氧，澎润透亮持久水光感'], ingredients:[{n:'母菊花纯露',b:'舒缓安肌'},{n:'霍霍巴籽油 + 刺阿干树仁油 + 卵磷脂',b:'修护皮脂膜，锁水抗皱'}], usage:'【水前水/湿敷/喷雾】同280ml版本，方便携带出行。' },
-          tw: { tagline:'「水光型」皮脂膜修護液 — 便攜旅行裝', features:['強效修護皮脂膜，舒緩·修護·抗皺','肌膚注氧，澎潤透亮持久水光感'], ingredients:[{n:'母菊花純露',b:'舒緩安肌'},{n:'霍霍巴籽油 + 刺阿甘樹仁油 + 卵磷脂',b:'修護皮脂膜，鎖水抗皺'}], usage:'【水前水/濕敷/噴霧】同280ml版本，方便攜帶出行。' },
-          en: { tagline:'"Water-glow" Sebum Barrier Repair Essence — Travel Size', features:['Clinically certified: soothes, repairs, reduces wrinkles','Oxygenates for a lasting dewy glow'], ingredients:[{n:'Chamomile Flower Hydrosol',b:'Soothes and calms'},{n:'Jojoba Oil + Argan Oil + Lecithin',b:'Repairs sebum barrier, locks in moisture'}], usage:'Same usage as 280ml version. Perfect for travel.' },
-          ko: { tagline:'「물광 타입」 피지막 수복 에센스 — 여행용', features:['피지막 강효 수복, 진정·수복·항주름 기능 인증','피부 산소 공급, 지속적 물광 피부'], ingredients:[{n:'카모마일 플라워 하이드로솔',b:'진정 안정'},{n:'호호바씨유 + 아르간오일 + 레시틴',b:'피지막 수복, 수분 잠금'}], usage:'280ml 제품과 동일한 사용법. 여행 시 휴대 편리.' },
-        },
-      },
-      {
-        img: 'images/Sebum%20Enhancing%20EssensePlus%2080ml.png',
-        en:  { name:'Sebum Enhancing Essence Plus', size:'80ml', desc:'Purifies inflammation — a favorite for oily, sensitive skin. Travel size.' },
-        ko:  { name:'시범인헨싱 에센스 플러스',    size:'80ml', desc:'피부 속 염증 정화, 지성·민감 피부의 애착템. 여행용.' },
-        zh:  { name:'膜焕液（清透版）',             size:'80ml', desc:'净化肌底炎症，消炎维稳，提亮肤色。便携装。' },
-        tw:  { name:'膜煥液（清透版）',             size:'80ml', desc:'淨化肌底炎症，消炎維穩，提亮膚色。便攜裝。' },
-        detail: {
-          zh: { tagline:'「安肌型」皮脂膜修护液 — 便携旅行装', features:['强效修护皮脂膜，舒缓·修护·紧致','安肌舒缓，告别泛红，净化肌底炎症'], ingredients:[{n:'微生态平衡液（乳酸杆菌 + 酵母菌发酵产物）',b:'平衡肌肤菌群'},{n:'山茶籽油 + 霍霍巴籽油 + 向日葵籽油',b:'修护屏障，抑氧平滑'}], usage:'【水前水/湿敷/喷雾】同280ml版本，方便携带出行。' },
-          tw: { tagline:'「安肌型」皮脂膜修護液 — 便攜旅行裝', features:['強效修護皮脂膜，舒緩·修護·緊致','安肌舒緩，告別泛紅，淨化肌底炎症'], ingredients:[{n:'微生態平衡液（乳酸桿菌 + 酵母菌發酵產物）',b:'平衡肌膚菌群'},{n:'山茶籽油 + 霍霍巴籽油 + 向日葵籽油',b:'修護屏障，抑氧平滑'}], usage:'【水前水/濕敷/噴霧】同280ml版本，方便攜帶出行。' },
-          en: { tagline:'Calming Sebum Barrier Repair Essence — Travel Size', features:['Clinically certified: soothes, repairs, and firms','Calms inflammation, eliminates redness'], ingredients:[{n:'Microbiome Balancing Complex',b:'Rebalances skin microbiome'},{n:'Camellia + Jojoba + Sunflower Oil',b:'Repairs barrier, antioxidant'}], usage:'Same usage as 280ml version. Perfect for travel.' },
-          ko: { tagline:'「안정 타입」 피지막 수복 에센스 — 여행용', features:['피지막 강효 수복, 진정·수복·탄력 기능 인증','염증 정화, 홍조 해소'], ingredients:[{n:'마이크로바이옴 밸런싱 복합체',b:'피부 균형 마이크로바이옴 조절'},{n:'동백씨유 + 호호바씨유 + 해바라기씨유',b:'장벽 수복, 항산화'}], usage:'280ml 제품과 동일한 사용법. 여행 시 휴대 편리.' },
-        },
-      },
-      {
-        img: 'images/Sebum%20Enhancing%20Blending%20Cream.png',
-        en:  { name:'Sebum Enhancing Blending Cream', size:'70g', desc:'Melts into skin to seal moisture and reinforce the barrier.' },
-        ko:  { name:'시범 인헨싱 블렌딩 크림',     size:'70g', desc:'피부에 녹아드는 텍스처로 수분 봉인 + 피지막 강화.' },
-        zh:  { name:'膜焕混混霜',                  size:'70g', desc:'触肤即化，深层锁水，强效修复皮脂膜屏障。' },
-        tw:  { name:'膜煥混混霜',                  size:'70g', desc:'觸膚即化，深層鎖水，強效修復皮脂膜屏障。' },
-        detail: {
-          zh: { tagline:'触肤即化，深层锁水，配合膜焕液强效修复皮脂膜屏障', features:['轻盈质地，触肤即化，深层锁水保湿','修复皮脂膜屏障，持久保湿不油腻'], ingredients:[{n:'膜焕修护精华基底',b:'协同膜焕液加速皮脂膜修护与再生'}], usage:'每日护肤最后阶段，取适量涂抹面部轻轻按摩至吸收。可与膜焕液叠加使用，强化修护效果。' },
-          tw: { tagline:'觸膚即化，深層鎖水，配合膜煥液強效修復皮脂膜屏障', features:['輕盈質地，觸膚即化，深層鎖水保濕','修復皮脂膜屏障，持久保濕不油膩'], ingredients:[{n:'膜煥修護精華基底',b:'協同膜煥液加速皮脂膜修護與再生'}], usage:'每日護膚最後階段，取適量塗抹面部輕按至吸收。可與膜煥液疊加使用。' },
-          en: { tagline:'Melts into skin instantly — seals moisture and reinforces the sebum barrier.', features:['Lightweight, melts on contact, deeply locks in hydration','Repairs the sebum barrier for lasting moisture without greasiness'], ingredients:[{n:'Barrier Repair Essence Base',b:'Works synergistically with the Barrier Essence for accelerated recovery'}], usage:'Final step of daily skincare routine — apply a small amount and gently massage into skin. Layer with Barrier Essence for enhanced repair.' },
-          ko: { tagline:'피부에 녹아드는 텍스처 — 수분 봉인과 피지막 강화', features:['가볍게 녹아드는 텍스처, 깊은 수분 잠금','피지막 강화, 지속 보습 논오일리'], ingredients:[{n:'피지막 수복 에센스 베이스',b:'막환액과 시너지 효과로 피지막 회복 가속'}], usage:'데일리 스킨케어 마지막 단계로 소량 도포 후 마사지. 막환액과 겹쳐 사용 시 수복 효과 강화.' },
-        },
-      },
-    ]
+    ],
   },
   {
     id: 'balancing',
-    label: { en:'Balancing', ko:'밸런싱', zh:'花样年华', tw:'花樣年華' },
-    name:  { en:'Full Bloom <em>Revitalizing</em>', ko:'花样年华 <em>부활 시리즈</em>', zh:'花样年华 <em>赋活系列</em>', tw:'花樣年華 <em>賦活系列</em>' },
+    label: { en:'Revitalizing', ko:'부활', zh:'花样年华', tw:'花樣年華' },
+    name:  { en:'Full Bloom <em>Revitalizing</em>', ko:'花样년华 <em>부활 시리즈</em>', zh:'花样年华 <em>赋活系列</em>', tw:'花樣年華 <em>賦活系列</em>' },
     products: [
       {
         img: 'images/Full%20Bloom%20Moisture%20Toner.png',
-        en:  { name:'Full Bloom Moisture Toner',  size:'130ml', desc:'Balances sebum, refines pores — for early-mature skin.' },
-        ko:  { name:'풀 블럼 모이스처 토너',       size:'130ml', desc:'피지 밸런스 조절, 모공 정돈, 어린 성숙 피부.' },
-        zh:  { name:'花样年华保湿爽肤水',          size:'130ml', desc:'天然草本调节皮脂平衡，控油收敛细致毛孔。' },
-        tw:  { name:'花樣年華保濕爽膚水',          size:'130ml', desc:'天然草本調節皮脂平衡，控油收斂細致毛孔。' },
+        en:  { name:'Full Bloom Moisture Toner',  size:'130ml', desc:'Controls sebum, refines pores, and layers hydration deep into skin.' },
+        ko:  { name:'풀 블룸 모이스처 토너',       size:'130ml', desc:'피지 조절·모공 수렴, 겹겹이 수분을 채워 넣습니다.' },
+        zh:  { name:'花样年华调衡爽肤水',          size:'130ml', desc:'控油平衡，紧致收敛，层层渗透补水。' },
+        tw:  { name:'花樣年華調衡爽膚水',          size:'130ml', desc:'控油平衡，緊致收斂，層層滲透補水。' },
         detail: {
-          zh: { tagline:'控油平衡，紧致收敛，让肌肤恢复活力与平衡', features:['调节油脂平衡，收敛细致毛孔','安肌柔润维稳，加速肌肤焕新'], ingredients:[{n:'天然草本精粹水（梅果水 + 互生叶白千层叶水）',b:'天然抗菌，调节皮脂，紧致收敛，疏通毛孔'},{n:'7种草本专利配方',b:'安肌舒缓效果显著，助肌肤保持平衡健康'},{n:'烟酰胺·腺苷·生育酚',b:'快速渗透，持续保湿，增强肌肤弹性'}], usage:'早晚洁面后，取适量用化妆棉顺肌肤纹理轻轻擦拭至吸收，或轻拍于面部至吸收，也可湿敷使用。' },
-          tw: { tagline:'控油平衡，緊致收斂，讓肌膚恢復活力與平衡', features:['調節油脂平衡，收斂細緻毛孔','安肌柔潤維穩，加速肌膚煥新'], ingredients:[{n:'天然草本精粹水（梅果水 + 互生葉白千層葉水）',b:'天然抗菌，調節皮脂，緊致收斂'},{n:'7種草本專利配方',b:'安肌舒緩，助肌膚平衡健康'},{n:'菸鹼醯胺·腺苷·生育酚',b:'快速滲透，持續保濕，增強彈性'}], usage:'早晚潔面後，取適量用化妝棉順肌膚紋理擦拭，或輕拍至吸收，也可濕敷使用。' },
-          en: { tagline:'Sebum-balancing, pore-tightening toner that revitalizes and rebalances maturing skin.', features:['Balances oil, tightens and refines pores','Calms, softens, and accelerates skin renewal'], ingredients:[{n:'Botanical Essence Water (plum fruit water + tea tree leaf water)',b:'Natural antibacterial, regulates sebum, tightens pores'},{n:'7-Herb Patented Formula',b:'Soothes and maintains healthy skin balance'},{n:'Niacinamide · Adenosine · Tocopherol',b:'Fast-absorbing, lasting hydration, improves elasticity'}], usage:'Morning and evening after cleansing — apply with cotton pad along skin texture, or pat onto face. Can also be used as a compress.' },
-          ko: { tagline:'피지 밸런스 조절, 모공 수축 — 어린 성숙 피부를 위한 토너', features:['유분 밸런스 조절, 모공 수축 및 정돈','피부 진정·보습, 피부 재생 촉진'], ingredients:[{n:'천연 한방 정수 (매실수 + 티트리잎수)',b:'천연 항균, 피지 조절, 모공 수축'},{n:'7종 한방 특허 배합',b:'진정 효과 탁월, 피부 균형 유지'},{n:'나이아신아미드·아데노신·비타민E',b:'빠른 흡수, 지속 보습, 탄력 향상'}], usage:'아침저녁 세안 후, 화장솜에 적셔 피부결 따라 닦아내거나 가볍게 두드려 흡수. 습포로도 사용 가능.' },
+          zh: { tagline:'滴滴渗透 · 层层调衡 · 控油平衡 · 紧致收敛', features:['控油调衡，持效紧致收敛毛孔','天然草本精粹水深层补水，水润不油腻'], ingredients:[{n:'天然草本精粹水（梅果水+互生叶白千层叶水）',b:'舒缓安肌，促进代谢平衡'},{n:'7种草本专利配方',b:'控油调肌，紧致收敛'},{n:'烟酰胺·腺苷·生育酚',b:'抑黑提亮，抗氧抗老'}], usage:'早晚洁面后，取适量用化妆棉由内到外擦拭，或双掌温热后轻轻拍打至吸收。' },
+          tw: { tagline:'滴滴滲透 · 層層調衡 · 控油平衡 · 緊致收斂', features:['控油調衡，持效緊致收斂毛孔','天然草本精粹水深層補水，水潤不油膩'], ingredients:[{n:'天然草本精粹水（梅果水+互生葉白千層葉水）',b:'舒緩安肌，促進代謝平衡'},{n:'7種草本專利配方',b:'控油調肌，緊致收斂'},{n:'煙醯胺·腺苷·生育酚',b:'抑黑提亮，抗氧抗老'}], usage:'早晚潔面後，取適量用化妝棉由內到外擦拭，或雙掌溫熱後輕輕拍打至吸收。' },
+          en: { tagline:'Drip by drip — balancing, pore-tightening, and deeply hydrating.', features:['Controls sebum and firms pores with sustained effect','Multi-botanical complex layers hydration without oiliness'], ingredients:[{n:'Botanical Essence Water (plum fruit water + melaleuca leaf water)',b:'Calms and rebalances skin metabolism'},{n:'7-Herb Patented Formula',b:'Regulates sebum, tightens pores'},{n:'Niacinamide · Adenosine · Tocopherol',b:'Brightens, antioxidant, anti-aging'}], usage:'Morning and evening after cleansing, apply with a cotton pad from inner to outer face, or warm between palms and gently pat in.' },
+          ko: { tagline:'겹겹이 스며드는 조율 · 피지 균형 · 모공 수렴', features:['피지 조절, 지속적 모공 수렴 효과','천연 초본 정수로 겹겹이 수분 공급, 촉촉하고 가볍게'], ingredients:[{n:'천연 초본 정수 (매화수+티트리잎수)',b:'진정 안정, 대사 균형 촉진'},{n:'7종 한방 특허 배합',b:'피지 조절, 모공 수렴'},{n:'나이아신아마이드·아데노신·토코페롤',b:'미백, 항산화, 항노화'}], usage:'아침저녁 세안 후, 화장솜으로 안에서 밖으로 닦아내거나 손바닥에 덜어 따뜻하게 한 후 가볍게 두드려 흡수시킵니다.' },
         },
       },
       {
         img: 'images/Full%20Bloom%20Moisture%20Lotion.png',
-        en:  { name:'Full Bloom Moisture Lotion', size:'130ml', desc:'Triple xylitol forms a light protective film.' },
-        ko:  { name:'풀 블럼 모이스처 로션',       size:'130ml', desc:'3중 자일리톨로 피지 밸런스 + 산뜻한 보호막.' },
-        zh:  { name:'花样年华润泽乳液',            size:'130ml', desc:'3重木糖醇配方，触肤液化控油，锁水轻润。' },
-        tw:  { name:'花樣年華潤澤乳液',            size:'130ml', desc:'3重木糖醇配方，觸膚液化控油，鎖水輕潤。' },
+        en:  { name:'Full Bloom Moisture Lotion', size:'130ml', desc:'Melts into skin — lightweight moisture that balances sebum without heaviness.' },
+        ko:  { name:'풀 블룸 모이스처 로션',      size:'130ml', desc:'피부에 녹아드는 가벼운 수분감, 피지 조율.' },
+        zh:  { name:'花样年华调衡乳液',           size:'130ml', desc:'触肤液化，控油平衡，紧致收敛，舒润不油腻。' },
+        tw:  { name:'花樣年華調衡乳液',           size:'130ml', desc:'觸膚液化，控油平衡，緊致收斂，舒潤不油膩。' },
         detail: {
-          zh: { tagline:'触肤液化，控油平衡，紧致收敛，舒润不油腻', features:['调节皮脂平衡，收敛细致毛孔','在肌肤表面形成保护膜，防止水分散失'], ingredients:[{n:'天然草本精粹水（梅果水 + 互生叶白千层叶水）',b:'维持保湿力，调节皮脂，疏通毛孔安肌'},{n:'7种草本专利配方',b:'安肌舒缓，助肌肤保持平衡健康'},{n:'3重复合木糖醇（木糖醇基葡糖苷·脱水木糖醇·木糖醇）',b:'保湿锁水，提升肌肤含水量'}], usage:'每日清洁和爽肤后，取适量于指尖或掌心，顺着肌肤纹理均匀涂抹面部，轻轻按摩至吸收。' },
-          tw: { tagline:'觸膚液化，控油平衡，緊致收斂，舒潤不油膩', features:['調節皮脂平衡，收斂細緻毛孔','在肌膚表面形成保護膜，防止水分散失'], ingredients:[{n:'天然草本精粹水（梅果水 + 互生葉白千層葉水）',b:'維持保濕力，調節皮脂，安肌收斂'},{n:'7種草本專利配方',b:'安肌舒緩，助肌膚平衡健康'},{n:'3重複合木糖醇',b:'保濕鎖水，提升肌膚含水量'}], usage:'每日清潔爽膚後，取適量順肌膚紋理均勻塗抹面部，輕按至吸收。' },
-          en: { tagline:'Melts on contact — a light lotion that controls oil, tightens pores, and protects moisture.', features:['Balances sebum and refines pores','Forms a protective film on skin to prevent moisture loss'], ingredients:[{n:'Botanical Essence Water (plum fruit + tea tree leaf water)',b:'Maintains hydration, regulates sebum, calms and tightens'},{n:'7-Herb Patented Formula',b:'Soothes, balances skin health'},{n:'Triple Xylitol Complex (xylitylglucoside · anhydroxylitol · xylitol)',b:'Seals in moisture, boosts skin water content'}], usage:'After daily cleansing and toning, apply a small amount and gently massage into face along skin texture.' },
-          ko: { tagline:'발림과 동시에 녹아드는 로션 — 피지 조절, 모공 수축, 보습막 형성', features:['피지 밸런스 조절, 모공 수축 및 정돈','피부 위에 보호막 형성, 수분 손실 방지'], ingredients:[{n:'천연 한방 정수 (매실수 + 티트리잎수)',b:'보습 유지, 피지 조절, 진정'},{n:'7종 한방 특허 배합',b:'진정 효과, 피부 균형 건강 유지'},{n:'3중 자일리톨 복합체',b:'수분 잠금, 피부 수분 함량 증가'}], usage:'일일 세안·토너 후, 소량을 피부결 따라 얼굴에 고르게 도포 후 마사지.' },
-        },
-      },
-    ]
-  },
-  {
-    id: 'soothing',
-    label: { en:'Soothing', ko:'수딩', zh:'鲟鱼子酱', tw:'鱘魚子醬' },
-    name:  { en:'Caviar <em>Soothing</em>', ko:'캐비어 <em>진정 시리즈</em>', zh:'鲟鱼子酱 <em>舒缓系列</em>', tw:'鱘魚子醬 <em>舒緩系列</em>' },
-    products: [
-      {
-        img: 'images/Caviar%20Soothing%20Toner.png',
-        en:  { name:'Caviar Soothing Toner',   size:'130ml', desc:'Trehalose and centella rapidly soothe sensitive skin.' },
-        ko:  { name:'캐비어 수딩 토너',         size:'130ml', desc:'트레할로스·병풀로 빠른 수분 충전, 연약 피부 진정.' },
-        zh:  { name:'鲟鱼子酱舒缓水',           size:'130ml', desc:'海藻糖与积雪草，速补水，有效舒缓脆弱敏肌。' },
-        tw:  { name:'鱘魚子醬舒緩水',           size:'130ml', desc:'海藻糖與積雪草，速補水，有效舒緩脆弱敏肌。' },
-        detail: {
-          zh: { tagline:'凝露质地，告别肌肤干燥缺水，速补水强保湿，安肌舒缓赶走泛红', features:['速补水，强保湿，有效舒缓脆皮肌','安肌稳肤，赶走泛红'], ingredients:[{n:'鲟鱼子酱提取物（俄罗斯里海水域，24小时低温压榨，无化学辅助）',b:'高浓度营养精华，滋养修护'},{n:'库拉索芦荟提取物',b:'保湿安抚，修护受损肌肤'},{n:'7种草本专利配方（甘草·虎杖根·迷迭香·母菊花·黄芩根·积雪草·绿茶）',b:'舒缓修护，强化屏障'},{n:'海藻糖',b:'被誉为「生命之糖」，超强保湿，抑氧'},{n:'积雪草提取物',b:'光滑有弹性，加速肌肤修护'}], usage:'洁面后，取适量于面部，沿皮肤纹理涂抹吸收。' },
-          tw: { tagline:'凝露質地，速補水強保濕，安肌舒緩趕走泛紅', features:['速補水，強保濕，有效舒緩脆皮肌','安肌穩膚，趕走泛紅'], ingredients:[{n:'鱘魚子醬提取物（俄羅斯裡海水域，24小時低溫壓榨）',b:'高濃度營養精華，滋養修護'},{n:'庫拉索蘆薈提取物',b:'保濕安撫，修護受損肌膚'},{n:'7種草本專利配方（甘草·虎杖根·迷迭香·積雪草·綠茶等）',b:'舒緩修護，強化屏障'},{n:'海藻糖',b:'超強保濕，抑氧'},{n:'積雪草提取物',b:'光滑彈性，加速修護'}], usage:'潔面後，取適量沿皮膚紋理塗抹吸收。' },
-          en: { tagline:'A gel-like soothing toner that rapidly quenches dry, sensitive skin and banishes redness.', features:['Rapidly hydrates and soothes fragile, sensitive skin','Calms and stabilizes, eliminates redness'], ingredients:[{n:'Caviar Extract (from Caspian Sea sturgeon, cold-pressed within 24h, no chemicals)',b:'High-concentration nourishing essence'},{n:'Aloe Vera (Aloe barbadensis)',b:'Soothes, moisturizes, and repairs'},{n:'7-Herb Patented Formula (licorice, knotweed, rosemary, chamomile, scutellaria, centella, green tea)',b:'Soothes and strengthens barrier'},{n:'Trehalose',b:'Powerful humectant and antioxidant'},{n:'Centella Asiatica',b:'Smooths, adds elasticity, accelerates repair'}], usage:'After cleansing, apply an appropriate amount along skin texture and let absorb.' },
-          ko: { tagline:'겔 타입 진정 토너 — 민감 건조 피부에 빠른 수분 충전, 홍조 진정', features:['빠른 수분 보충, 민감 건조 피부 진정','피부 안정화, 홍조 해소'], ingredients:[{n:'철갑상어알 추출물 (카스피해 철갑상어, 24시간 이내 저온 압착)',b:'고농도 영양 에센스'},{n:'알로에베라 (쿠라소 알로에)',b:'진정, 보습, 수복'},{n:'7종 한방 특허 배합 (감초·호장근·로즈마리·카모마일·황금·병풀·녹차)',b:'진정, 장벽 강화'},{n:'트레할로스',b:'강력 보습, 항산화'},{n:'병풀 추출물',b:'매끄러운 피부, 탄력, 수복 촉진'}], usage:'세안 후 적당량을 피부결 따라 도포 후 흡수시킵니다.' },
-        },
-      },
-      {
-        img: 'images/Caviar%20Ampoule.png',
-        en:  { name:'Caviar Ampoule',          size:'50ml',  desc:'Adenosine and peptides deeply repair and awaken self-healing.' },
-        ko:  { name:'캐비어 앰플',              size:'50ml',  desc:'아데노신·베타글루칸이 손상 세포를 깊게 리페어.' },
-        zh:  { name:'鲟鱼子酱精华液',           size:'50ml',  desc:'腺苷、精氨酸激活肌肤自愈力，深层修护损伤。' },
-        tw:  { name:'鱘魚子醬精華液',           size:'50ml',  desc:'腺苷、精氨酸激活肌膚自愈力，深層修護損傷。' },
-        detail: {
-          zh: { tagline:'精华凝露质地，舒缓肌肤，激活肌肤自愈力', features:['补充肌肤能量，安肌修护','持续帮助肌肤对抗外界伤害'], ingredients:[{n:'鲟鱼子酱提取物',b:'高营养活化精华，深层修护'},{n:'库拉索芦荟提取物',b:'保湿修护，美容"冠军选手"'},{n:'7种草本专利配方（甘草·虎杖根·迷迭香·母菊花·黄芩根·积雪草·绿茶）',b:'舒缓修护综合配方'},{n:'腺苷',b:'补充肌肤能量，激活细胞修复'},{n:'精氨酸',b:'调节pH值，强化肌肤抵御力'},{n:'β-葡聚糖',b:'「免疫黄金」，促伤口愈合，缓解局部炎症，改善屏障受损'}], usage:'每日早晚爽肤水后，取适量于指尖或掌心，顺着肌肤纹理均匀涂抹面部，轻揉按摩至吸收。' },
-          tw: { tagline:'精華凝露質地，舒緩肌膚，激活肌膚自愈力', features:['補充肌膚能量，安肌修護','持續幫助肌膚對抗外界傷害'], ingredients:[{n:'鱘魚子醬提取物',b:'高營養活化精華'},{n:'庫拉索蘆薈提取物',b:'保濕修護'},{n:'7種草本專利配方',b:'舒緩修護'},{n:'腺苷',b:'補充細胞能量，激活修復'},{n:'精氨酸',b:'調節pH，強化抵御力'},{n:'β-葡聚糖',b:'「免疫黃金」，促愈合，緩解炎症，改善受損屏障'}], usage:'每日早晚爽膚水後，取適量沿肌膚紋理塗抹，輕揉至吸收。' },
-          en: { tagline:'A serum that soothes, energizes, and activates skin\'s self-healing power.', features:['Energizes skin cells, soothes and repairs','Builds resilience against environmental stressors'], ingredients:[{n:'Caviar Extract (sturgeon, Caspian Sea)',b:'High-concentration nourishing and repairing essence'},{n:'Aloe barbadensis Leaf Juice',b:'Soothes and moisturizes'},{n:'7-Herb Patented Complex',b:'Comprehensive soothing and repair formula'},{n:'Adenosine',b:'Boosts cellular energy, activates repair'},{n:'Arginine',b:'Regulates pH, strengthens skin defense'},{n:'β-Glucan',b:'"Immune gold" — promotes healing, reduces inflammation, restores compromised barriers'}], usage:'Morning and evening after toning — apply a small amount, spread along skin texture, and gently massage until absorbed.' },
-          ko: { tagline:'진정 앰플 — 피부 에너지를 보충하고 자기 회복력을 깨웁니다', features:['피부 세포 에너지 보충, 진정 및 수복','외부 자극에 대한 피부 저항력 강화'], ingredients:[{n:'철갑상어알 추출물',b:'고농도 영양 활성화 에센스'},{n:'쿠라소 알로에베라',b:'진정 보습'},{n:'7종 한방 특허 배합',b:'종합 진정·수복 포뮬라'},{n:'아데노신',b:'세포 에너지 보충, 수복 활성화'},{n:'아르기닌',b:'pH 조절, 피부 방어력 강화'},{n:'베타글루칸',b:'「면역의 황금」— 상처 치유, 염증 완화, 손상 장벽 회복'}], usage:'아침저녁 토너 후 소량을 피부결 따라 고르게 도포하고 마사지합니다.' },
-        },
-      },
-      {
-        img: 'images/Caviar%20Soothing%20Lotion.png',
-        en:  { name:'Caviar Soothing Lotion',  size:'130ml', desc:'Cypress and larch calm heat-flushed skin.' },
-        ko:  { name:'캐비어 수딩 로션',         size:'130ml', desc:'편백잎·시베리아 낙엽송으로 열오른 피부 진정.' },
-        zh:  { name:'鲟鱼子酱舒缓乳',           size:'130ml', desc:'日本扁柏叶与落叶松镇定燥热肌，强化抵御力。' },
-        tw:  { name:'鱘魚子醬舒緩乳',           size:'130ml', desc:'日本扁柏葉與落葉松鎮定燥熱肌，強化抵御力。' },
-        detail: {
-          zh: { tagline:'凝乳质地，水润轻薄，有效舒缓肌肤不安情绪', features:['舒缓燥热肌，强化肌肤抵御力','安肌维稳，肤感水润轻盈'], ingredients:[{n:'鲟鱼子酱提取物',b:'高营养修护精华'},{n:'库拉索芦荟提取物',b:'保湿安肌'},{n:'7种草本专利配方',b:'综合舒缓修护'},{n:'日本扁柏叶提取物',b:'安肌舒缓，镇定'},{n:'西伯利亚落叶松木',b:'收敛，强化肌肤防护'}], usage:'每日清洁爽肤后，取适量于指尖或掌心，涂抹面部轻轻按摩至吸收。' },
-          tw: { tagline:'凝乳質地，水潤輕薄，有效舒緩肌膚不安情緒', features:['舒緩燥熱肌，強化肌膚抵御力','安肌維穩，膚感水潤輕盈'], ingredients:[{n:'鱘魚子醬提取物',b:'高營養修護精華'},{n:'庫拉索蘆薈提取物',b:'保濕安肌'},{n:'7種草本專利配方',b:'綜合舒緩修護'},{n:'日本扁柏葉提取物',b:'安肌舒緩，鎮定'},{n:'西伯利亞落葉松木',b:'收斂，強化肌膚防護'}], usage:'每日清潔爽膚後，取適量塗抹面部輕按至吸收。' },
-          en: { tagline:'A light, gel-cream lotion that calms heat-flushed, agitated skin and strengthens resilience.', features:['Soothes inflamed, heat-flushed skin, strengthens barrier','Calms and stabilizes sensitive skin'], ingredients:[{n:'Caviar Extract',b:'Nourishing repair essence'},{n:'Aloe barbadensis',b:'Hydrates and soothes'},{n:'7-Herb Patented Complex',b:'Comprehensive soothing formula'},{n:'Japanese Cypress Leaf Extract',b:'Calms and soothes skin'},{n:'Siberian Larch Wood',b:'Astringent, strengthens skin protection'}], usage:'After daily cleansing and toning, apply a small amount and gently massage into face.' },
-          ko: { tagline:'겔크림 타입 로션 — 열오른 민감 피부를 진정시키고 저항력 강화', features:['열오른 피부 진정, 장벽 강화','민감 피부 안정화'], ingredients:[{n:'철갑상어알 추출물',b:'영양 수복 에센스'},{n:'쿠라소 알로에베라',b:'보습 진정'},{n:'7종 한방 특허 배합',b:'종합 진정 포뮬라'},{n:'일본 편백잎 추출물',b:'피부 안정, 진정'},{n:'시베리아 낙엽송',b:'수렴, 피부 보호 강화'}], usage:'일일 세안·토너 후 소량을 얼굴에 도포하고 마사지합니다.' },
-        },
-      },
-      {
-        img: 'images/Caviar%20Essence%20Cream.png',
-        en:  { name:'Caviar Essence Cream',    size:'50g',   desc:'Hydrolyzed collagen rapidly calms redness for lasting stability.' },
-        ko:  { name:'캐비어 에센스 크림',       size:'50g',   desc:'가수분해 콜라겐·감태로 붉은기 즉각 진정, 안정화.' },
-        zh:  { name:'鲟鱼子酱菁萃霜',           size:'50g',   desc:'水解胶原与腔昆布，厚养舒缓退红，持续维稳。' },
-        tw:  { name:'鱘魚子醬菁萃霜',           size:'50g',   desc:'水解膠原與腔昆布，厚養舒緩退紅，持續維穩。' },
-        detail: {
-          zh: { tagline:'厚养舒缓，退红修护，持续维稳肌肤状态', features:['迅速舒缓肌肤泛红、灼热等不适症状','巩固肌肤稳定性，持续维稳'], ingredients:[{n:'鲟鱼子酱提取物',b:'高营养修护精华'},{n:'库拉索芦荟提取物',b:'保湿修护安肌'},{n:'7种草本专利配方',b:'综合舒缓修护'},{n:'水解胶原',b:'强化保湿，易渗透，深层滋养'},{n:'油橄榄果油',b:'舒缓，保护细胞免受自由基侵害'},{n:'腔昆布',b:'舒缓退红，加速炎症消退'}], usage:'每日基础护肤最后阶段，取适量于指尖或掌心，涂抹面部轻轻按摩至吸收。' },
-          tw: { tagline:'厚養舒緩，退紅修護，持續維穩肌膚狀態', features:['迅速舒緩肌膚泛紅、灼熱症狀','鞏固肌膚穩定性，持續維穩'], ingredients:[{n:'鱘魚子醬提取物',b:'高營養修護精華'},{n:'庫拉索蘆薈提取物',b:'保濕修護安肌'},{n:'7種草本專利配方',b:'綜合舒緩修護'},{n:'水解膠原',b:'強化保濕，易滲透'},{n:'油橄欖果油',b:'舒緩，保護細胞'},{n:'腔昆布',b:'舒緩退紅，消炎'}], usage:'每日護膚最後階段，取適量塗抹面部輕按至吸收。' },
-          en: { tagline:'Rich, calming cream that instantly reduces redness and keeps skin stable over time.', features:['Rapidly soothes redness, heat, and irritation','Fortifies skin stability for long-lasting calm'], ingredients:[{n:'Caviar Extract',b:'Nourishing repair essence'},{n:'Aloe barbadensis',b:'Hydrates and calms'},{n:'7-Herb Patented Complex',b:'Comprehensive soothing formula'},{n:'Hydrolyzed Collagen',b:'Enhances moisture, penetrates deeply'},{n:'Olive Fruit Oil',b:'Soothes, shields cells from free radicals'},{n:'Ecklonia Cava (sea kelp)',b:'Soothes redness, accelerates anti-inflammatory response'}], usage:'Final step of daily skincare — apply a small amount and gently massage into face.' },
-          ko: { tagline:'풍부한 진정 크림 — 홍조를 즉각 완화하고 피부를 안정적으로 유지', features:['홍조, 열감, 자극 즉각 진정','피부 안정성 강화, 지속 진정'], ingredients:[{n:'철갑상어알 추출물',b:'영양 수복 에센스'},{n:'쿠라소 알로에베라',b:'보습 진정'},{n:'7종 한방 특허 배합',b:'종합 진정 포뮬라'},{n:'가수분해 콜라겐',b:'보습 강화, 깊은 침투'},{n:'올리브과실유',b:'진정, 세포 자유 라디칼 방어'},{n:'ecklonia cava (감태)',b:'홍조 진정, 염증 완화 촉진'}], usage:'데일리 스킨케어 마지막 단계에 소량을 얼굴에 도포하고 마사지합니다.' },
+          zh: { tagline:'触肤液化 · 控油平衡 · 紧致收敛 · 舒润不油腻', features:['触肤即化的轻盈质地，水润持效不油腻','3重复合木糖醇长效保湿，平衡皮脂分泌'], ingredients:[{n:'天然草本精粹水',b:'补水保湿，调节水油平衡'},{n:'3重复合木糖醇',b:'长效锁水，舒润肌肤'}], usage:'每日常规清洁和爽肤后，取适量于手掌，由内到外均匀涂抹面部，轻柔按摩至吸收。' },
+          tw: { tagline:'觸膚液化 · 控油平衡 · 緊致收斂 · 舒潤不油膩', features:['觸膚即化的輕盈質地，水潤持效不油膩','3重複合木糖醇長效保濕，平衡皮脂分泌'], ingredients:[{n:'天然草本精粹水',b:'補水保濕，調節水油平衡'},{n:'3重複合木糖醇',b:'長效鎖水，舒潤肌膚'}], usage:'每日常規清潔和爽膚後，取適量於手掌，由內到外均勻塗抹面部，輕柔按摩至吸收。' },
+          en: { tagline:'Melts on contact — balances sebum, firms pores, and hydrates without heaviness.', features:['Feather-light texture melts instantly, no residue or oiliness','Triple xylitol complex for lasting moisture and sebum balance'], ingredients:[{n:'Botanical Essence Water',b:'Hydrates and rebalances skin'},{n:'Triple Xylitol Complex',b:'Long-lasting moisture retention'}], usage:'After daily cleansing and toning, take an appropriate amount and spread evenly over face from inner to outer, massage gently until absorbed.' },
+          ko: { tagline:'피부에 녹아드는 · 피지 균형 · 모공 수렴 · 촉촉하고 산뜻하게', features:['피부에 녹아드는 가벼운 질감, 촉촉하고 기름지지 않음','3중 복합 자일리톨로 지속 보습 및 피지 균형'], ingredients:[{n:'천연 초본 정수',b:'수분 공급, 수분·유분 균형 조율'},{n:'3중 복합 자일리톨',b:'장기 수분 잠금, 촉촉한 피부'}], usage:'매일 세안 및 토너 사용 후, 적당량을 손바닥에 덜어 얼굴 안에서 바깥으로 균일하게 도포하고 가볍게 마사지해 흡수시킵니다.' },
         },
       },
     ]
@@ -851,41 +753,41 @@ const SERIES = [
     products: [
       {
         img: 'images/Persica-ro%20Treatment%20Essence.png',
-        en:  { name:'Persica-ro Treatment Essence', size:'130ml', desc:'Opens absorption channels for even, smooth tone.' },
-        ko:  { name:'페르시카로 트리트먼트 에센스', size:'130ml', desc:'흡수 통로를 열고 톤을 균일하게, 촉촉하고 매끄럽게.' },
-        zh:  { name:'桃颜悦色修护蜜露',           size:'130ml', desc:'打开肌肤吸收通道，舒缓均匀肤色，水润透亮。' },
-        tw:  { name:'桃顏悅色修護蜜露',           size:'130ml', desc:'打開肌膚吸收通道，舒緩均勻膚色，水潤透亮。' },
+        en:  { name:'Persica-ro Treatment Essence', size:'130ml', desc:'Multi-pathway brightening — layer by layer, skin becomes luminous.' },
+        ko:  { name:'퍼시카-로 트리트먼트 에센스', size:'130ml', desc:'다경로 미백, 겹겹이 투명하게 빛나는 피부.' },
+        zh:  { name:'桃颜悦色修护蜜露',            size:'130ml', desc:'多通路美白，层层焕白，水润透亮。' },
+        tw:  { name:'桃顏悅色修護蜜露',            size:'130ml', desc:'多通路美白，層層煥白，水潤透亮。' },
         detail: {
-          zh: { tagline:'调理型精华蜜露，层层焕白，水润透亮，令肌肤平滑软嫩', features:['桃红色精华蜜露质地，丝滑沁润，打开肌肤吸收通道','舒缓安肌，均匀肤色，由内而外透润有光泽'], ingredients:[{n:'烟酰胺',b:'美白阻黑，均匀肤色'},{n:'α-熊果苷',b:'抑制酪氨酸酶活性，阻断黑色素生成'},{n:'桃子提取物',b:'糖氧双抑，宁肌平滑'},{n:'三重复配玻尿酸（专利No.10-2289551）',b:'多层次补水保湿，强化吸收'},{n:'乳酸杆菌·酵母菌/大米发酵产物滤液',b:'助渗透，促黑色素代谢，调节微生态'},{n:'玉米仁提取物',b:'植物黏蛋白，含β-葡聚糖和植物甾醇，保湿锁水修护屏障'}], usage:'洁面后，取适量于面部，沿皮肤纹理涂抹吸收。' },
-          tw: { tagline:'調理型精華蜜露，層層煥白，水潤透亮，令肌膚平滑軟嫩', features:['桃紅色精華蜜露質地，絲滑沁潤，打開肌膚吸收通道','舒緩安肌，均勻膚色，由內而外透潤有光澤'], ingredients:[{n:'菸鹼醯胺',b:'美白阻黑，均勻膚色'},{n:'α-熊果苷',b:'抑制酪氨酸酶，阻斷黑色素'},{n:'桃子提取物',b:'糖氧雙抑，寧肌平滑'},{n:'三重複配玻尿酸（專利）',b:'多層次補水保濕'},{n:'乳酸桿菌·酵母菌發酵產物',b:'助滲透，促黑色素代謝'},{n:'玉米仁提取物',b:'保濕鎖水，修護屏障'}], usage:'潔面後，取適量沿皮膚紋理塗抹吸收。' },
-          en: { tagline:'A peachy treatment essence that opens skin\'s absorption channels for layered brightening and smooth, radiant skin.', features:['Silky honey-like texture, opens absorption channels for maximum serum uptake','Soothes, evens skin tone, reveals inner luminosity'], ingredients:[{n:'Niacinamide',b:'Whitens and blocks melanin'},{n:'α-Arbutin',b:'Inhibits tyrosinase activity'},{n:'Peach Extract',b:'Dual antioxidant-glycation inhibitor, smooths'},{n:'Triple Hyaluronic Acid Complex (patent No.10-2289551)',b:'Multi-depth hydration and absorption boost'},{n:'Lactobacillus · Rice Ferment Filtrate',b:'Enhances penetration, promotes melanin metabolism'},{n:'Corn Kernel Extract',b:'Plant mucin with β-glucan and phytosterols — locks moisture, repairs barrier'}], usage:'After cleansing, apply an appropriate amount along skin texture and let absorb.' },
-          ko: { tagline:'복숭아빛 조율 에센스 — 흡수 채널을 열어 층층이 미백, 매끄럽고 촉촉한 피부', features:['실키 꿀 텍스처로 흡수 채널 개방, 후속 제품 흡수 극대화','진정 및 균일한 피부톤, 내부에서 빛나는 피부'], ingredients:[{n:'나이아신아미드',b:'미백·멜라닌 차단'},{n:'알파-알부틴',b:'티로시나제 활성 억제'},{n:'복숭아 추출물',b:'이중 항산화·당화 억제, 매끄러운 피부'},{n:'3중 복합 히알루론산 (특허)',b:'다층 보습 및 흡수 강화'},{n:'유산균·쌀 발효물',b:'침투 촉진, 멜라닌 대사 촉진'},{n:'옥수수알 추출물',b:'베타글루칸·피토스테롤 함유, 보습 잠금, 장벽 수복'}], usage:'세안 후 적당량을 피부결 따라 도포 후 흡수시킵니다.' },
+          zh: { tagline:'层层焕白 · 水润透亮', features:['多通路阻黑美白，温和焕亮肤色','全肤质适用，补水提亮两不误'], ingredients:[{n:'烟酰胺',b:'阻断黑色素合成，均匀肤色'},{n:'桃子提取物',b:'淡化色斑，赋予天然透亮感'},{n:'α-熊果苷',b:'抑制酪氨酸酶，温和美白'},{n:'玻尿酸',b:'深层补水，丰盈肌肤'},{n:'乳酸杆菌发酵产物',b:'促进代谢更新，提亮通透感'}], usage:'洁面后，取适量于面部，用化妆棉轻轻擦拭或双手拍打至充分吸收。' },
+          tw: { tagline:'層層煥白 · 水潤透亮', features:['多通路阻黑美白，溫和煥亮膚色','全膚質適用，補水提亮兩不誤'], ingredients:[{n:'煙醯胺',b:'阻斷黑色素合成，均勻膚色'},{n:'桃子提取物',b:'淡化色斑，賦予天然透亮感'},{n:'α-熊果苷',b:'抑制酪胺酸酶，溫和美白'},{n:'玻尿酸',b:'深層補水，豐盈肌膚'},{n:'乳酸桿菌發酵產物',b:'促進代謝更新，提亮通透感'}], usage:'潔面後，取適量於面部，用化妝棉輕輕擦拭或雙手拍打至充分吸收。' },
+          en: { tagline:'Layer by layer — multi-pathway brightening that hydrates and illuminates.', features:['Multi-pathway melanin inhibition — gently brightens all skin types','Hydrates and brightens simultaneously, no irritation'], ingredients:[{n:'Niacinamide',b:'Blocks melanin synthesis, evens skin tone'},{n:'Peach Extract',b:'Fades dark spots, restores natural luminosity'},{n:'Alpha-Arbutin',b:'Gently inhibits tyrosinase'},{n:'Hyaluronic Acid',b:'Deep hydration, plumping effect'},{n:'Lactobacillus Ferment',b:'Boosts cellular renewal, brightens translucency'}], usage:'After cleansing, apply to face with a cotton pad or gently pat in with hands until fully absorbed.' },
+          ko: { tagline:'겹겹이 환하게 · 수분 가득 투명하게', features:['다경로 멜라닌 억제, 전 피부타입에 온화한 미백','보습과 미백을 동시에'], ingredients:[{n:'나이아신아마이드',b:'멜라닌 합성 차단, 균일한 피부톤'},{n:'복숭아 추출물',b:'색소침착 완화, 자연 투명감 부여'},{n:'알파-아부틴',b:'티로시나아제 억제, 온화한 미백'},{n:'히알루론산',b:'깊은 수분 공급'},{n:'유산균 발효물',b:'세포 재생 촉진, 투명감 향상'}], usage:'세안 후, 화장솜으로 가볍게 닦아내거나 손으로 두드려 흡수시킵니다.' },
         },
       },
       {
         img: 'images/Persica-ro%20Brightening%20Serum.png',
-        en:  { name:'Persica-ro Brightening Serum', size:'50ml',  desc:'Full-pathway melanin blocking for rosy-white skin.' },
-        ko:  { name:'페르시카로 브라이트닝 세럼',  size:'50ml',  desc:'미백·기미 이중 인증. 전 경로 멜라닌 차단.' },
-        zh:  { name:'桃颜悦色透白精华乳',           size:'50ml',  desc:'美白祛斑双证，全通路抑黑阻黑，打造粉白皮。' },
-        tw:  { name:'桃顏悅色透白精華乳',           size:'50ml',  desc:'美白祛斑雙證，全通路抑黑阻黑，打造粉白皮。' },
+        en:  { name:'Persica-ro Brightening Serum', size:'50ml', desc:'Concentrated brightening serum — blocks and inhibits melanin from every angle.' },
+        ko:  { name:'퍼시카-로 브라이트닝 세럼',  size:'50ml', desc:'고농축 미백 세럼으로 멜라닌을 다각도로 차단.' },
+        zh:  { name:'桃颜悦色透白精华乳',          size:'50ml', desc:'全通路抑黑阻黑，高浓缩美白精华，打造粉白透亮肌。' },
+        tw:  { name:'桃顏悅色透白精華乳',          size:'50ml', desc:'全通路抑黑阻黑，高濃縮美白精華，打造粉白透亮肌。' },
         detail: {
-          zh: { tagline:'全通路抑黑阻黑，美白祛斑双证认证，打造肌肤粉白皮', features:['美白祛斑双证（国妆特进字20250070），国家级安全认证','从根源抑制黑色素生成，多元矩阵安肌美白'], ingredients:[{n:'烟酰胺',b:'美白阻黑'},{n:'α-熊果苷',b:'抑制酪氨酸酶活性'},{n:'桃子提取物',b:'糖氧双抑，宁肌平滑'},{n:'三重复配玻尿酸（专利No.10-2289551）',b:'补水保湿，强化吸收'},{n:'三种水解草本植物复配（专利No.10-2347109）',b:'宁肌保湿，强化屏障'},{n:'乳酸杆菌·酵母菌/大米发酵产物',b:'助渗透，促黑色素代谢，调节微生态'},{n:'栀子果提取物',b:'宁肌修稳，糖氧双抑'}], usage:'每日爽肤后，取适量于指尖或掌心，涂抹面部轻轻按摩至吸收。' },
-          tw: { tagline:'全通路抑黑阻黑，美白祛斑雙證認證，打造肌膚粉白皮', features:['美白祛斑雙證認證，國家級安全認證','從根源抑制黑色素生成，多元矩陣安肌美白'], ingredients:[{n:'菸鹼醯胺',b:'美白阻黑'},{n:'α-熊果苷',b:'抑制酪氨酸酶'},{n:'桃子提取物',b:'糖氧雙抑，寧肌平滑'},{n:'三重複配玻尿酸（專利）',b:'補水保濕'},{n:'三種水解草本複配（專利）',b:'寧肌保濕，強化屏障'},{n:'乳酸桿菌·酵母菌發酵產物',b:'助滲透，代謝黑色素'},{n:'梔子果提取物',b:'寧肌修穩，糖氧雙抑'}], usage:'每日爽膚後，取適量塗抹面部輕按至吸收。' },
-          en: { tagline:'Dual-certified brightening serum — blocks melanin at every pathway for rosy-white skin.', features:['Dual whitening & spot-reduction certification (No.20250070)','Targets melanin at the source; multi-matrix safe brightening'], ingredients:[{n:'Niacinamide',b:'Whitens, blocks melanin transfer'},{n:'α-Arbutin',b:'Inhibits tyrosinase'},{n:'Peach Extract',b:'Dual anti-glycation / antioxidant, soothes'},{n:'Triple HA Complex (patent No.10-2289551)',b:'Hydrates and boosts absorption'},{n:'3-Herb Hydrolyzate Complex (patent No.10-2347109)',b:'Soothes, moisturizes, reinforces barrier'},{n:'Fermented Lactobacillus · Rice Filtrate',b:'Enhances penetration, promotes melanin metabolism'},{n:'Gardenia Fruit Extract',b:'Soothes, anti-glycation and antioxidant'}], usage:'After toning, apply a small amount and gently massage into face.' },
-          ko: { tagline:'이중 인증 미백 세럼 — 전 경로 멜라닌 차단으로 분홍빛 화이트 피부', features:['미백·기미 이중 인증 (국화특진자 20250070)','근원에서 멜라닌 생성 차단, 다원 매트릭스 안전 미백'], ingredients:[{n:'나이아신아미드',b:'미백, 멜라닌 전달 차단'},{n:'알파-알부틴',b:'티로시나제 활성 억제'},{n:'복숭아 추출물',b:'이중 항당화·항산화, 진정'},{n:'3중 히알루론산 복합체 (특허)',b:'보습 및 흡수 강화'},{n:'3종 가수분해 한방 복합체 (특허)',b:'진정, 보습, 장벽 강화'},{n:'유산균·쌀 발효물',b:'침투 강화, 멜라닌 대사 촉진'},{n:'치자열매 추출물',b:'진정, 이중 항당화·항산화'}], usage:'토너 후 소량을 얼굴에 도포하고 마사지합니다.' },
+          zh: { tagline:'全通路抑黑阻黑 · 打造肌肤粉白皮', features:['多维抑黑+阻黑双重机制，高效提亮肤色','高浓缩精华质地，快速渗透均匀提亮'], ingredients:[{n:'烟酰胺',b:'阻断黑色素从黑色素细胞向角质形成细胞转移'},{n:'桃子提取物',b:'天然美白，淡化色斑'},{n:'α-熊果苷',b:'温和抑制酪氨酸酶活性'},{n:'玻尿酸',b:'深层保湿，辅助美白持效'},{n:'3种水解草本植物复配',b:'协同抑黑，舒缓安肌'}], usage:'每日爽肤后，取适量于指腹，轻轻点涂并按摩至吸收，再进行后续保湿护理。' },
+          tw: { tagline:'全通路抑黑阻黑 · 打造肌膚粉白皮', features:['多維抑黑+阻黑雙重機制，高效提亮膚色','高濃縮精華質地，快速滲透均勻提亮'], ingredients:[{n:'煙醯胺',b:'阻斷黑色素轉移至角質形成細胞'},{n:'桃子提取物',b:'天然美白，淡化色斑'},{n:'α-熊果苷',b:'溫和抑制酪胺酸酶活性'},{n:'玻尿酸',b:'深層保濕，輔助美白持效'},{n:'3種水解草本植物複配',b:'協同抑黑，舒緩安肌'}], usage:'每日爽膚後，取適量於指腹，輕輕點塗並按摩至吸收，再進行後續保濕護理。' },
+          en: { tagline:'All-pathway melanin control — concentrated brightening for naturally luminous skin.', features:['Dual-action: inhibits and blocks melanin at multiple stages','High-concentration formula penetrates fast for even, lasting brightness'], ingredients:[{n:'Niacinamide',b:'Prevents melanin transfer to keratinocytes'},{n:'Peach Extract',b:'Naturally brightens and fades spots'},{n:'Alpha-Arbutin',b:'Gently inhibits tyrosinase'},{n:'Hyaluronic Acid',b:'Deep moisture support'},{n:'3-Herb Hydrolysate Complex',b:'Synergistic melanin inhibition and calming'}], usage:'After toning, apply a small amount with fingertips, gently press and massage until absorbed, then follow with moisturizer.' },
+          ko: { tagline:'전방위 멜라닌 차단 · 투명 피부 완성', features:['억제+차단 이중 미백 메커니즘','고농축 세럼, 빠른 침투로 균일한 미백 효과'], ingredients:[{n:'나이아신아마이드',b:'각질세포로의 멜라닌 이동 차단'},{n:'복숭아 추출물',b:'천연 미백, 색소침착 완화'},{n:'알파-아부틴',b:'티로시나아제 억제'},{n:'히알루론산',b:'깊은 수분 보습'},{n:'3종 수해 초본 복합체',b:'협력 미백 및 진정'}], usage:'토너 후 적당량을 지끝에 올려 가볍게 두드려 흡수시키고 수분 케어를 이어갑니다.' },
         },
       },
       {
         img: 'images/Persica-ro%20Brightening%20Cream.png',
-        en:  { name:'Persica-ro Brightening Cream', size:'50g',   desc:'Boosts melanin metabolism — radiance that lasts.' },
-        ko:  { name:'페르시카로 브라이트닝 크림',  size:'50g',   desc:'미백·기미 이중 인증. 멜라닌 대사 강화, 광손상 방어.' },
-        zh:  { name:'桃颜悦色丝白霜',             size:'50g',   desc:'强化黑色素代谢，抵御光损伤，润而不腻锁白。' },
-        tw:  { name:'桃顏悅色絲白霜',             size:'50g',   desc:'強化黑色素代謝，抵御光損傷，潤而不膩鎖白。' },
+        en:  { name:'Persica-ro Brightening Cream', size:'50g', desc:'Locks in brightening results and fortifies the barrier — sustained white glow.' },
+        ko:  { name:'퍼시카-로 브라이트닝 크림',  size:'50g', desc:'미백 효과를 봉인하고 장벽을 강화하는 지속 미백 크림.' },
+        zh:  { name:'桃颜悦色丝白霜',              size:'50g', desc:'养肤阻黑，锁白续航，强化屏障。' },
+        tw:  { name:'桃顏悅色絲白霜',              size:'50g', desc:'養膚阻黑，鎖白續航，強化屏障。' },
         detail: {
-          zh: { tagline:'美白祛斑双证加持，养肤阻黑，锁白续航，润而不腻', features:['安肌维稳，美白淡斑','抵御肌肤光损伤，减少紫外线带来的氧化损伤'], ingredients:[{n:'烟酰胺',b:'美白阻黑'},{n:'α-熊果苷',b:'抑制酪氨酸酶活性'},{n:'桃子提取物',b:'糖氧双抑，宁肌平滑'},{n:'三重复配玻尿酸',b:'补水保湿，强化吸收'},{n:'乳酸杆菌·酵母菌/大米发酵产物',b:'助渗透，促黑色素代谢，调节微生态'},{n:'椰油提取物',b:'抑氧，抵御光损伤，长效保湿滋润'},{n:'萝卜籽提取物',b:'抑氧，抵御光老化，减少紫外线氧化损伤'}], usage:'每日基础护肤最后阶段，取适量于指尖或掌心，涂抹面部轻轻按摩至吸收。' },
-          tw: { tagline:'美白祛斑雙證加持，養膚阻黑，鎖白續航，潤而不膩', features:['安肌維穩，美白淡斑','抵御光損傷，減少紫外線氧化損傷'], ingredients:[{n:'菸鹼醯胺',b:'美白阻黑'},{n:'α-熊果苷',b:'抑制酪氨酸酶'},{n:'桃子提取物',b:'糖氧雙抑，寧肌平滑'},{n:'三重複配玻尿酸',b:'補水保濕'},{n:'乳酸桿菌發酵產物',b:'助滲透，代謝黑色素'},{n:'椰油提取物',b:'抑氧，長效保濕'},{n:'蘿蔔籽提取物',b:'抑氧，抵御光老化'}], usage:'每日護膚最後階段，取適量塗抹面部輕按至吸收。' },
-          en: { tagline:'Dual-certified brightening cream — nourishes, blocks melanin, and locks in whiteness without greasiness.', features:['Soothes and stabilizes while whitening and fading spots','Defends against photo-damage and UV-induced oxidation'], ingredients:[{n:'Niacinamide',b:'Whitens and blocks melanin'},{n:'α-Arbutin',b:'Inhibits tyrosinase activity'},{n:'Peach Extract',b:'Dual anti-glycation/antioxidant, soothes'},{n:'Triple HA Complex',b:'Hydrates and absorbs'},{n:'Lactobacillus · Rice Ferment Filtrate',b:'Enhances penetration, promotes melanin metabolism'},{n:'Coconut-derived Extract',b:'Antioxidant, UV defense, lasting moisture'},{n:'Rapeseed Oil Extract',b:'Antioxidant, anti-photoaging, reduces UV oxidation'}], usage:'Final step of daily skincare — apply a small amount and gently massage into face.' },
-          ko: { tagline:'이중 인증 미백 크림 — 멜라닌 차단하고 화이트닝을 지속', features:['진정·안정화 + 미백·기미 케어','광손상 방어, 자외선 산화 손상 감소'], ingredients:[{n:'나이아신아미드',b:'미백 멜라닌 차단'},{n:'알파-알부틴',b:'티로시나제 활성 억제'},{n:'복숭아 추출물',b:'이중 항당화·항산화'},{n:'3중 히알루론산 복합체',b:'보습 및 흡수'},{n:'유산균·쌀 발효물',b:'침투 촉진, 멜라닌 대사'},{n:'코코넛 유래 추출물',b:'항산화, 자외선 방어, 지속 보습'},{n:'무씨 오일 추출물',b:'항산화, 광노화 방어'}], usage:'데일리 스킨케어 마지막 단계에 소량 도포 후 마사지합니다.' },
+          zh: { tagline:'养肤阻黑 · 锁白续航', features:['锁住美白成效，长效持续提亮','阻黑同步强化皮肤屏障，肌肤白而不脆'], ingredients:[{n:'烟酰胺',b:'持续阻黑提亮'},{n:'桃子提取物',b:'美白淡斑'},{n:'α-熊果苷',b:'温和美白'},{n:'椰油提取物',b:'保湿滋润，强化屏障'},{n:'萝卜籽提取物',b:'抗氧化，辅助美白持效'}], usage:'每日基础护肤的最后阶段，取适量均匀涂抹全脸，轻柔按摩至吸收。' },
+          tw: { tagline:'養膚阻黑 · 鎖白續航', features:['鎖住美白成效，長效持續提亮','阻黑同步強化皮膚屏障，肌膚白而不脆'], ingredients:[{n:'煙醯胺',b:'持續阻黑提亮'},{n:'桃子提取物',b:'美白淡斑'},{n:'α-熊果苷',b:'溫和美白'},{n:'椰油提取物',b:'保濕滋潤，強化屏障'},{n:'蘿蔔籽提取物',b:'抗氧化，輔助美白持效'}], usage:'每日基礎護膚的最後階段，取適量均勻塗抹全臉，輕柔按摩至吸收。' },
+          en: { tagline:'Barrier-boosting brightening cream — locks in results for a sustained white glow.', features:['Seals in brightening results for long-lasting luminosity','Simultaneously firms the barrier so skin stays bright without fragility'], ingredients:[{n:'Niacinamide',b:'Sustained brightening'},{n:'Peach Extract',b:'Brightens and fades spots'},{n:'Alpha-Arbutin',b:'Gentle melanin inhibition'},{n:'Coconut Oil Extract',b:'Moisturizes and fortifies barrier'},{n:'Radish Seed Extract',b:'Antioxidant, prolongs brightening effect'}], usage:'As the last step in your daily routine, apply evenly over the entire face and massage gently until absorbed.' },
+          ko: { tagline:'미백 효과 봉인 · 지속 유지', features:['미백 효과를 봉인하여 오래 지속','미백과 동시에 장벽 강화'], ingredients:[{n:'나이아신아마이드',b:'지속 미백'},{n:'복숭아 추출물',b:'미백·색소 완화'},{n:'알파-아부틴',b:'온화한 미백'},{n:'코코넛오일 추출물',b:'보습·장벽 강화'},{n:'무씨앗 추출물',b:'항산화, 미백 효과 지속'}], usage:'매일 기초 스킨케어의 마지막 단계로, 적당량을 균일하게 바르고 가볍게 마사지해 흡수시킵니다.' },
         },
       },
     ]
@@ -897,74 +799,133 @@ const SERIES = [
     products: [
       {
         img: 'images/Youth%20Cohesion%20Radiant%20Toner.png',
-        en:  { name:'Youth Cohesion Radiant Toner', size:'130ml', desc:'Fermented red ginseng — moisture, glow, and fine-line care.' },
-        ko:  { name:'유스코히즌 레디언트 토너',    size:'130ml', desc:'농축 홍삼 발효 원액. 보습·항산화·잔주름 케어.' },
-        zh:  { name:'凝萃芳华焕颜水',     size:'130ml', desc:'浓缩红参发酵原浆，润泽保湿抗氧，1-2-3遍抚纹。' },
-        tw:  { name:'凝萃芳華煥顏水',     size:'130ml', desc:'濃縮紅參發酵原漿，潤澤保濕抗氧，1-2-3遍撫紋。' },
+        en:  { name:'Youth Cohesion Radiant Toner+', size:'130ml', desc:'Fermented red ginseng essence — hydrates, smooths fine lines, and firms.' },
+        ko:  { name:'유스 코히전 래디언트 토너+',   size:'130ml', desc:'발효 홍삼 원액으로 수분·탄력·잔주름 케어.' },
+        zh:  { name:'凝萃芳华焕颜水+',              size:'130ml', desc:'浓缩红参发酵，水润舒展抚纹，紧致提升。' },
+        tw:  { name:'凝萃芳華煥顏水+',              size:'130ml', desc:'濃縮紅參發酵，水潤舒展撫紋，緊致提升。' },
         detail: {
-          zh: { tagline:'蕴含浓缩红参发酵原浆，水润·舒展·抚纹', features:['润泽保湿，提高肌肤蓄水力，抚平干纹细纹','抑氧抵御光老化，持久改善肌肤状态'], ingredients:[{n:'浓缩红参发酵原浆',b:'高温蒸制生成红参多酚·人参多糖，双重发酵转化为小分子，直达肌底促胶原弹性纤维生成'},{n:'四大种子能量发酵物',b:'稻提取物(促胶原再生·增弹)、麦芽提取物(促代谢·细腻)、稻胚芽提取物(补营养·延缓衰老)、水解麦芽提取物(抗氧化·增弹)'},{n:'紫朱牛舌草根萃取物',b:'治愈肌肤微损伤，强化屏障，提升抵御力'},{n:'可可提取物',b:'保湿，抗光老，消水肿'}], usage:'洁面后，取适量用化妆棉顺肌肤纹理轻轻擦拭至吸收，或轻拍于面部至吸收。' },
-          tw: { tagline:'蘊含濃縮紅參發酵原漿，水潤·舒展·撫紋', features:['潤澤保濕，提高肌膚蓄水力，撫平乾紋細紋','抑氧抵御光老化'], ingredients:[{n:'濃縮紅參發酵原漿',b:'高溫蒸制+雙重發酵，大分子轉化小分子，促膠原彈性纖維生成'},{n:'四大種子能量發酵物',b:'稻·麥芽·稻胚芽·水解麥芽提取物，綜合抗衰'},{n:'紫朱牛舌草根萃取物',b:'修復微損傷，強化屏障'},{n:'可可提取物',b:'保濕，抗光老，消水腫'}], usage:'潔面後，取適量用化妝棉順肌膚紋理擦拭，或輕拍至吸收。' },
-          en: { tagline:'Concentrated fermented red ginseng toner — moisture, radiance, and fine-line smoothing.', features:['Deep hydration, builds moisture capacity, smooths fine dry lines','Antioxidant protection against photoaging'], ingredients:[{n:'Concentrated Fermented Red Ginseng',b:'Steam-processed + bio-fermented — converted to small molecules for deep penetration; promotes collagen and elastin'},{n:'4 Seed Energy Ferments',b:'Rice (collagen boost), Malt (metabolism), Rice Germ (nourishment), Hydrolyzed Malt (antioxidant + elasticity)'},{n:'Symphytum Officinale Root Extract',b:'Repairs micro-damage, strengthens barrier'},{n:'Cocoa Extract',b:'Moisturizes, anti-photoaging, reduces puffiness'}], usage:'After cleansing, apply with cotton pad along skin texture or gently pat onto face.' },
-          ko: { tagline:'농축 발효 홍삼 원액 토너 — 보습·광채·잔주름 케어', features:['깊은 보습, 수분 축적 능력 향상, 건성 잔주름 개선','항산화·광노화 방어'], ingredients:[{n:'농축 발효 홍삼 원액',b:'고온 증제 + 생물 발효로 소분자 전환, 피부 깊숙이 침투, 콜라겐·탄성섬유 생성 촉진'},{n:'4대 씨앗 에너지 발효물',b:'쌀(콜라겐 촉진)·맥아(대사 촉진)·쌀눈(영양 보충)·가수분해 맥아(항산화·탄력)'},{n:'심피툼 뿌리 추출물',b:'미세 손상 수복, 장벽 강화'},{n:'코코아 추출물',b:'보습, 광노화 방어, 붓기 완화'}], usage:'세안 후 화장솜에 적셔 피부결 따라 닦아내거나 가볍게 두드려 흡수.' },
+          zh: { tagline:'水润 · 舒展 · 抚纹', features:['浓缩红参发酵原浆+四大种子能量，密集补水抗皱','舒展细纹，持效紧致提升面部轮廓'], ingredients:[{n:'浓缩红参发酵原浆',b:'高能抗老，激活肌肤活力'},{n:'四大种子能量发酵物',b:'深层滋养，提升紧致弹性'},{n:'紫朱牛舌草根萃取物',b:'舒缓抗炎，辅助抗皱'},{n:'可可提取物',b:'抗氧化，促进胶原合成'}], usage:'洁面后，取适量用化妆棉擦拭全脸，或双手轻拍至吸收。' },
+          tw: { tagline:'水潤 · 舒展 · 撫紋', features:['濃縮紅參發酵原漿+四大種子能量，密集補水抗皺','舒展細紋，持效緊致提升面部輪廓'], ingredients:[{n:'濃縮紅參發酵原漿',b:'高能抗老，激活肌膚活力'},{n:'四大種子能量發酵物',b:'深層滋養，提升緊致彈性'},{n:'紫朱牛舌草根萃取物',b:'舒緩抗炎，輔助抗皺'},{n:'可可提取物',b:'抗氧化，促進膠原合成'}], usage:'潔面後，取適量用化妝棉擦拭全臉，或雙手輕拍至吸收。' },
+          en: { tagline:'Hydrate, smooth, and lift — powered by fermented red ginseng.', features:['Concentrated red ginseng ferment + four-seed energy complex for deep anti-aging','Smooths fine lines and firms facial contours with sustained effect'], ingredients:[{n:'Concentrated Red Ginseng Ferment',b:'High-potency anti-aging, activates skin vitality'},{n:'Four-Seed Energy Ferment Complex',b:'Deep nourishment, boosts elasticity and firmness'},{n:'Alkanna Root Extract',b:'Soothes, anti-inflammatory, supports wrinkle reduction'},{n:'Cacao Extract',b:'Antioxidant, stimulates collagen synthesis'}], usage:'After cleansing, wipe over face with a cotton pad or gently pat in with both hands until absorbed.' },
+          ko: { tagline:'수분 · 부드러움 · 잔주름 케어', features:['농축 홍삼 발효 원액 + 4종 씨앗 에너지로 밀집 항노화','잔주름 완화, 지속적인 탄력·리프팅 효과'], ingredients:[{n:'농축 홍삼 발효 원액',b:'고효능 항노화, 피부 활력 활성화'},{n:'4종 씨앗 에너지 발효물',b:'깊은 영양 공급, 탄력·결 향상'},{n:'알카나 루트 추출물',b:'진정·항염, 주름 개선'},{n:'카카오 추출물',b:'항산화, 콜라겐 합성 촉진'}], usage:'세안 후 화장솜으로 닦아내거나 손바닥으로 가볍게 두드려 흡수시킵니다.' },
         },
       },
       {
         img: 'images/Youth%20Cohesion%20Radiant%20Serum.png',
-        en:  { name:'Youth Cohesion Radiant Serum', size:'50ml',  desc:'Plant oils repair micro-damage and strengthen the barrier.' },
-        ko:  { name:'유스코히즌 레디언트 세럼',    size:'50ml',  desc:'다중 천연 식물 오일. 미세 손상 리페어, 장벽 강화.' },
-        zh:  { name:'凝萃芳华焕颜精华乳', size:'50ml',  desc:'多重天然植物油，修护微损伤强化屏障，淡纹抗衰。' },
-        tw:  { name:'凝萃芳華煥顏精華乳', size:'50ml',  desc:'多重天然植物油，修護微損傷強化屏障，淡紋抗衰。' },
+        en:  { name:'Youth Cohesion Radiant Serum+', size:'50ml', desc:'Activates cellular energy to visibly redefine facial contours.' },
+        ko:  { name:'유스 코히전 래디언트 세럼+',   size:'50ml', desc:'세포 활력을 끌어올려 얼굴 윤곽을 다시 그립니다.' },
+        zh:  { name:'凝萃芳华焕颜精华乳+',          size:'50ml', desc:'调动细胞活力，重塑面部轮廓，密集抗皱。' },
+        tw:  { name:'凝萃芳華煥顏精華乳+',          size:'50ml', desc:'調動細胞活力，重塑面部輪廓，密集抗皺。' },
         detail: {
-          zh: { tagline:'调动细胞活力，重塑面部轮廓，从肌底对抗衰老', features:['抗皱御龄，高效淡纹，强化角质屏障','激活细胞再生动力，对抗真皮胶原流失'], ingredients:[{n:'浓缩红参发酵原浆',b:'双重发酵，直达肌底促胶原弹性纤维生成'},{n:'四大种子能量发酵物',b:'稻·麦芽·稻胚芽·水解麦芽综合抗衰'},{n:'多重天然植物油（角鲨烷·澳洲坚果籽油·向日葵籽油·毛瑞榈果油·牛油果树果脂）',b:'富含优质不饱和脂肪酸，补充细胞间脂质，增弹光泽，修护屏障'},{n:'可可提取物（可可碱·咖啡因·原花青素）',b:'抗氧化，对抗慢性炎症'}], usage:'每日早晚爽肤水后，取适量于指尖或掌心，涂抹面部轻轻按摩至吸收。' },
-          tw: { tagline:'調動細胞活力，重塑面部輪廓，從肌底對抗衰老', features:['抗皺御齡，高效淡紋，強化角質屏障','激活細胞再生動力，對抗真皮膠原流失'], ingredients:[{n:'濃縮紅參發酵原漿',b:'促膠原彈性纖維生成'},{n:'四大種子能量發酵物',b:'綜合抗衰'},{n:'多重天然植物油（角鯊烷·夏威夷果仁油·向日葵籽油等）',b:'補充細胞間脂質，增彈光澤，修護屏障'},{n:'可可提取物',b:'抗氧化，抗慢性炎症'}], usage:'每日早晚爽膚水後，取適量塗抹面部輕按至吸收。' },
-          en: { tagline:'Activates cellular vitality, reshapes facial contours — anti-aging from deep within.', features:['Anti-wrinkle, deeply smooths fine lines, reinforces keratin barrier','Stimulates cellular regeneration, counteracts collagen loss in the dermis'], ingredients:[{n:'Concentrated Fermented Red Ginseng',b:'Dual-fermented, penetrates deeply to stimulate collagen and elastin'},{n:'4 Seed Energy Ferments',b:'Rice, Malt, Rice Germ, Hydrolyzed Malt — comprehensive anti-aging'},{n:'Multi Plant Oil Blend (squalane, macadamia, sunflower, maracuja, shea)',b:'Rich in unsaturated fatty acids — fills intercellular lipid gaps, boosts glow and elasticity'},{n:'Cocoa Extract (theobromine · caffeine · proanthocyanidins)',b:'Antioxidant, combats chronic inflammation'}], usage:'Morning and evening after toning — apply a small amount and gently massage into face.' },
-          ko: { tagline:'세포 활력 회복, 얼굴 윤곽 재건 — 피부 깊은 곳에서 노화에 대응', features:['항주름·항노화, 잔주름 집중 케어, 각질 장벽 강화','세포 재생 동력 활성화, 진피 콜라겐 손실 대응'], ingredients:[{n:'농축 발효 홍삼 원액',b:'이중 발효, 깊은 침투, 콜라겐·탄성섬유 촉진'},{n:'4대 씨앗 에너지 발효물',b:'종합 항노화'},{n:'다중 천연 식물성 오일 (스쿠알란·마카다미아·해바라기씨유·마라쿠자·시어버터)',b:'세포간지질 보충, 광채·탄력 향상, 장벽 수복'},{n:'코코아 추출물 (테오브로민·카페인·프로안토시아닌)',b:'항산화, 만성 염증 대응'}], usage:'아침저녁 토너 후 소량을 얼굴에 도포하고 마사지합니다.' },
+          zh: { tagline:'调动细胞活力 · 重塑面部轮廓', features:['调动细胞活力，从根本抗皱改善松弛','多重天然植物油深度滋养，重塑紧致轮廓'], ingredients:[{n:'浓缩红参发酵原浆',b:'高能激活，密集抗老'},{n:'四大种子能量发酵物',b:'深层修复，提升细胞活力'},{n:'多重天然植物油',b:'深层滋养，修护屏障'},{n:'可可提取物',b:'抗氧化，促进胶原合成'}], usage:'每日早晚爽肤水之后，取适量轻轻按摩于面部及颈部至完全吸收。' },
+          tw: { tagline:'調動細胞活力 · 重塑面部輪廓', features:['調動細胞活力，從根本抗皺改善鬆弛','多重天然植物油深度滋養，重塑緊致輪廓'], ingredients:[{n:'濃縮紅參發酵原漿',b:'高能激活，密集抗老'},{n:'四大種子能量發酵物',b:'深層修復，提升細胞活力'},{n:'多重天然植物油',b:'深層滋養，修護屏障'},{n:'可可提取物',b:'抗氧化，促進膠原合成'}], usage:'每日早晚爽膚水之後，取適量輕輕按摩於面部及頸部至完全吸收。' },
+          en: { tagline:'Activate cellular energy and redefine your facial contours.', features:['Stimulates cellular vitality to fight wrinkles and sagging from within','Multi-botanical oil complex nourishes deeply and restores definition'], ingredients:[{n:'Concentrated Red Ginseng Ferment',b:'High-potency activation, intensive anti-aging'},{n:'Four-Seed Energy Ferment',b:'Deep repair, boosts cellular vitality'},{n:'Multi-Botanical Oil Complex',b:'Deep nourishment, barrier repair'},{n:'Cacao Extract',b:'Antioxidant, collagen-stimulating'}], usage:'Morning and evening after toning, apply a small amount and massage gently into face and neck until fully absorbed.' },
+          ko: { tagline:'세포 활력 활성화 · 얼굴 윤곽 재정립', features:['세포 활력을 끌어올려 주름·처짐을 근본적으로 개선','복합 천연 식물성 오일로 깊은 영양 공급 및 윤곽 복원'], ingredients:[{n:'농축 홍삼 발효 원액',b:'고효능 활성화, 밀집 항노화'},{n:'4종 씨앗 에너지 발효물',b:'깊은 수복, 세포 활력 향상'},{n:'복합 천연 식물성 오일',b:'깊은 영양, 장벽 수복'},{n:'카카오 추출물',b:'항산화, 콜라겐 합성'}], usage:'매일 아침저녁 토너 후 적당량을 얼굴·목에 가볍게 마사지해 흡수시킵니다.' },
         },
       },
       {
         img: 'images/Youth%20Cohesion%20Radiant%20Lotion.png',
-        en:  { name:'Youth Cohesion Radiant Lotion', size:'130ml', desc:'Squalane and ceramides smooth fine lines — rich yet light.' },
-        ko:  { name:'유스코히즌 레디언트 로션',    size:'130ml', desc:'식물성 스쿠알란·세라마이드로 잔주름 케어, 산뜻.' },
-        zh:  { name:'凝萃芳华焕颜乳',     size:'130ml', desc:'植物角鲨烷协同神经酰胺，强韧屏障，舒展淡纹。' },
-        tw:  { name:'凝萃芳華煥顏乳',     size:'130ml', desc:'植物角鯊烷協同神經醯胺，強韌屏障，舒展淡紋。' },
+        en:  { name:'Youth Cohesion Radiant Lotion+', size:'130ml', desc:'Plump and bouncy skin — smooths fine lines without heaviness.' },
+        ko:  { name:'유스 코히전 래디언트 로션+',   size:'130ml', desc:'탱탱하게 부풀어 오르는 피부, 가볍게 잔주름 완화.' },
+        zh:  { name:'凝萃芳华焕颜乳+',              size:'130ml', desc:'嘭弹饱满，舒展淡纹，润而不腻。' },
+        tw:  { name:'凝萃芳華煥顏乳+',              size:'130ml', desc:'澎彈飽滿，舒展淡紋，潤而不膩。' },
         detail: {
-          zh: { tagline:'浓缩稠乳质地，舒展淡纹，润而不腻，嘭弹饱满', features:['抗皱御龄，植物角鲨烷协同神经酰胺，强韧屏障','润而不腻，嘭弹饱满'], ingredients:[{n:'浓缩红参发酵原浆',b:'直达肌底，促胶原弹性纤维'},{n:'四大种子能量发酵物（稻·麦芽·稻胚芽·水解麦芽）',b:'综合抗衰'},{n:'酵母菌发酵产物',b:'增加皮肤弹性，收敛毛孔，改善肤质'},{n:'牛油果树果脂·毛瑞榈果油·向日葵籽油',b:'修复，改善粗糙，提升紧实度'},{n:'神经酰胺',b:'修复屏障，淡化皱纹'}], usage:'每日早晚精华液后，取适量于指尖或掌心，涂抹面部轻轻按摩至吸收。' },
-          tw: { tagline:'濃縮稠乳質地，舒展淡紋，潤而不膩，澎彈飽滿', features:['抗皺御齡，植物角鯊烷協同神經醯胺，強韌屏障','潤而不膩，澎彈飽滿'], ingredients:[{n:'濃縮紅參發酵原漿',b:'促膠原彈性纖維'},{n:'四大種子能量發酵物',b:'綜合抗衰'},{n:'酵母菌發酵產物',b:'增彈，收斂毛孔'},{n:'牛油果樹果脂·向日葵籽油',b:'修復，提升緊實度'},{n:'神經醯胺',b:'修復屏障，淡化皺紋'}], usage:'每日早晚精華液後，取適量塗抹面部輕按至吸收。' },
-          en: { tagline:'A rich-yet-light lotion with squalane and ceramides — smooths fine lines and fortifies the barrier.', features:['Anti-wrinkle, plant squalane synergizes with ceramides for barrier strength','Plumping and bouncy skin feel, never greasy'], ingredients:[{n:'Concentrated Fermented Red Ginseng',b:'Penetrates deep to promote collagen and elastin'},{n:'4 Seed Energy Ferments',b:'Comprehensive anti-aging complex'},{n:'Yeast Ferment',b:'Boosts elasticity, tightens pores, improves texture'},{n:'Shea Butter · Maracuja Oil · Sunflower Oil',b:'Repairs, smooths roughness, firms skin'},{n:'Ceramide',b:'Restores barrier, softens fine lines'}], usage:'Morning and evening after serum — apply a small amount and gently massage into face.' },
-          ko: { tagline:'스쿠알란·세라마이드 함유 진한 로션 — 잔주름 케어와 장벽 강화', features:['항주름, 식물성 스쿠알란과 세라마이드로 장벽 강화','탱탱하고 통통한 피부감, 논오일리'], ingredients:[{n:'농축 발효 홍삼 원액',b:'콜라겐·탄성섬유 촉진'},{n:'4대 씨앗 에너지 발효물',b:'종합 항노화'},{n:'효모 발효물',b:'탄력 증가, 모공 수축'},{n:'시어버터·마라쿠자오일·해바라기씨유',b:'수복, 피부결 개선, 탄력'},{n:'세라마이드',b:'장벽 수복, 잔주름 완화'}], usage:'아침저녁 세럼 후 소량을 얼굴에 도포하고 마사지합니다.' },
+          zh: { tagline:'嘭弹饱满 · 舒展淡纹 · 润而不腻', features:['嘭弹饱满，提升含水量与肌肤弹性','润而不腻，舒展淡化表情细纹'], ingredients:[{n:'浓缩红参发酵原浆',b:'高能激活抗老'},{n:'酵母菌发酵产物',b:'提亮均匀肤色'},{n:'牛油果树果脂',b:'深层滋润，锁水保湿'},{n:'神经酰胺',b:'强化屏障，防止水分流失'}], usage:'每日早晚精华液之后，取适量均匀涂抹全脸，轻柔按摩至吸收。' },
+          tw: { tagline:'澎彈飽滿 · 舒展淡紋 · 潤而不膩', features:['澎彈飽滿，提升含水量與肌膚彈性','潤而不膩，舒展淡化表情細紋'], ingredients:[{n:'濃縮紅參發酵原漿',b:'高能激活抗老'},{n:'酵母菌發酵產物',b:'提亮均勻膚色'},{n:'牛油果樹果脂',b:'深層滋潤，鎖水保濕'},{n:'神經醯胺',b:'強化屏障，防止水分流失'}], usage:'每日早晚精華液之後，取適量均勻塗抹全臉，輕柔按摩至吸收。' },
+          en: { tagline:'Plump, bouncy, and line-smoothing — rich without heaviness.', features:['Plumps skin and boosts moisture elasticity','Lightweight richness smooths expression lines without feeling heavy'], ingredients:[{n:'Concentrated Red Ginseng Ferment',b:'High-potency anti-aging activation'},{n:'Yeast Ferment',b:'Brightens and evens skin tone'},{n:'Shea Butter',b:'Deep moisture, locks in hydration'},{n:'Ceramide',b:'Fortifies barrier, prevents moisture loss'}], usage:'Morning and evening after serum, apply evenly over face and massage gently until absorbed.' },
+          ko: { tagline:'탱탱 풍성하게 · 잔주름 완화 · 촉촉하고 산뜻하게', features:['탱탱하게 부풀어 오르는 피부, 수분·탄력 향상','가볍게 잔주름 완화, 기름지지 않음'], ingredients:[{n:'농축 홍삼 발효 원액',b:'고효능 항노화'},{n:'효모 발효물',b:'미백·균일한 피부톤'},{n:'시어버터',b:'깊은 보습, 수분 잠금'},{n:'세라마이드',b:'장벽 강화, 수분 손실 방지'}], usage:'매일 아침저녁 세럼 후 균일하게 바르고 가볍게 마사지해 흡수시킵니다.' },
         },
       },
       {
         img: 'images/Youth%20Cohesion%20Radiant%20Cream.png',
-        en:  { name:'Youth Cohesion Radiant Cream', size:'50g',   desc:'Adenosine and herbal ferment replenish cellular energy.' },
-        ko:  { name:'유스코히즌 레디언트 크림',    size:'50g',   desc:'아데노신·허브 발효로 세포 에너지 충전, 탄력 케어.' },
-        zh:  { name:'凝萃芳华焕颜霜',     size:'50g',   desc:'腺苷与草本发酵，补充细胞能量促胶原合成。' },
-        tw:  { name:'凝萃芳華煥顏霜',     size:'50g',   desc:'腺苷與草本發酵，補充細胞能量促膠原合成。' },
+        en:  { name:'Youth Cohesion Radiant Cream+', size:'50g', desc:'High-potency ferment complex — deep anti-aging and skin radiance.' },
+        ko:  { name:'유스 코히전 래디언트 크림+',   size:'50g', desc:'고효능 발효 복합체로 밀집 항노화 및 빛나는 피부.' },
+        zh:  { name:'凝萃芳华焕颜霜+',              size:'50g', desc:'高能酵醒，抗衰御龄，焕发肌肤年轻光彩。' },
+        tw:  { name:'凝萃芳華煥顏霜+',              size:'50g', desc:'高能酵醒，抗衰御齡，煥發肌膚年輕光彩。' },
         detail: {
-          zh: { tagline:'奶酪般丝滑质地，高能酵醒，抗衰御龄，焕活细胞青春力', features:['抗皱御龄，重塑肌肤细腻柔滑','促胶原合成，强化真皮立体支撑，提升弹韧力'], ingredients:[{n:'浓缩红参发酵原浆',b:'双重发酵，促胶原弹性纤维生成'},{n:'四大种子能量发酵物',b:'综合抗衰'},{n:'腺苷',b:'加速细胞能量代谢，修复DNA，促胶原合成，防止组织松弛'},{n:'复配焕颜油',b:'抚平干纹细纹，重塑表皮平滑度，焕活青春力'},{n:'草本发酵复合物',b:'抗氧化，促进细胞再生，抵御衰老'}], usage:'每日早晚护肤最后阶段，取适量于指尖或掌心，涂抹面部轻轻按摩至吸收。' },
-          tw: { tagline:'奶酪般絲滑質地，高能酵醒，抗衰御齡，煥活細胞青春力', features:['抗皺御齡，重塑肌膚細膩柔滑','促膠原合成，強化真皮支撐，提升彈韌力'], ingredients:[{n:'濃縮紅參發酵原漿',b:'促膠原彈性纖維生成'},{n:'四大種子能量發酵物',b:'綜合抗衰'},{n:'腺苷',b:'加速細胞能量代謝，修復DNA，促膠原合成'},{n:'複配煥顏油',b:'撫平乾紋細紋，重塑表皮平滑度'},{n:'草本發酵複合物',b:'抗氧化，促細胞再生'}], usage:'每日護膚最後階段，取適量塗抹面部輕按至吸收。' },
-          en: { tagline:'A cheese-soft cream that re-energizes cells, promotes collagen synthesis, and fights aging.', features:['Anti-wrinkle, reshapes skin texture for silky, fine-grained skin','Stimulates collagen synthesis, reinforces dermal support, improves elasticity'], ingredients:[{n:'Concentrated Fermented Red Ginseng',b:'Dual-fermented, stimulates collagen and elastin production'},{n:'4 Seed Energy Ferments',b:'Comprehensive anti-aging complex'},{n:'Adenosine',b:'Accelerates cellular energy metabolism, repairs DNA, stimulates collagen, prevents tissue sagging'},{n:'Radiance Oil Complex',b:'Smooths fine lines, reshapes surface smoothness, revives youthful skin'},{n:'Herbal Ferment Complex',b:'Antioxidant, promotes cell regeneration'}], usage:'Final step of morning and evening skincare — apply a small amount and gently massage into face.' },
-          ko: { tagline:'치즈처럼 부드러운 크림 — 세포 에너지 재충전, 콜라겐 합성 촉진, 항노화', features:['항주름·항노화, 매끄럽고 탄탄한 피부결 재건','콜라겐 합성 촉진, 진피 지지 구조 강화, 탄력 향상'], ingredients:[{n:'농축 발효 홍삼 원액',b:'이중 발효, 콜라겐·탄성섬유 생성 촉진'},{n:'4대 씨앗 에너지 발효물',b:'종합 항노화'},{n:'아데노신',b:'세포 에너지 대사 가속, DNA 수복, 콜라겐 합성, 조직 처짐 방지'},{n:'광채 오일 복합체',b:'건성 잔주름 개선, 표피 매끄러움 재건'},{n:'한방 발효 복합체',b:'항산화, 세포 재생 촉진'}], usage:'아침저녁 스킨케어 마지막 단계에 소량을 얼굴에 도포하고 마사지합니다.' },
+          zh: { tagline:'高能酵醒 · 抗衰御龄', features:['高能酵醒，密集抗衰老，御龄奢护','腺苷+草本发酵复合物，重塑年轻面貌'], ingredients:[{n:'浓缩红参发酵原浆',b:'高能酵醒，抗衰御龄'},{n:'腺苷',b:'淡化皱纹，提升紧致感'},{n:'复配焕颜油',b:'深层滋润，恢复光泽'},{n:'草本发酵复合物',b:'协同抗老，稳定修护'}], usage:'每日早晚基础护肤最后阶段，取适量均匀涂抹全脸，轻柔按摩至吸收。' },
+          tw: { tagline:'高能酵醒 · 抗衰御齡', features:['高能酵醒，密集抗衰老，御齡奢護','腺苷+草本發酵複合物，重塑年輕面貌'], ingredients:[{n:'濃縮紅參發酵原漿',b:'高能酵醒，抗衰御齡'},{n:'腺苷',b:'淡化皺紋，提升緊致感'},{n:'複配煥顏油',b:'深層滋潤，恢復光澤'},{n:'草本發酵複合物',b:'協同抗老，穩定修護'}], usage:'每日早晚基礎護膚最後階段，取適量均勻塗抹全臉，輕柔按摩至吸收。' },
+          en: { tagline:'High-potency ferment activation — intense anti-aging for timeless skin.', features:['Ferment-powered anti-aging targets signs of aging from multiple pathways','Adenosine and botanical ferment complex visibly restores youthful appearance'], ingredients:[{n:'Concentrated Red Ginseng Ferment',b:'High-potency ferment activation, intense anti-aging'},{n:'Adenosine',b:'Visibly reduces wrinkles, improves firmness'},{n:'Glow Oil Complex',b:'Deep moisture, restores luminosity'},{n:'Botanical Ferment Complex',b:'Synergistic anti-aging, stable repair'}], usage:'As the last step in your morning and evening routine, apply evenly over face and massage gently until absorbed.' },
+          ko: { tagline:'고효능 발효 활성화 · 항노화 · 젊음 복원', features:['발효 에너지로 다각도 항노화, 고효능 케어','아데노신+초본 발효 복합체로 젊은 피부 복원'], ingredients:[{n:'농축 홍삼 발효 원액',b:'고효능 발효 활성화, 밀집 항노화'},{n:'아데노신',b:'주름 완화, 탄력 향상'},{n:'글로우 오일 복합체',b:'깊은 보습, 광택 복원'},{n:'초본 발효 복합체',b:'복합 항노화, 안정적 수복'}], usage:'매일 아침저녁 기초 스킨케어 마지막 단계로, 균일하게 바르고 가볍게 마사지해 흡수시킵니다.' },
         },
       },
     ]
   },
   {
     id: 'eye-care',
-    label: { en:'Eye Care', ko:'아이케어', zh:'多肽眼部', tw:'多肽眼部' },
+    label: { en:'Eye Care', ko:'아이 케어', zh:'眼部护理', tw:'眼部護理' },
     name:  { en:'Peptide <em>Eye Care</em>', ko:'펩타이드 <em>아이 케어</em>', zh:'肽魅力 <em>眼部护理</em>', tw:'肽魅力 <em>眼部護理</em>' },
     products: [
       {
         img: 'images/Peptide%20Charming%20Eye%20Cream.png',
-        en:  { name:'Peptide Charming Eye Cream', size:'30g', desc:'Four peptides + herbal ferment — eye cream and mask in one.' },
-        ko:  { name:'펩타이드 매력 아이크림',      size:'30g', desc:'4종 펩타이드 복합으로 눈가 주름, 한방 발효로 부기 케어.' },
-        zh:  { name:'肽魅力眼霜',                  size:'30g', desc:'4种多肽对抗眼纹，韩方发酵祛浮肿，眼霜兼眼膜。' },
-        tw:  { name:'肽魅力眼霜',                  size:'30g', desc:'4種多肽對抗眼紋，韓方發酵祛浮腫，眼霜兼眼膜。' },
+        en:  { name:'Peptide Charming Eye Cream', size:'30g', desc:'Multi-peptide complex targets eye wrinkles, puffiness, and blue light damage.' },
+        ko:  { name:'펩타이드 차밍 아이 크림',    size:'30g', desc:'복합 펩타이드로 눈가 잔주름·붓기·블루라이트 대응.' },
+        zh:  { name:'肽魅力眼霜',                  size:'30g', desc:'多肽复配，对抗眼纹，抵御蓝光，全效护眼。' },
+        tw:  { name:'肽魅力眼霜',                  size:'30g', desc:'多肽複配，對抗眼紋，抵禦藍光，全效護眼。' },
         detail: {
-          zh: { tagline:'全效型眼霜，多肽复配，眼霜兼眼膜，对抗蓝光和眼部老化', features:['4种多肽+2种乳酸杆菌发酵，全面抗皱紧致嘭润','促循环消浮肿，告别眼部暗沉和脂肪粒','抵御氧化和蓝光损伤'], ingredients:[{n:'白花春黄菊花油',b:'舒缓抗敏，润泽保湿'},{n:'4种多肽（乙酰基六肽-8·三肽-1铜·棕榈酰四肽-7·棕榈酰五肽-4）',b:'活化成纤维母细胞，刺激胶原和弹力纤维再生，平抚眼纹'},{n:'可可提取物（可可碱·咖啡因·原花青素）',b:'促代谢排水肿，紧致眼周'},{n:'韩方米循环发酵精粹',b:'抗蓝光，淡化黑眼圈，预防油脂粒'}], usage:'【眼霜】每天早晚爽肤后，取适量点涂于眼周，打圈按摩至完全吸收。【眼膜】爽肤后，取适量厚涂于眼周，停留10-15分钟，按摩至吸收，无需清洗。' },
-          tw: { tagline:'全效型眼霜，多肽複配，眼霜兼眼膜，對抗藍光和眼部老化', features:['4種多肽+2種乳酸桿菌發酵，全面抗皺緊致澎潤','促循環消浮腫，告別眼部暗沉和脂肪粒','抵御氧化和藍光損傷'], ingredients:[{n:'白花春黃菊花油',b:'舒緩抗敏，潤澤保濕'},{n:'4種多肽（乙醯基六肽-8·三肽-1銅·棕櫚醯四肽-7·棕櫚醯五肽-4）',b:'刺激膠原和彈力纖維再生，撫平眼紋'},{n:'可可提取物（可可鹼·咖啡因·原花青素）',b:'促代謝排水腫，緊致眼周'},{n:'韓方米循環發酵精粹',b:'抗藍光，淡化黑眼圈，預防油脂粒'}], usage:'【眼霜】每天早晚爽膚後，取適量點塗眼周，打圈按摩至吸收。【眼膜】取適量厚塗眼周，停留10-15分鐘，按摩至吸收。' },
-          en: { tagline:'All-in-one eye cream and mask — peptides, ferment, and anti-blue-light protection for the eye zone.', features:['4 peptides + 2 lactobacillus ferments — anti-wrinkle, firming, plumping','Promotes circulation, eliminates puffiness, prevents milia and dark circles','Guards against oxidation and blue-light damage'], ingredients:[{n:'Anthemis Nobilis Flower Oil',b:'Soothes sensitivity, deeply moisturizes'},{n:'4 Peptides (acetyl hexapeptide-8 · copper tripeptide-1 · palmitoyl tetrapeptide-7 · palmitoyl pentapeptide-4)',b:'Activates fibroblasts, stimulates collagen and elastin regeneration'},{n:'Cocoa Extract (theobromine · caffeine · proanthocyanidins)',b:'Promotes circulation, reduces puffiness, firms eye contour'},{n:'Korean Fermented Rice Cycling Extract',b:'Anti-blue-light, fades dark circles, prevents milia'}], usage:'【As cream】 Morning & evening after toning — dot around eye area and massage in circles until absorbed. 【As mask】 Apply generously, leave 10–15 min, massage in — no rinsing needed.' },
-          ko: { tagline:'올인원 아이 크림 & 마스크 — 펩타이드, 발효 성분, 블루라이트 차단', features:['4종 펩타이드 + 2종 유산균 발효물 — 항주름, 탄력, 탱탱함','순환 촉진, 붓기 제거, 비립종 예방, 다크서클 개선','산화 방지 및 블루라이트 손상 방어'], ingredients:[{n:'카모마일 (안테미스 노빌리스) 플라워 오일',b:'민감성 진정, 깊은 보습'},{n:'4종 펩타이드 (아세틸 헥사펩타이드-8·구리 트리펩타이드-1·팔미토일 테트라펩타이드-7·팔미토일 펜타펩타이드-4)',b:'섬유아세포 활성화, 콜라겐·탄성섬유 재생, 눈가 주름 케어'},{n:'코코아 추출물 (테오브로민·카페인·프로안토시아닌)',b:'순환 촉진, 붓기 해소, 눈 주위 탄력'},{n:'한방 쌀 발효 정수',b:'블루라이트 차단, 다크서클 완화, 비립종 예방'}], usage:'【크림으로】 아침저녁 토너 후 눈 주위에 소량 점찍어 원을 그리며 흡수시킵니다. 【마스크로】 두텁게 도포 후 10~15분 유지 후 마사지하여 흡수, 세안 불필요.' },
+          zh: { tagline:'全效型眼霜 · 多肽复配 · 对抗眼纹 · 抵御蓝光', features:['4种多肽+2种乳酸杆菌，全面对抗眼周老化','抵御蓝光伤害，提亮暗沉减少眼周疲惫感'], ingredients:[{n:'白花春黄菊花油',b:'深层滋润眼周，舒缓安肌'},{n:'4种多肽+2种乳酸杆菌发酵物',b:'针对眼纹、细纹、松弛进行多维修复'},{n:'可可提取物',b:'抗氧化，促进眼周循环'},{n:'韩方米循环发酵精粹',b:'提亮暗沉，减少黑眼圈'}], usage:'每天早晚爽肤后，取少量点涂于眼周，由内向外轻轻按摩至吸收；或厚涂作眼膜，10-15分钟后轻拍至吸收。' },
+          tw: { tagline:'全效型眼霜 · 多肽複配 · 對抗眼紋 · 抵禦藍光', features:['4種多肽+2種乳酸桿菌，全面對抗眼周老化','抵禦藍光傷害，提亮暗沉減少眼周疲惫感'], ingredients:[{n:'白花春黃菊花油',b:'深層滋潤眼周，舒緩安肌'},{n:'4種多肽+2種乳酸桿菌發酵物',b:'針對眼紋、細紋、鬆弛進行多維修復'},{n:'可可提取物',b:'抗氧化，促進眼周循環'},{n:'韓方米循環發酵精粹',b:'提亮暗沉，減少黑眼圈'}], usage:'每天早晚爽膚後，取少量點塗於眼周，由內向外輕輕按摩至吸收；或厚塗作眼膜，10-15分鐘後輕拍至吸收。' },
+          en: { tagline:'Full-effect eye cream — peptide complex targets wrinkles, sagging, and blue light damage.', features:['4 peptides + 2 lactobacillus strains combat all major signs of eye aging','Shields against blue light, brightens dark circles and reduces puffiness'], ingredients:[{n:'Anthemis Nobilis Flower Oil',b:'Deeply nourishes and soothes delicate eye area'},{n:'4 Peptides + 2 Lactobacillus Ferments',b:'Multi-dimensional repair for wrinkles, fine lines, and sagging'},{n:'Cacao Extract',b:'Antioxidant, promotes circulation around eyes'},{n:'Korean Rice Ferment Filtrate',b:'Brightens dark circles and fatigue around eyes'}], usage:'Morning and evening after toning, dot a small amount around the eye area and gently massage from inner to outer corner; or apply thickly as an eye mask and pat in after 10–15 minutes.' },
+          ko: { tagline:'전효 아이 크림 · 복합 펩타이드 · 눈가 주름 · 블루라이트 차단', features:['4종 펩타이드 + 2종 유산균으로 눈가 노화 전방위 대응','블루라이트 차단, 다크서클·피로 완화'], ingredients:[{n:'캐모마일 플라워 오일',b:'눈가 깊은 영양 공급 및 진정'},{n:'4종 펩타이드 + 2종 유산균 발효물',b:'눈가 주름·잔주름·처짐 다차원 수복'},{n:'카카오 추출물',b:'항산화, 눈가 순환 촉진'},{n:'한방 쌀 발효 정수',b:'다크서클 미백, 눈가 피로감 완화'}], usage:'매일 아침저녁 토너 후, 소량을 눈가에 점찍어 안에서 밖으로 가볍게 마사지해 흡수시키거나, 두껍게 바르고 10~15분 후 가볍게 두드려 흡수시킵니다.' },
+        },
+      },
+    ]
+  },
+  {
+    id: 'soothing',
+    label: { en:'Soothing', ko:'진정', zh:'鲟鱼子酱', tw:'鱘魚子醬' },
+    name:  { en:'Caviar <em>Soothing</em>', ko:'캐비아 <em>진정 시리즈</em>', zh:'鲟鱼子酱 <em>舒缓系列</em>', tw:'鱘魚子醬 <em>舒緩系列</em>' },
+    products: [
+      {
+        img: 'images/Caviar%20Soothing%20Toner.png',
+        en:  { name:'Caviar Soothing Toner',  size:'130ml', desc:'Instantly hydrates, soothes sensitivity, and banishes redness.' },
+        ko:  { name:'캐비아 수딩 토너',         size:'130ml', desc:'즉각 수분 공급, 민감 진정, 홍조 완화.' },
+        zh:  { name:'鲟鱼子酱舒缓水',          size:'130ml', desc:'速补水，强保湿，安肌舒缓，赶走泛红。' },
+        tw:  { name:'鱘魚子醬舒緩水',          size:'130ml', desc:'速補水，強保濕，安肌舒緩，趕走泛紅。' },
+        detail: {
+          zh: { tagline:'速补水 · 强保湿 · 安肌舒缓 · 赶走泛红', features:['鲟鱼子酱+7种草本专利，速效补水舒缓','有效镇静敏感，改善泛红不稳定肌肤'], ingredients:[{n:'鲟鱼子酱提取物',b:'高营养保湿，修护肌肤屏障'},{n:'库拉索芦荟提取物',b:'即时舒缓，消炎镇静'},{n:'7种草本专利配方',b:'安肌调肌，退红维稳'},{n:'海藻糖',b:'锁水保湿，增强肌肤耐受力'},{n:'积雪草提取物',b:'修护敏感，舒缓炎症'}], usage:'洁面后，取适量用化妆棉擦拭或轻拍于全脸，也可用于湿敷镇静5-8分钟。' },
+          tw: { tagline:'速補水 · 強保濕 · 安肌舒緩 · 趕走泛紅', features:['鱘魚子醬+7種草本專利，速效補水舒緩','有效鎮靜敏感，改善泛紅不穩定肌膚'], ingredients:[{n:'鱘魚子醬提取物',b:'高營養保濕，修護肌膚屏障'},{n:'庫拉索蘆薈提取物',b:'即時舒緩，消炎鎮靜'},{n:'7種草本專利配方',b:'安肌調肌，退紅維穩'},{n:'海藻糖',b:'鎖水保濕，增強肌膚耐受力'},{n:'積雪草提取物',b:'修護敏感，舒緩炎症'}], usage:'潔面後，取適量用化妝棉擦拭或輕拍於全臉，也可用於濕敷鎮靜5-8分鐘。' },
+          en: { tagline:'Instantly soothing — hydrates fast, calms sensitivity, and eliminates redness.', features:['Caviar extract + 7-herb complex delivers rapid hydration and calming','Effectively soothes reactive skin and reduces visible redness'], ingredients:[{n:'Caviar (Sturgeon Roe) Extract',b:'High-nutrition moisture, repairs skin barrier'},{n:'Aloe Barbadensis Leaf Extract',b:'Instant soothing, anti-inflammatory'},{n:'7-Herb Patented Formula',b:'Calms and stabilizes reactive skin'},{n:'Trehalose',b:'Locks in moisture, strengthens skin tolerance'},{n:'Centella Asiatica Extract',b:'Repairs sensitivity, soothes inflammation'}], usage:'After cleansing, wipe over face with cotton pad or gently pat all over; can also be used as a calming compress for 5–8 minutes.' },
+          ko: { tagline:'즉각 수분 · 강력 보습 · 진정 안정 · 홍조 완화', features:['캐비아 + 7종 한방 특허 배합으로 빠른 수분·진정','민감 피부를 효과적으로 안정시키고 홍조 개선'], ingredients:[{n:'캐비아(철갑상어알) 추출물',b:'고영양 보습, 피부 장벽 수복'},{n:'알로에베라 추출물',b:'즉각 진정, 항염'},{n:'7종 한방 특허 배합',b:'민감 피부 안정 및 홍조 완화'},{n:'트레할로스',b:'수분 잠금, 피부 내성 강화'},{n:'병풀 추출물',b:'민감 수복, 염증 완화'}], usage:'세안 후 화장솜으로 닦아내거나 가볍게 두드려 흡수시키거나, 5~8분간 습포 진정팩으로 활용합니다.' },
+        },
+      },
+      {
+        img: 'images/Caviar%20Ampoule.png',
+        en:  { name:'Caviar Ampoule',           size:'50ml', desc:'Intensive repair ampoule — activates skin\'s natural self-healing power.' },
+        ko:  { name:'캐비아 앰풀',               size:'50ml', desc:'피부 자연 자기 치유력을 활성화하는 고기능 앰풀.' },
+        zh:  { name:'鲟鱼子酱精华液',            size:'50ml', desc:'舒缓肌肤，激活肌肤自愈力，密集修护。' },
+        tw:  { name:'鱘魚子醬精華液',            size:'50ml', desc:'舒緩肌膚，激活肌膚自癒力，密集修護。' },
+        detail: {
+          zh: { tagline:'舒缓肌肤 · 激活肌肤自愈力', features:['激活肌肤自愈力，密集修护敏感肌','腺苷+β-葡聚糖，协同修护强化免疫屏障'], ingredients:[{n:'鲟鱼子酱提取物',b:'高营养深层修护'},{n:'库拉索芦荟提取物',b:'舒缓消炎，镇静敏感'},{n:'腺苷',b:'促进细胞再生，淡化细纹'},{n:'精氨酸',b:'修护受损肌肤屏障'},{n:'β-葡聚糖',b:'激活免疫防御，增强肌肤自愈力'}], usage:'每日早晚爽肤水之后，取适量于指腹轻柔按摩至吸收，再进行乳液或霜类护理。' },
+          tw: { tagline:'舒緩肌膚 · 激活肌膚自癒力', features:['激活肌膚自癒力，密集修護敏感肌','腺苷+β-葡聚糖，協同修護強化免疫屏障'], ingredients:[{n:'鱘魚子醬提取物',b:'高營養深層修護'},{n:'庫拉索蘆薈提取物',b:'舒緩消炎，鎮靜敏感'},{n:'腺苷',b:'促進細胞再生，淡化細紋'},{n:'精氨酸',b:'修護受損肌膚屏障'},{n:'β-葡聚糖',b:'激活免疫防禦，增強肌膚自癒力'}], usage:'每日早晚爽膚水之後，取適量於指腹輕柔按摩至吸收，再進行乳液或霜類護理。' },
+          en: { tagline:'Soothe and activate — intensively repairs while awakening skin\'s self-healing ability.', features:['Activates skin\'s natural self-healing power for intensive sensitive-skin repair','Adenosine + beta-glucan synergistically repair and strengthen the immune barrier'], ingredients:[{n:'Caviar Extract',b:'High-nutrition deep repair'},{n:'Aloe Extract',b:'Soothes and calms inflammation'},{n:'Adenosine',b:'Promotes cell renewal, reduces fine lines'},{n:'Arginine',b:'Repairs damaged skin barrier'},{n:'Beta-Glucan',b:'Activates immune defense, strengthens self-healing capacity'}], usage:'Morning and evening after toning, massage a small amount into skin with fingertips until absorbed, then continue with lotion or cream.' },
+          ko: { tagline:'진정 · 피부 자기 치유력 활성화', features:['피부 자기 치유력을 활성화해 민감 피부 집중 수복','아데노신 + 베타글루칸으로 면역 장벽 강화'], ingredients:[{n:'캐비아 추출물',b:'고영양 깊은 수복'},{n:'알로에 추출물',b:'진정·항염'},{n:'아데노신',b:'세포 재생 촉진, 잔주름 완화'},{n:'아르기닌',b:'손상 피부 장벽 수복'},{n:'베타글루칸',b:'면역 방어 활성화, 자기 치유력 강화'}], usage:'매일 아침저녁 토너 후, 지끝으로 가볍게 마사지해 흡수시킨 뒤 로션이나 크림을 이어 사용합니다.' },
+        },
+      },
+      {
+        img: 'images/Caviar%20Soothing%20Lotion.png',
+        en:  { name:'Caviar Soothing Lotion',  size:'130ml', desc:'Calms reactive skin with Japanese cypress and Siberian larch bark extracts.' },
+        ko:  { name:'캐비아 수딩 로션',          size:'130ml', desc:'편백나무·시베리아 낙엽송으로 민감 피부를 차분히 안정.' },
+        zh:  { name:'鲟鱼子酱舒缓乳',           size:'130ml', desc:'有效舒缓肌肤不安情绪，轻盈滋润，稳定肌肤。' },
+        tw:  { name:'鱘魚子醬舒緩乳',           size:'130ml', desc:'有效舒緩肌膚不安情緒，輕盈滋潤，穩定肌膚。' },
+        detail: {
+          zh: { tagline:'有效舒缓肌肤不安情绪', features:['轻盈乳液质地，舒缓敏感不安肌肤','日本扁柏+西伯利亚落叶松，天然抗敏修护'], ingredients:[{n:'鲟鱼子酱提取物',b:'营养修护，保湿稳肤'},{n:'库拉索芦荟提取物',b:'舒缓安抚，减少刺激'},{n:'日本扁柏叶提取物',b:'天然抗敏，舒缓皮肤刺激'},{n:'西伯利亚落叶松木提取物',b:'强化屏障，减少泛红'}], usage:'每日清洁爽肤后，取适量于手掌，均匀涂抹于面颈部，轻柔按摩至吸收。' },
+          tw: { tagline:'有效舒緩肌膚不安情緒', features:['輕盈乳液質地，舒緩敏感不安肌膚','日本扁柏+西伯利亞落葉松，天然抗敏修護'], ingredients:[{n:'鱘魚子醬提取物',b:'營養修護，保濕穩膚'},{n:'庫拉索蘆薈提取物',b:'舒緩安撫，減少刺激'},{n:'日本扁柏葉提取物',b:'天然抗敏，舒緩皮膚刺激'},{n:'西伯利亞落葉松木提取物',b:'強化屏障，減少泛紅'}], usage:'每日清潔爽膚後，取適量於手掌，均勻塗抹於面頸部，輕柔按摩至吸收。' },
+          en: { tagline:'Calms reactive, uneasy skin with nature-derived anti-sensitizing actives.', features:['Lightweight lotion texture soothes reactive and sensitive skin','Japanese cypress + Siberian larch provide natural anti-sensitizing repair'], ingredients:[{n:'Caviar Extract',b:'Nourishes and stabilizes skin with moisture'},{n:'Aloe Barbadensis Extract',b:'Soothes and reduces irritation'},{n:'Japanese Hinoki Cypress Leaf Extract',b:'Natural anti-sensitizing, calms skin irritation'},{n:'Siberian Larch Wood Extract',b:'Strengthens barrier, reduces redness'}], usage:'After daily cleansing and toning, take an appropriate amount and apply evenly over face and neck, massaging gently until absorbed.' },
+          ko: { tagline:'민감 피부를 차분하게 안정시키는 수딩 로션', features:['가벼운 로션 질감으로 민감·불안정 피부 진정','편백나무 + 시베리아 낙엽송으로 천연 항민감 수복'], ingredients:[{n:'캐비아 추출물',b:'영양 수복, 보습 안정'},{n:'알로에 추출물',b:'진정 안무, 자극 완화'},{n:'일본 편백잎 추출물',b:'천연 항민감, 자극 완화'},{n:'시베리아 낙엽송 추출물',b:'장벽 강화, 홍조 완화'}], usage:'매일 세안·토너 후 적당량을 손바닥에 덜어 얼굴·목에 균일하게 바르고 가볍게 마사지해 흡수시킵니다.' },
+        },
+      },
+      {
+        img: 'images/Caviar%20Essence%20Cream.png',
+        en:  { name:'Caviar Essence Cream',    size:'50g', desc:'Rich repair cream — soothes redness and keeps sensitive skin steadily calm.' },
+        ko:  { name:'캐비아 에센스 크림',        size:'50g', desc:'진한 수복 크림으로 홍조 진정·민감 피부 지속 안정.' },
+        zh:  { name:'鲟鱼子酱菁萃霜',          size:'50g', desc:'厚养舒缓，退红修护，持续维稳肌肤。' },
+        tw:  { name:'鱘魚子醬菁萃霜',          size:'50g', desc:'厚養舒緩，退紅修護，持續維穩肌膚。' },
+        detail: {
+          zh: { tagline:'厚养舒缓 · 退红修护 · 持续维稳', features:['厚养型霜体，密集修护敏感脆弱肌','退红修护，持续稳定维护皮肤屏障'], ingredients:[{n:'鲟鱼子酱提取物',b:'深层修护，高营养保湿'},{n:'库拉索芦荟提取物',b:'舒缓退红，消炎'},{n:'水解胶原',b:'深层滋润，促进屏障修复'},{n:'油橄榄果油',b:'抗氧化，锁水滋养'},{n:'腔昆布提取物',b:'持续维稳，增强屏障韧性'}], usage:'每日基础护肤最后阶段，取适量均匀涂抹全脸，轻柔按摩至吸收。' },
+          tw: { tagline:'厚養舒緩 · 退紅修護 · 持續維穩', features:['厚養型霜體，密集修護敏感脆弱肌','退紅修護，持續穩定維護皮膚屏障'], ingredients:[{n:'鱘魚子醬提取物',b:'深層修護，高營養保濕'},{n:'庫拉索蘆薈提取物',b:'舒緩退紅，消炎'},{n:'水解膠原',b:'深層滋潤，促進屏障修復'},{n:'油橄欖果油',b:'抗氧化，鎖水滋養'},{n:'腔昆布提取物',b:'持續維穩，增強屏障韌性'}], usage:'每日基礎護膚最後階段，取適量均勻塗抹全臉，輕柔按摩至吸收。' },
+          en: { tagline:'Rich, nourishing, and barrier-strengthening — soothes redness and keeps skin calmly stable.', features:['Rich cream texture intensively repairs sensitive and fragile skin','Reduces redness and maintains stable skin barrier over time'], ingredients:[{n:'Caviar Extract',b:'Deep repair, high-nutrition moisturizing'},{n:'Aloe Extract',b:'Soothes redness and inflammation'},{n:'Hydrolyzed Collagen',b:'Deep moisture, promotes barrier repair'},{n:'Olive Oil',b:'Antioxidant, nourishes and locks in moisture'},{n:'Ecklonia Cava Extract',b:'Sustained stabilization, strengthens barrier resilience'}], usage:'As the last step in your daily routine, apply evenly over face and massage gently until absorbed.' },
+          ko: { tagline:'두터운 영양 진정 · 홍조 수복 · 지속 안정', features:['두터운 크림 질감으로 민감·취약 피부 집중 수복','홍조 완화 후 피부 장벽을 지속적으로 안정 유지'], ingredients:[{n:'캐비아 추출물',b:'깊은 수복, 고영양 보습'},{n:'알로에 추출물',b:'진정·홍조 완화, 항염'},{n:'가수분해 콜라겐',b:'깊은 수분, 장벽 수복 촉진'},{n:'올리브오일',b:'항산화, 수분 잠금·영양'},{n:'에클로니아 카바 추출물',b:'지속 안정, 장벽 강도 향상'}], usage:'매일 기초 스킨케어 마지막 단계로, 균일하게 바르고 가볍게 마사지해 흡수시킵니다.' },
         },
       },
     ]
@@ -972,71 +933,71 @@ const SERIES = [
   {
     id: 'suncare',
     label: { en:'Sun Care', ko:'선케어', zh:'日光防护', tw:'日光防護' },
-    name:  { en:'Sun Care <em>& Makeup</em>', ko:'선케어 <em>& 메이크업</em>', zh:'日光防护 <em>& 彩妆</em>', tw:'日光防護 <em>& 彩妝</em>' },
+    name:  { en:'Sun Care <em>&</em> Makeup', ko:'선케어 <em>&</em> 메이크업', zh:'日光防护 <em>&</em> 彩妆', tw:'日光防護 <em>&</em> 彩妝' },
     products: [
       {
         img: 'images/Sun%20Cream%20waterproof.png',
-        en:  { name:'Sun Cream SPF45 PA++++', size:'50g',  desc:'Pure mineral. Water and sweat resistant.' },
-        ko:  { name:'선크림 SPF45 PA++++',    size:'50g',  desc:'순수 물리 선크림. 물·땀·번짐 차단.' },
-        zh:  { name:'防晒霜',                 size:'50g',  desc:'SPF45 PA++++纯物理，秒成膜防水防汗，敏肌孕妈可用。' },
-        tw:  { name:'防曬霜',                 size:'50g',  desc:'SPF45 PA++++純物理，秒成膜防水防汗，敏肌孕媽可用。' },
+        en:  { name:'Sun Cream Waterproof', size:'50g', desc:'NPUW full-spectrum UV protection with a skincare-forward formula. SPF45 PA++++.' },
+        ko:  { name:'선 크림 워터프루프',    size:'50g', desc:'NPUW 전광역 자외선 차단 + 피부 케어. SPF45 PA++++.' },
+        zh:  { name:'珂莉安防晒霜++',        size:'50g', desc:'NPUW全光谱防护，防晒养肤一体化。SPF45 PA++++。' },
+        tw:  { name:'珂莉安防曬霜++',        size:'50g', desc:'NPUW全光譜防護，防曬養膚一體化。SPF45 PA++++。' },
         detail: {
-          zh: { tagline:'SPF45 PA++++ 纯物理防晒，NPUW全光谱防护科技，防晒养肤一体化', features:['纯物理防晒，脆皮肌·孕妈·敏感肌安心使用','秒极成膜，轻薄透气，国际80分钟专业防水认证','防晒养肤一体化，无负担出行'], ingredients:[{n:'NPUW全光谱防护科技',b:'N微纳米物理防晒剂(安全高效) + P多孔亲水锁护技术(透气持久) + U微胶囊包裹(秒成膜) + W国际防水测试'},{n:'迷迭香叶油',b:'抑制晒后反应，抵御光损伤，安肌紧致，平衡油脂分泌'}], usage:'出门前取适量均匀涂抹面部，需要防水时提前涂抹，确保成膜效果。' },
-          tw: { tagline:'SPF45 PA++++ 純物理防曬，NPUW全光譜防護科技，防曬養膚一體化', features:['純物理防曬，脆皮肌·孕媽·敏感肌安心使用','秒極成膜，輕薄透氣，國際80分鐘專業防水認證','防曬養膚一體化'], ingredients:[{n:'NPUW全光譜防護科技',b:'N微奈米物理防曬劑 + P多孔親水鎖護 + U微膠囊包裹 + W國際防水測試'},{n:'迷迭香葉油',b:'抑制曬後反應，抵御光損傷，安肌緊致'}], usage:'出門前取適量均勻塗抹面部。' },
-          en: { tagline:'SPF45 PA++++ pure mineral sunscreen — NPUW full-spectrum protection, protection and skincare in one.', features:['Pure mineral formula — safe for sensitive skin, pregnant women, and babies','Instantly films, featherlight, professionally waterproof (80-min international standard)','Sunscreen meets skincare: nourishes while protecting'], ingredients:[{n:'NPUW Full-Spectrum Protection Technology',b:'N: nano-scale mineral SPF (safe & effective) | P: porous hydro-lock film (breathable, lasting) | U: microcapsule wrap (instant film) | W: international 80-min waterproof certified'},{n:'Rosemary Leaf Oil',b:'Suppresses post-UV reactions, shields against photo-damage, firms and balances oil'}], usage:'Apply evenly to face before going out. For water resistance, apply in advance to ensure proper film formation.' },
-          ko: { tagline:'SPF45 PA++++ 순수 물리 선크림 — NPUW 풀스펙트럼 방호 기술, 선케어 + 스킨케어 일체화', features:['순수 물리 차단제 — 민감성, 임산부, 영아도 안심 사용','즉각 필름 형성, 가볍고 통기성 좋음, 국제 80분 방수 인증','선케어와 스킨케어 통합'], ingredients:[{n:'NPUW 풀스펙트럼 방호 기술',b:'N: 나노 물리 차단제 (안전·고효율) | P: 다공성 수분 잠금 (통기·지속) | U: 마이크로캡슐 래핑 (즉각 필름) | W: 국제 80분 방수 인증'},{n:'로즈마리 잎 오일',b:'자외선 후 반응 억제, 광손상 방어, 진정, 피지 균형'}], usage:'외출 전 얼굴에 고르게 도포합니다. 방수 효과 필요 시 미리 도포하여 필름 형성을 확인합니다.' },
-        },
-      },
-      {
-        img: 'images/Violet%20Make%20Up%20Base.png',
-        en:  { name:'Violet Make Up Base',    size:'35ml', desc:'Lavender oil corrects sallowness — weightless mousse.' },
-        ko:  { name:'바이올렛 메이크업 베이스', size:'35ml', desc:'라벤더 오일 에센스 베이스. 노란기 보정, 밀착 무스.' },
-        zh:  { name:'烟紫隔离乳',              size:'35ml', desc:'薰衣草油精华隔离，修饰偏黄肌，慕斯质地轻薄。' },
-        tw:  { name:'煙紫隔離乳',              size:'35ml', desc:'薰衣草油精華隔離，修飾偏黃肌，慕斯質地輕薄。' },
-        detail: {
-          zh: { tagline:'薰衣草精华隔离，修饰偏黄肌，慕斯质地轻薄服帖', features:['修饰偏黄肤色，自然提亮，轻薄慕斯妆感','安肌养肤成分，妆容持久不易脱妆'], ingredients:[{n:'薰衣草油精华',b:'舒缓安肌，减轻肌肤压力，调节肤色'},{n:'双菌发酵提取物',b:'强化肌肤屏障，平衡微生态'}], usage:'洁肤爽肤后，取适量均匀涂抹面部，自然晕开，再上后续底妆。' },
-          tw: { tagline:'薰衣草精華隔離，修飾偏黃肌，慕斯質地輕薄服貼', features:['修飾偏黃膚色，自然提亮，輕薄慕斯妝感','安肌養膚成分，妝容持久'], ingredients:[{n:'薰衣草油精華',b:'舒緩安肌，調節膚色'},{n:'雙菌發酵提取物',b:'強化屏障，平衡微生態'}], usage:'潔膚爽膚後，取適量均勻塗抹面部，再上後續底妝。' },
-          en: { tagline:'Lavender essence base — corrects sallowness with an ultra-light mousse texture.', features:['Corrects yellow-toned skin, naturally brightens, feather-light mousse finish','Skin-caring formula for a long-lasting, non-cakey look'], ingredients:[{n:'Lavender Oil Essence',b:'Soothes, reduces skin stress, corrects tone'},{n:'Dual Fermented Extract',b:'Strengthens barrier, balances microbiome'}], usage:'After cleansing and toning, apply evenly to face and blend, then layer with foundation.' },
-          ko: { tagline:'라벤더 에센스 베이스 — 노란기 보정에 특화된 가벼운 무스 텍스처', features:['노란 피부톤 보정, 자연스러운 밝음, 가벼운 무스 마무리','피부 케어 성분으로 지속력 향상'], ingredients:[{n:'라벤더 오일 에센스',b:'진정, 피부 스트레스 완화, 피부톤 조율'},{n:'이중 발효 추출물',b:'장벽 강화, 마이크로바이옴 균형'}], usage:'세안·토너 후 얼굴에 고르게 바르고 퍼트린 후 파운데이션을 올립니다.' },
+          zh: { tagline:'NPUW全光谱防护科技 · 防晒 · 养肤一体化 · SPF45 PA++++', features:['NPUW全光谱防护，物化双重防晒，全面抵御UVA/UVB','质地轻透不泛白，防晒护肤两不误'], ingredients:[{n:'迷迭香叶油',b:'抗氧化，抵御紫外线氧化损伤，舒缓安肌'}], usage:'日间护肤最后步骤，取适量均匀涂抹于面部及暴露肌肤，外出前15分钟涂抹。长时间户外活动建议每2-3小时补涂。' },
+          tw: { tagline:'NPUW全光譜防護科技 · 防曬 · 養膚一體化 · SPF45 PA++++', features:['NPUW全光譜防護，物化雙重防曬，全面抵禦UVA/UVB','質地輕透不泛白，防曬護膚兩不誤'], ingredients:[{n:'迷迭香葉油',b:'抗氧化，抵禦紫外線氧化損傷，舒緩安肌'}], usage:'日間護膚最後步驟，取適量均勻塗抹於面部及暴露肌膚，外出前15分鐘塗抹。長時間戶外活動建議每2-3小時補塗。' },
+          en: { tagline:'NPUW full-spectrum UV defense — suncare and skincare in one. SPF45 PA++++.', features:['NPUW full-spectrum protection with dual physical + chemical filters for complete UVA/UVB defense','Lightweight, no white cast — sun protection that also nourishes skin'], ingredients:[{n:'Rosemary Leaf Oil',b:'Antioxidant protection against UV-induced oxidative damage; calms skin'}], usage:'As the final step in your daytime routine, apply evenly over face and exposed areas 15 minutes before sun exposure. Reapply every 2–3 hours during prolonged outdoor activity.' },
+          ko: { tagline:'NPUW 전광역 자외선 차단 · SPF45 PA++++', features:['NPUW 전광역 차단, 물리+화학 이중 필터로 UVA/UVB 완전 방어','가볍고 백탁 없음, 자외선 차단과 피부 케어를 동시에'], ingredients:[{n:'로즈마리잎 오일',b:'항산화, 자외선 산화 손상 방어 및 진정'}], usage:'낮 스킨케어 마지막 단계로, 외출 15분 전 얼굴·노출 피부에 균일하게 도포합니다. 장시간 야외 활동 시 2~3시간마다 재도포를 권장합니다.' },
         },
       },
       {
         img: 'images/Green%20Make%20Up%20Base.png',
-        en:  { name:'Green Make Up Base',     size:'35ml', desc:'Green tea corrects redness — smooth, clinging finish.' },
-        ko:  { name:'그린 메이크업 베이스',   size:'35ml', desc:'녹차 정수 에센스 베이스. 붉은기 보정, 매끄럽게 밀착.' },
-        zh:  { name:'翠绿隔离乳',              size:'35ml', desc:'绿茶精华隔离，修饰泛红肌，丝滑亲肤零负担。' },
-        tw:  { name:'翠綠隔離乳',              size:'35ml', desc:'綠茶精華隔離，修飾泛紅肌，絲滑親膚零負擔。' },
+        en:  { name:'Green Make Up Base',    size:'35ml', desc:'Green tea-infused primer that corrects redness and gives a mousse-soft, zero-burden finish.' },
+        ko:  { name:'그린 메이크업 베이스',   size:'35ml', desc:'녹차 성분으로 홍조를 커버하는 머랭 베이스.' },
+        zh:  { name:'翠绿隔离乳',             size:'35ml', desc:'绿茶精华隔离，丝滑亲肤，修饰泛红肌肤。' },
+        tw:  { name:'翠綠隔離乳',             size:'35ml', desc:'綠茶精華隔離，絲滑親膚，修飾泛紅肌膚。' },
         detail: {
-          zh: { tagline:'绿茶精华隔离，修饰泛红肌，丝滑亲肤零负担', features:['修饰泛红肤色，自然调和，丝滑亲肤质地','零负担配方，养肤同时修颜'], ingredients:[{n:'绿茶精华',b:'抗氧化，舒缓泛红，细腻肌肤'},{n:'双菌发酵提取物',b:'强化肌肤屏障，平衡微生态'}], usage:'洁肤爽肤后，取适量均匀涂抹面部，自然晕开，再上后续底妆。' },
-          tw: { tagline:'綠茶精華隔離，修飾泛紅肌，絲滑親膚零負擔', features:['修飾泛紅膚色，自然調和，絲滑親膚','零負擔配方，養膚同時修顏'], ingredients:[{n:'綠茶精華',b:'抗氧化，舒緩泛紅，細膩肌膚'},{n:'雙菌發酵提取物',b:'強化屏障，平衡微生態'}], usage:'潔膚爽膚後，取適量均勻塗抹面部，再上後續底妝。' },
-          en: { tagline:'Green tea essence base — corrects redness with a smooth, skin-hugging finish.', features:['Corrects redness and uneven tone, skin-like smooth texture','Zero-burden formula that cares for skin while perfecting it'], ingredients:[{n:'Green Tea Essence',b:'Antioxidant, soothes redness, refines texture'},{n:'Dual Fermented Extract',b:'Strengthens barrier, balances microbiome'}], usage:'After cleansing and toning, apply evenly to face and blend, then layer with foundation.' },
-          ko: { tagline:'녹차 에센스 베이스 — 붉은기 보정, 매끄럽게 밀착되는 텍스처', features:['홍조 및 불균일한 피부톤 보정, 피부처럼 밀착','피부 부담 없는 배합, 케어와 메이크업 동시에'], ingredients:[{n:'녹차 에센스',b:'항산화, 홍조 진정, 피부결 정돈'},{n:'이중 발효 추출물',b:'장벽 강화, 마이크로바이옴 균형'}], usage:'세안·토너 후 얼굴에 고르게 바르고 퍼트린 후 파운데이션을 올립니다.' },
+          zh: { tagline:'绿茶精华隔离，丝滑亲肤不伤肤，修饰泛红肌肤', features:['添加绿茶精华，养肤·修饰泛红肌，一步到位','三层滚轮研磨+保湿因子包裹技术，慕斯质地贴肤零负担'], ingredients:[{n:'茶叶提取物',b:'安肌抑氧，对抗紫外线晒伤'}], usage:'每日常规清洁和爽肤后，取适量于指尖或掌心，涂抹于面部轻轻按摩至吸收。' },
+          tw: { tagline:'綠茶精華隔離，絲滑親膚不傷膚，修飾泛紅肌膚', features:['添加綠茶精華，養膚·修飾泛紅肌，一步到位','三層滾輪研磨+保濕因子包裹技術，慕斯質地貼膚零負擔'], ingredients:[{n:'茶葉提取物',b:'安肌抑氧，對抗紫外線曬傷'}], usage:'每日常規清潔和爽膚後，取適量於指尖或掌心，塗抹於面部輕輕按摩至吸收。' },
+          en: { tagline:'Green tea-powered primer — corrects redness and leaves a mousse-soft, weightless finish.', features:['Green tea extract nourishes skin while masking redness in one step','Triple-layer roller-milled formula wrapped in moisture factors for a skin-hugging, zero-burden texture'], ingredients:[{n:'Tea Leaf Extract',b:'Calms skin, antioxidant protection against UV-induced damage'}], usage:'After daily cleansing and toning, apply a small amount to fingertips or palm and smooth over face, massaging gently until absorbed.' },
+          ko: { tagline:'녹차 성분 베이스 — 홍조 수정 + 머랭 질감, 부담 없는 마무리', features:['녹차 추출물로 피부 케어와 홍조 커버를 한 번에','3단계 롤러 분쇄 + 보습 인자 캡슐 기술, 머랭 질감으로 피부 밀착 제로 부담'], ingredients:[{n:'차잎 추출물',b:'피부 진정, 자외선 산화 손상 방어'}], usage:'매일 세안·토너 후 소량을 지끝이나 손바닥에 덜어 얼굴 전체에 가볍게 마사지해 흡수시킵니다.' },
+        },
+      },
+      {
+        img: 'images/Violet%20Make%20Up%20Base.png',
+        en:  { name:'Violet Make Up Base',   size:'35ml', desc:'Lavender oil-infused primer that corrects sallowness for a hydrated, silky look.' },
+        ko:  { name:'바이올렛 메이크업 베이스', size:'35ml', desc:'라벤더 오일로 노란 피부를 교정하는 촉촉 베이스.' },
+        zh:  { name:'烟紫隔离乳',              size:'35ml', desc:'薰衣草油精华隔离，水润丝滑，修饰偏黄肌。' },
+        tw:  { name:'煙紫隔離乳',              size:'35ml', desc:'薰衣草油精華隔離，水潤絲滑，修飾偏黃肌。' },
+        detail: {
+          zh: { tagline:'薰衣草油精华隔离，水润丝滑，修饰偏黄肌，亲肤不伤肤', features:['添加薰衣草油，养肤·修饰偏黄肌，一步到位','三层滚轮研磨+保湿因子包裹技术，慕斯质地贴肤零负担'], ingredients:[{n:'薰衣草油',b:'修护微损伤、安肌舒缓'}], usage:'每日常规清洁和爽肤后，取适量于指尖或掌心，涂抹于面部轻轻按摩至吸收。' },
+          tw: { tagline:'薰衣草油精華隔離，水潤絲滑，修飾偏黃肌，親膚不傷膚', features:['添加薰衣草油，養膚·修飾偏黃肌，一步到位','三層滾輪研磨+保濕因子包裹技術，慕斯質地貼膚零負擔'], ingredients:[{n:'薰衣草油',b:'修護微損傷、安肌舒緩'}], usage:'每日常規清潔和爽膚後，取適量於指尖或掌心，塗抹於面部輕輕按摩至吸收。' },
+          en: { tagline:'Lavender oil primer — corrects sallowness for a dewy, silky finish that nurtures skin.', features:['Lavender oil nourishes while correcting yellow/sallow skin tone in one step','Triple-layer roller-milled formula for a hydrated, skin-hugging mousse texture'], ingredients:[{n:'Lavender Oil',b:'Repairs micro-damage and soothes sensitive skin'}], usage:'After daily cleansing and toning, apply a small amount to fingertips or palm and smooth over face, massaging gently until absorbed.' },
+          ko: { tagline:'라벤더 오일 베이스 — 노란 피부톤 교정 + 촉촉 실키 마무리', features:['라벤더 오일로 피부 케어와 노란 피부 교정 한 번에','3단계 롤러 분쇄 + 보습 인자 캡슐 기술, 머랭 질감으로 밀착 제로 부담'], ingredients:[{n:'라벤더 오일',b:'미세 손상 수복, 진정'}], usage:'매일 세안·토너 후 소량을 지끝이나 손바닥에 덜어 얼굴 전체에 가볍게 마사지해 흡수시킵니다.' },
         },
       },
       {
         img: 'images/Magic%20Control%20Base.png',
-        en:  { name:'Magic Control Base',     size:'35ml', desc:'Purslane and chamomile for a clear nude finish.' },
-        ko:  { name:'매직 컨트롤 베이스',    size:'35ml', desc:'쇠비름·캐모마일 배합. 자연 보정, 맑은 누드 피부.' },
-        zh:  { name:'调肌修颜乳',              size:'35ml', desc:'马齿苋与母菊花自然润色，敏肌安心清透裸妆肌。' },
-        tw:  { name:'調肌修顏乳',              size:'35ml', desc:'馬齒莧與母菊花自然潤色，敏肌安心清透裸妝肌。' },
+        en:  { name:'Magic Control Base',    size:'35ml', desc:'Skin-calming color corrector for a natural, translucent bare-skin finish.' },
+        ko:  { name:'매직 컨트롤 베이스',     size:'35ml', desc:'민감 피부도 안심하고 쓰는 자연스러운 투명 톤업 베이스.' },
+        zh:  { name:'调肌修颜乳',              size:'35ml', desc:'安肌型修颜乳，自然润色，轻松打造清透裸妆肌。' },
+        tw:  { name:'調肌修顏乳',              size:'35ml', desc:'安肌型修顏乳，自然潤色，輕鬆打造清透裸妝肌。' },
         detail: {
-          zh: { tagline:'马齿苋与母菊花自然润色，安肌配方，打造清透裸妆肌', features:['自然提亮，修饰肤色，清透裸妆感','敏感肌安心使用，养肤同时提升妆感'], ingredients:[{n:'马齿苋提取物',b:'舒缓安肌，减少炎症'},{n:'母菊花水',b:'舒缓安抚，润泽肌肤'},{n:'双菌发酵提取物',b:'强化肌肤屏障，平衡微生态'}], usage:'洁肤爽肤后，取适量均匀涂抹面部，自然晕开，再上后续底妆或直接作为裸妆最终步骤。' },
-          tw: { tagline:'馬齒莧與母菊花自然潤色，安肌配方，打造清透裸妝肌', features:['自然提亮，修飾膚色，清透裸妝感','敏感肌安心使用，養膚同時提升妝感'], ingredients:[{n:'馬齒莧提取物',b:'舒緩安肌，減少炎症'},{n:'母菊花水',b:'舒緩安撫，潤澤肌膚'},{n:'雙菌發酵提取物',b:'強化屏障，平衡微生態'}], usage:'潔膚爽膚後，取適量均勻塗抹面部，自然暈開，再上後續底妝或直接作為裸妝使用。' },
-          en: { tagline:'Purslane and chamomile naturally perfect skin tone — clear, nude-look finish safe for sensitive skin.', features:['Naturally brightens and evens skin tone, transparent nude finish','Gentle enough for sensitive skin — skincare meets makeup'], ingredients:[{n:'Purslane Extract',b:'Soothes skin, reduces inflammation'},{n:'Chamomile Flower Water',b:'Calms and hydrates'},{n:'Dual Fermented Extract',b:'Strengthens barrier, balances microbiome'}], usage:'After cleansing and toning, apply evenly and blend. Use as a base under foundation or as the final step in a minimal makeup look.' },
-          ko: { tagline:'쇠비름·카모마일로 자연스럽게 피부톤을 보정 — 맑은 누드 피부, 민감성 피부 안심', features:['자연스럽게 피부톤 밝힘, 맑은 누드 마무리','민감성 피부에 적합, 피부 케어 + 메이크업 동시에'], ingredients:[{n:'쇠비름 추출물',b:'피부 진정, 염증 완화'},{n:'카모마일 플라워 워터',b:'진정, 보습'},{n:'이중 발효 추출물',b:'장벽 강화, 마이크로바이옴 균형'}], usage:'세안·토너 후 얼굴에 고르게 바르고 퍼트립니다. 파운데이션 베이스로 또는 미니멀 메이크업 마지막 단계로 활용.' },
+          zh: { tagline:'安肌型修颜乳，自然润色，轻松打造清透裸妆肌', features:['自然调色，轻松打造清透裸妆肌','添加天然植物养肤成分，修颜·养肤，脆皮肌安心用'], ingredients:[{n:'马齿苋提取物',b:'抗敏感，增加皮肤舒适度，防止肌肤干燥、老化'},{n:'母菊花提取物',b:'补水、保湿、镇静、舒缓，改善肌肤对冷热刺激的敏感度'}], usage:'基础护肤后，取适量用手指或海绵扑，顺着肌肤纹理均匀涂抹于面部。' },
+          tw: { tagline:'安肌型修顏乳，自然潤色，輕鬆打造清透裸妝肌', features:['自然調色，輕鬆打造清透裸妝肌','添加天然植物養膚成分，修顏·養膚，脆皮肌安心用'], ingredients:[{n:'馬齒莧提取物',b:'抗敏感，增加皮膚舒適度，防止肌膚乾燥、老化'},{n:'母菊花提取物',b:'補水、保濕、鎮靜、舒緩，改善肌膚對冷熱刺激的敏感度'}], usage:'基礎護膚後，取適量用手指或海綿撲，順著肌膚紋理均勻塗抹於面部。' },
+          en: { tagline:'Skin-calming color corrector — natural radiance, zero makeup heaviness.', features:['Natural color correction for a translucent, bare-skin finish','Plant-based calming actives make it safe even for reactive, fragile skin'], ingredients:[{n:'Purslane Extract',b:'Anti-sensitizing — improves skin comfort and prevents dryness and aging'},{n:'Chamomile Flower Extract',b:'Hydrates, soothes, and calms — reduces skin sensitivity to temperature changes'}], usage:'After skincare, apply a small amount with fingers or a sponge, spreading evenly along skin texture.' },
+          ko: { tagline:'민감 피부 안심 사용 가능 · 자연 톤업 · 투명 베이스', features:['자연스러운 색상 교정으로 투명 피부 표현','천연 식물 진정 성분으로 민감·취약 피부도 안심 사용'], ingredients:[{n:'쇠비름 추출물',b:'항민감 — 피부 편안함 향상, 건조·노화 방지'},{n:'카모마일 꽃 추출물',b:'수분 공급, 진정, 온도 변화에 따른 민감도 완화'}], usage:'스킨케어 후 적당량을 손가락이나 스펀지 퍼프로 피부결 따라 균일하게 바릅니다.' },
         },
       },
       {
         img: 'images/Magic%20Control%20Concealer.png',
-        en:  { name:'Magic Control Concealer', size:'35ml', desc:'TPS smart light-shadow tech — flawless, dimensional look.' },
-        ko:  { name:'매직 컨트롤 컨실러',       size:'35ml', desc:'TPS 스마트 광채 보정. 잡티 커버, 입체적 무결점.' },
-        zh:  { name:'调肌遮瑕乳',               size:'35ml', desc:'TPS智能光影调肤，隐匿瑕疵，打造立体无痕妆感。' },
-        tw:  { name:'調肌遮瑕乳',               size:'35ml', desc:'TPS智能光影調膚，隱匿瑕疵，打造立體無痕妝感。' },
+        en:  { name:'Magic Control Concealer', size:'35ml', desc:'TPS light-adapting technology conceals flaws for a seamless, sculpted finish.' },
+        ko:  { name:'매직 컨트롤 컨실러',      size:'35ml', desc:'TPS 광학 기술로 결점을 자연스럽게 커버하는 컨실러.' },
+        zh:  { name:'调肌遮瑕乳',              size:'35ml', desc:'TPS智能光影调肤技术，隐匿瑕疵，打造立体无痕妆感。' },
+        tw:  { name:'調肌遮瑕乳',              size:'35ml', desc:'TPS智能光影調膚技術，隱匿瑕疵，打造立體無痕妝感。' },
         detail: {
-          zh: { tagline:'TPS智能光影调肤技术，隐匿瑕疵，不假白不厚重，立体无痕妆感', features:['精准隐匿大小瑕疵，无痕自然，不假白不厚重','多重植物养肤成分，妆容锁鲜持久，减负出行'], ingredients:[{n:'TPS智能光影调肤技术',b:'温感融入贴合肌肤，精准捕捉瑕疵；钻石切割色彩微粒子，多维反射光线，打造立体无痕妆感'},{n:'侧柏叶提取物',b:'缓解肌肤疲劳，保湿抑氧，长效水润'},{n:'双菌发酵提取物',b:'强化肌肤屏障，平衡微生态'},{n:'薰衣草油',b:'舒缓安肌，减轻肌肤压力'}], usage:'取适量涂抹于瑕疵处，轻轻拍按融入肌肤，可叠涂增加遮盖力。' },
-          tw: { tagline:'TPS智能光影調膚技術，隱匿瑕疵，不假白不厚重，立體無痕妝感', features:['精準隱匿大小瑕疵，無痕自然','多重植物養膚成分，妝容持久'], ingredients:[{n:'TPS智能光影調膚技術',b:'溫感融入肌膚，鑽石切割色彩微粒子多維反射，立體無痕妝感'},{n:'側柏葉提取物',b:'緩解肌膚疲勞，保濕抑氧'},{n:'雙菌發酵提取物',b:'強化屏障，平衡微生態'},{n:'薰衣草油',b:'舒緩安肌'}], usage:'取適量塗抹於瑕疵處，輕輕拍按融入肌膚，可疊塗增加遮蓋力。' },
-          en: { tagline:'TPS Smart Light-Shadow technology — precisely conceals blemishes with a dimensional, skin-like finish.', features:['Precisely hides blemishes of all sizes — natural, never cakey or chalky','Multi-botanical formula keeps makeup fresh and long-lasting'], ingredients:[{n:'TPS Smart Light-Shadow Technology',b:'Temperature-responsive, skin-hugging formula; diamond-cut color micro-particles multi-directionally reflect light for a 3D flawless look'},{n:'Oriental Arborvitae Leaf Extract',b:'Relieves skin fatigue, moisturizes, antioxidant'},{n:'Dual Fermented Extract',b:'Strengthens barrier, balances microbiome'},{n:'Lavender Oil',b:'Soothes and calms skin'}], usage:'Apply a small amount to blemished areas, gently tap to blend into skin. Layer for higher coverage.' },
-          ko: { tagline:'TPS 스마트 광-쉐도우 기술 — 잡티를 정확하게 커버하는 입체적이고 자연스러운 마무리', features:['대소 잡티 정밀 커버, 자연스러움, 두껍거나 하얗게 뜨지 않음','다중 식물 케어 성분으로 지속력 향상'], ingredients:[{n:'TPS 스마트 광-쉐도우 기술',b:'체온 반응형 밀착, 다이아몬드 컷 컬러 마이크로파티클 다방향 광반사로 입체적 무결점 피부 연출'},{n:'측백나무잎 추출물',b:'피부 피로 완화, 보습, 항산화'},{n:'이중 발효 추출물',b:'장벽 강화, 마이크로바이옴 균형'},{n:'라벤더 오일',b:'진정 안정'}], usage:'잡티 부위에 소량 도포 후 가볍게 두드려 피부에 밀착시킵니다. 겹쳐 발라 커버력 조절 가능.' },
+          zh: { tagline:'隐匿瑕疵 · 打造面部立体无痕妆感', features:['TPS智能光影调肤技术，自然融肤无痕感','双菌发酵+植物成分，遮瑕同时养护肌肤'], ingredients:[{n:'侧柏叶提取物',b:'收敛毛孔，控油持妆'},{n:'双菌发酵提取物',b:'调理肌肤，减少遮瑕后卡粉'},{n:'薰衣草油',b:'舒缓安肌，调节肌肤状态'}], usage:'基础护肤后，取适量用指尖或遮瑕笔点涂于瑕疵处，轻轻拍按至融合，再定妆。' },
+          tw: { tagline:'隱匿瑕疵 · 打造面部立體無痕妝感', features:['TPS智能光影調膚技術，自然融膚無痕感','雙菌發酵+植物成分，遮瑕同時養護肌膚'], ingredients:[{n:'側柏葉提取物',b:'收斂毛孔，控油持妝'},{n:'雙菌發酵提取物',b:'調理肌膚，減少遮瑕後卡粉'},{n:'薰衣草油',b:'舒緩安肌，調節肌膚狀態'}], usage:'基礎護膚後，取適量用指尖或遮瑕筆點塗於瑕疵處，輕輕拍按至融合，再定妝。' },
+          en: { tagline:'TPS light-adapting technology — conceal flaws for a naturally sculpted, undetectable finish.', features:['TPS smart light-mapping technology blends seamlessly with skin for a natural, traceless look','Dual-ferment + botanical formula nourishes while concealing'], ingredients:[{n:'Thuja Orientalis Leaf Extract',b:'Tightens pores, controls oil for long-lasting wear'},{n:'Dual-Strain Ferment Extract',b:'Refines skin texture, prevents powder caking over concealer'},{n:'Lavender Oil',b:'Soothes and calms, stabilizes skin condition'}], usage:'After skincare, apply a small amount with fingertip or concealer brush, dotting over blemishes and gently patting to blend. Set with powder to finish.' },
+          ko: { tagline:'TPS 광학 기술 — 결점을 자연스럽게 커버하는 입체 무흔 메이크업', features:['TPS 스마트 광조절 기술로 피부에 자연스럽게 밀착, 무흔 표현','이중 균주 발효 + 식물 성분으로 커버하면서 피부 케어'], ingredients:[{n:'측백나무잎 추출물',b:'모공 수렴, 피지 조절로 오래 지속'},{n:'이중 균주 발효 추출물',b:'피부 정돈, 컨실러 후 뭉침 방지'},{n:'라벤더 오일',b:'진정, 피부 상태 안정'}], usage:'스킨케어 후 소량을 지끝이나 컨실러 붓으로 결점 부위에 점찍어 가볍게 두드려 밀착시키고 파우더로 마무리합니다.' },
         },
       },
     ]
@@ -1048,314 +1009,214 @@ const SERIES = [
 ════════════════════════════════════════════════ */
 const T = {
   en: {
-    'nav.story':'Brand Story','nav.products':'Products','nav.ingredients':'Ingredients','nav.news':'News','nav.contact':'Contact',
-    'page.kicker':'珂莉安 · COORIONARA',
-    'page.h1':'All <em>Products</em>',
-    'page.sub':'8 series · 26 products · crafted in Korea.',
-    'page.back':'← Back to Home',
-    'footer.tagline':'"The art of doing more with less."',
-    'footer.copy':'© 2026 COORIONARA 珂莉安. All rights reserved.',
-    'footer.lang.en':'English','footer.lang.ko':'한국어','footer.lang.zh-cn':'简体中文','footer.lang.zh-tw':'繁體中文',
+    'brand.logo': 'COORIONARA',
+    'nav.story': 'Brand Story', 'nav.products': 'Products',
+    'nav.ingredients': 'Ingredients', 'nav.news': 'News', 'nav.contact': 'Contact',
+    'page.kicker': 'Full Collection',
+    'page.h1': 'All <em>Products</em>',
+    'page.sub': '23 products · 8 series',
+    'page.back': '← Back to Home',
+    'page.all': 'All',
+    'lb.title.features': 'Key Features',
+    'lb.title.ingredients': 'Core Ingredients',
+    'lb.title.usage': 'How to Use',
+    'footer.tagline': '"The art of doing more with less."',
+    'footer.copy': '© 2026 COORIONARA. All rights reserved.',
+    'footer.lang.en': 'English', 'footer.lang.ko': '한국어',
+    'footer.lang.zh-cn': '简体中文', 'footer.lang.zh-tw': '繁體中文',
   },
   ko: {
-    'nav.story':'브랜드 스토리','nav.products':'제품','nav.ingredients':'성분','nav.news':'뉴스','nav.contact':'문의',
-    'page.kicker':'珂莉安 · 코리오나라',
-    'page.h1':'전체 <em>제품</em>',
-    'page.sub':'8개 시리즈 · 26개 제품 · 한국에서 만들었습니다.',
-    'page.back':'← 홈으로',
-    'footer.tagline':'"적은 것으로 더 많은 것을 하는 예술."',
-    'footer.copy':'© 2026 珂莉安 코리오나라. 모든 권리 보유.',
-    'footer.lang.en':'English','footer.lang.ko':'한국어','footer.lang.zh-cn':'简体中文','footer.lang.zh-tw':'繁體中文',
+    'brand.logo': '珂莉안 COORIONARA',
+    'nav.story': '브랜드 스토리', 'nav.products': '제품',
+    'nav.ingredients': '성분', 'nav.news': '뉴스', 'nav.contact': '문의',
+    'page.kicker': '전체 컬렉션',
+    'page.h1': '전체 <em>제품</em>',
+    'page.sub': '23개 제품 · 8개 시리즈',
+    'page.back': '← 홈으로 돌아가기',
+    'page.all': '전체',
+    'lb.title.features': '주요 기능',
+    'lb.title.ingredients': '핵심 성분',
+    'lb.title.usage': '사용 방법',
+    'footer.tagline': '"적은 것으로 더 많은 것을 하는 예술."',
+    'footer.copy': '© 2026 珂莉안 코리오나라. 모든 권리 보유.',
+    'footer.lang.en': 'English', 'footer.lang.ko': '한국어',
+    'footer.lang.zh-cn': '简体中文', 'footer.lang.zh-tw': '繁體中文',
   },
   'zh-cn': {
-    'nav.story':'品牌故事','nav.products':'产品','nav.ingredients':'成分','nav.news':'动态','nav.contact':'联系我们',
-    'page.kicker':'珂莉安 · COORIONARA',
-    'page.h1':'全部<em>产品</em>',
-    'page.sub':'8个系列 · 26款产品 · 韩国精制。',
-    'page.back':'← 返回首页',
-    'footer.tagline':'"以少胜多的艺术。"',
-    'footer.copy':'© 2026 珂莉安 COORIONARA. 版权所有。',
-    'footer.lang.en':'English','footer.lang.ko':'한국어','footer.lang.zh-cn':'简体中文','footer.lang.zh-tw':'繁體中文',
+    'brand.logo': '珂莉安 COORIONARA',
+    'nav.story': '品牌故事', 'nav.products': '产品',
+    'nav.ingredients': '成分', 'nav.news': '动态', 'nav.contact': '联系我们',
+    'page.kicker': '全部系列',
+    'page.h1': '全部<em>产品</em>',
+    'page.sub': '23款产品 · 8大系列',
+    'page.back': '← 返回首页',
+    'page.all': '全部',
+    'lb.title.features': '产品亮点',
+    'lb.title.ingredients': '核心成分',
+    'lb.title.usage': '使用方法',
+    'footer.tagline': '"以少胜多的艺术。"',
+    'footer.copy': '© 2026 珂莉安 COORIONARA. 版权所有。',
+    'footer.lang.en': 'English', 'footer.lang.ko': '한국어',
+    'footer.lang.zh-cn': '简体中文', 'footer.lang.zh-tw': '繁體中文',
   },
   'zh-tw': {
-    'nav.story':'品牌故事','nav.products':'產品','nav.ingredients':'成分','nav.news':'動態','nav.contact':'聯絡我們',
-    'page.kicker':'珂莉安 · COORIONARA',
-    'page.h1':'全部<em>產品</em>',
-    'page.sub':'8個系列 · 26款產品 · 韓國精製。',
-    'page.back':'← 返回首頁',
-    'footer.tagline':'"以少勝多的藝術。"',
-    'footer.copy':'© 2026 珂莉安 COORIONARA. 版權所有。',
-    'footer.lang.en':'English','footer.lang.ko':'한국어','footer.lang.zh-cn':'简体中文','footer.lang.zh-tw':'繁體中文',
+    'brand.logo': '珂莉安 COORIONARA',
+    'nav.story': '品牌故事', 'nav.products': '產品',
+    'nav.ingredients': '成分', 'nav.news': '動態', 'nav.contact': '聯絡我們',
+    'page.kicker': '全部系列',
+    'page.h1': '全部<em>產品</em>',
+    'page.sub': '23款產品 · 8大系列',
+    'page.back': '← 返回首頁',
+    'page.all': '全部',
+    'lb.title.features': '產品亮點',
+    'lb.title.ingredients': '核心成分',
+    'lb.title.usage': '使用方法',
+    'footer.tagline': '"以少勝多的藝術。"',
+    'footer.copy': '© 2026 珂莉安 COORIONARA. 版權所有。',
+    'footer.lang.en': 'English', 'footer.lang.ko': '한국어',
+    'footer.lang.zh-cn': '简体中文', 'footer.lang.zh-tw': '繁體中文',
   },
 };
+
+/* ════════════════════════════════════════════════
+   STATE & HELPERS
+════════════════════════════════════════════════ */
+let currentLang = 'en';
+function prodKey(lang) { return lang === 'zh-cn' ? 'zh' : lang === 'zh-tw' ? 'tw' : lang; }
+
+/* ════════════════════════════════════════════════
+   REVEAL OBSERVER
+════════════════════════════════════════════════ */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+function observeReveal(el) { revealObserver.observe(el); }
 
 /* ════════════════════════════════════════════════
    RENDER
 ════════════════════════════════════════════════ */
-function getLang(s, lang) {
-  if (lang === 'ko') return s.ko;
-  if (lang === 'zh-cn') return s.zh;
-  if (lang === 'zh-tw') return s.tw;
-  return s.en;
-}
-
 function renderAll(lang) {
-  const bar = document.getElementById('filter-bar');
-  const container = document.getElementById('series-container');
-  bar.innerHTML = '';
+  var lk = prodKey(lang);
+  var dict = T[lang] || T['en'];
+  var fb = document.getElementById('filter-bar');
+  fb.innerHTML = '<button class="filter-btn active" data-series="all">' + (dict['page.all'] || 'All') + '</button>' +
+    SERIES.map(function(s) { return '<button class="filter-btn" data-series="' + s.id + '">' + (s.label[lk] || s.label.en) + '</button>'; }).join('');
+  var container = document.getElementById('series-container');
   container.innerHTML = '';
-
-  SERIES.forEach((series, si) => {
-    // Filter button
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn' + (si === 0 ? ' active' : '');
-    btn.textContent = getLang({ en: series.label.en, ko: series.label.ko, zh: series.label.zh, tw: series.label.tw }, lang);
-    btn.addEventListener('click', () => {
-      document.getElementById('series-' + series.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-    bar.appendChild(btn);
-
-    // Series section
-    const section = document.createElement('div');
-    section.className = 'series-section reveal';
-    section.id = 'series-' + series.id;
-
-    const nameHtml = getLang({ en: series.name.en, ko: series.name.ko, zh: series.name.zh, tw: series.name.tw }, lang);
-    const labelTxt = getLang({ en: series.label.en, ko: series.label.ko, zh: series.label.zh, tw: series.label.tw }, lang);
-    const countTxt = series.products.length + (lang === 'ko' ? '개 제품' : lang === 'zh-cn' ? '款产品' : lang === 'zh-tw' ? '款產品' : ' products');
-
-    section.innerHTML = `
-      <div class="series-header">
-        <div class="series-meta">
-          <p class="series-label">${labelTxt}</p>
-          <h2 class="series-name">${nameHtml}</h2>
-          <p class="series-count">${countTxt}</p>
-        </div>
-      </div>
-      <div class="products-grid">${series.products.map((p, pi) => {
-        const info = getLang(p, lang);
-        return `
-          <div class="product-card reveal reveal-d${(pi % 4) + 0}" style="transition-delay:${pi * 0.07}s"
-               data-lb-series="${series.id}" data-lb-idx="${pi}">
-            <div class="product-img">
-              <img src="${p.img}" alt="${info.name}" loading="lazy"
-                   onload="if(this.naturalHeight>this.naturalWidth)this.classList.add('portrait-img')"
-                   onerror="this.parentElement.classList.add('no-img'); this.style.display='none'" />
-            </div>
-            <p class="product-name">${info.name}</p>
-            <p class="product-desc">${info.desc}</p>
-            <span class="product-size">${info.size}</span>
-          </div>`;
-      }).join('')}</div>`;
-    container.appendChild(section);
+  SERIES.forEach(function(s, si) {
+    var prods = s.products.map(function(p, pi) {
+      var pd = p[lk] || p.en;
+      var delay = pi % 3 === 1 ? ' reveal-d1' : pi % 3 === 2 ? ' reveal-d2' : '';
+      return '<div class="product-card reveal' + delay + '" data-lb-img="' + p.img + '" data-series-idx="' + si + '" data-prod-idx="' + pi + '">' +
+        '<div class="product-img"><img src="' + p.img + '" alt="' + pd.name.replace(/"/g, '&quot;') + '" loading="lazy" onload="if(this.naturalHeight>this.naturalWidth)this.classList.add(\'portrait-img\')"></div>' +
+        '<p class="product-name">' + pd.name + '</p>' +
+        '<span class="product-size">' + pd.size + '</span>' +
+        '<p class="product-desc">' + pd.desc + '</p>' +
+        '</div>';
+    }).join('');
+    var sec = document.createElement('section');
+    sec.id = 'series-' + s.id;
+    sec.className = 'series-section';
+    sec.innerHTML = '<div class="container"><div class="series-header reveal"><div class="series-meta"><p class="series-label">' + (s.label[lk] || s.label.en) + '</p><h2 class="series-name">' + (s.name[lk] || s.name.en) + '</h2></div></div><div class="products-grid">' + prods + '</div></div>';
+    container.appendChild(sec);
+    sec.querySelectorAll('.reveal').forEach(observeReveal);
   });
-
-  // Re-observe new elements
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-  // Update active filter on scroll
-  setupScrollSpy();
 }
-
-/* ════════════════════════════════════════════════
-   I18N
-════════════════════════════════════════════════ */
-let currentLang = 'en';
-
-function applyLang(lang) {
-  const dict = T[lang];
-  if (!dict) return;
-  document.body.classList.add('lang-switching');
-  setTimeout(() => {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const k = el.getAttribute('data-i18n');
-      if (dict[k] !== undefined) el.textContent = dict[k];
-    });
-    document.querySelectorAll('[data-i18n-html]').forEach(el => {
-      const k = el.getAttribute('data-i18n-html');
-      if (dict[k] !== undefined) el.innerHTML = dict[k];
-    });
-    document.documentElement.lang = { en:'en', ko:'ko', 'zh-cn':'zh-CN', 'zh-tw':'zh-TW' }[lang] || lang;
-    document.querySelectorAll('.footer-lang-bar a').forEach(a =>
-      a.classList.toggle('active', a.getAttribute('data-lang') === lang));
-    document.body.classList.remove('lang-switching');
-  }, 150);
-}
-
-function switchLang(lang) {
-  if (lang === currentLang) return;
-  currentLang = lang;
-  document.body.className = document.body.className.replace(/\blang-\S+/g, '').trim() + ' lang-' + lang;
-  document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(b =>
-    b.classList.toggle('active', b.getAttribute('data-lang') === lang));
-  applyLang(lang);
-  renderAll(lang);
-  const url = new URL(window.location);
-  url.searchParams.set('lang', lang);
-  history.replaceState({}, '', url);
-}
-
-document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn =>
-  btn.addEventListener('click', () => switchLang(btn.getAttribute('data-lang'))));
-document.querySelectorAll('.footer-lang-bar a').forEach(a =>
-  a.addEventListener('click', e => { e.preventDefault(); switchLang(a.getAttribute('data-lang')); }));
-
-/* ════════════════════════════════════════════════
-   REVEAL
-════════════════════════════════════════════════ */
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-/* ════════════════════════════════════════════════
-   NAV SCROLL
-════════════════════════════════════════════════ */
-const mainNav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => mainNav.classList.toggle('scrolled', scrollY > 20), { passive: true });
-
-/* ════════════════════════════════════════════════
-   SCROLL SPY
-════════════════════════════════════════════════ */
-function setupScrollSpy() {
-  const sectionEls = SERIES.map(s => document.getElementById('series-' + s.id)).filter(Boolean);
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const spy = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const idx = sectionEls.indexOf(entry.target);
-        if (idx >= 0) {
-          filterBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
-        }
-      }
-    });
-  }, { threshold: 0.3, rootMargin: '-20% 0px -60% 0px' });
-  sectionEls.forEach(el => spy.observe(el));
-}
-
-/* ════════════════════════════════════════════════
-   MOBILE MENU
-════════════════════════════════════════════════ */
-const hamburger  = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-function closeMenu() {
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
-  setTimeout(() => { mobileMenu.style.display = 'none'; }, 300);
-  mobileMenu.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
-hamburger.addEventListener('click', () => {
-  const isOpen = hamburger.classList.toggle('open');
-  if (isOpen) {
-    mobileMenu.style.display = 'flex';
-    requestAnimationFrame(() => mobileMenu.classList.add('open'));
-    mobileMenu.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  } else closeMenu();
-});
 
 /* ════════════════════════════════════════════════
    LIGHTBOX
 ════════════════════════════════════════════════ */
-const LB_LABELS = {
-  en:    { features:'Key Benefits', ingredients:'Core Ingredients', usage:'How to Use' },
-  ko:    { features:'핵심 효과',    ingredients:'주요 성분',        usage:'사용 방법' },
-  'zh-cn':{ features:'核心卖点',   ingredients:'核心成分',          usage:'使用方法' },
-  'zh-tw':{ features:'核心賣點',   ingredients:'核心成分',          usage:'使用方法' },
-};
-
-function openLightbox(product, lang) {
-  const detail = product.detail;
-  const info = getLang(product, lang);
-
-  // Pick detail language (zh → zh-cn, tw → zh-tw)
-  const detLang = lang === 'zh-cn' ? 'zh' : lang === 'zh-tw' ? 'tw' : lang;
-  const d = detail ? (detail[detLang] || detail.zh || detail.en) : null;
-
-  const seriesObj = SERIES.find(s => s.products.includes(product));
-  const seriesLabel = seriesObj ? getLang({en:seriesObj.label.en, ko:seriesObj.label.ko, zh:seriesObj.label.zh, tw:seriesObj.label.tw}, lang) : '';
-  const labels = LB_LABELS[lang] || LB_LABELS.en;
-
-  // Populate image
-  document.getElementById('lightbox-img').src = product.img;
-  document.getElementById('lightbox-img').alt = info.name;
-
-  // Series badge
-  document.getElementById('lb-series-badge').textContent = seriesLabel;
-
-  // Name & size
-  document.getElementById('lb-name').textContent = info.name;
-  document.getElementById('lb-size-tag').textContent = info.size;
-
-  // Detail panel
-  document.getElementById('lb-title-features').textContent = labels.features;
-  document.getElementById('lb-title-ingredients').textContent = labels.ingredients;
-  document.getElementById('lb-title-usage').textContent = labels.usage;
-
-  if (d) {
-    document.getElementById('lb-tagline').textContent = d.tagline || '';
-    document.getElementById('lb-tagline').style.display = d.tagline ? '' : 'none';
-
-    const featuresList = document.getElementById('lb-features');
-    featuresList.innerHTML = (d.features || []).map(f => `<li>${f}</li>`).join('');
-
-    const ingContainer = document.getElementById('lb-ingredients');
-    ingContainer.innerHTML = (d.ingredients || []).map(ing =>
-      `<div class="lb-ing-item"><span class="lb-ing-name">${ing.n}</span> <span class="lb-ing-benefit">— ${ing.b}</span></div>`
-    ).join('');
-
-    document.getElementById('lb-usage').textContent = d.usage || '';
+function openLightbox(si, pi, lang) {
+  var s = SERIES[si]; var p = s.products[pi]; var lk = prodKey(lang);
+  var pd = p[lk] || p.en;
+  var detail = p.detail && (p.detail[lk] || p.detail.zh || p.detail.en);
+  var dict = T[lang] || T['en'];
+  document.getElementById('lightbox-img').src = p.img;
+  document.getElementById('lightbox-img').alt = pd.name;
+  document.getElementById('lb-series-badge').textContent = s.label[lk] || s.label.en;
+  document.getElementById('lb-name').textContent = pd.name;
+  document.getElementById('lb-size-tag').textContent = pd.size;
+  if (detail) {
+    document.getElementById('lb-tagline').textContent = detail.tagline || pd.desc;
+    document.getElementById('lb-title-features').textContent = dict['lb.title.features'] || 'Key Features';
+    document.getElementById('lb-features').innerHTML = (detail.features || []).map(function(f){return '<li>'+f+'</li>';}).join('');
+    document.getElementById('lb-title-ingredients').textContent = dict['lb.title.ingredients'] || 'Core Ingredients';
+    document.getElementById('lb-ingredients').innerHTML = (detail.ingredients || []).map(function(i){return '<div class="lb-ing-item"><span class="lb-ing-name">'+i.n+'</span><span class="lb-ing-benefit"> — '+i.b+'</span></div>';}).join('');
+    document.getElementById('lb-title-usage').textContent = dict['lb.title.usage'] || 'How to Use';
+    document.getElementById('lb-usage').textContent = detail.usage || '';
   } else {
-    document.getElementById('lb-tagline').textContent = info.desc || '';
+    document.getElementById('lb-tagline').textContent = pd.desc;
     document.getElementById('lb-features').innerHTML = '';
     document.getElementById('lb-ingredients').innerHTML = '';
     document.getElementById('lb-usage').textContent = '';
   }
-
-  const lb = document.getElementById('lightbox');
-  lb.classList.add('open');
+  document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
-
-  // Reset scroll in detail panel
-  const detailEl = document.getElementById('lightbox-detail');
-  if (detailEl) detailEl.scrollTop = 0;
 }
-
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
 
-document.getElementById('lightbox').addEventListener('click', closeLightbox);
-document.getElementById('lightbox-panel').addEventListener('click', e => e.stopPropagation());
-document.getElementById('lightbox-close').addEventListener('click', e => { e.stopPropagation(); closeLightbox(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
-document.getElementById('series-container').addEventListener('click', e => {
-  const card = e.target.closest('[data-lb-series]');
-  if (!card) return;
-  const series = SERIES.find(s => s.id === card.dataset.lbSeries);
-  if (!series) return;
-  const product = series.products[parseInt(card.dataset.lbIdx)];
-  if (product) openLightbox(product, currentLang);
-});
+/* ════════════════════════════════════════════════
+   I18N
+════════════════════════════════════════════════ */
+function applyLang(lang) {
+  var dict = T[lang]; if (!dict) return;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(dict[k]!==undefined)el.textContent=dict[k];});
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html');if(dict[k]!==undefined)el.innerHTML=dict[k];});
+  var htmlLang = {en:'en',ko:'ko','zh-cn':'zh-CN','zh-tw':'zh-TW'};
+  document.documentElement.lang = htmlLang[lang] || lang;
+  document.querySelectorAll('.footer-lang-bar a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-lang')===lang);});
+  var url = new URL(window.location.href); url.searchParams.set('lang',lang); history.replaceState({},'',url);
+}
+function switchLang(lang) {
+  if (lang===currentLang) return; currentLang=lang;
+  document.body.className=document.body.className.replace(/\blang-\S+/g,'').trim()+' lang-'+lang;
+  document.querySelectorAll('.lang-btn,.mobile-lang-btn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===lang);});
+  applyLang(lang); renderAll(lang);
+}
 
 /* ════════════════════════════════════════════════
    INIT
 ════════════════════════════════════════════════ */
 (function init() {
-  const urlLang = new URLSearchParams(location.search).get('lang');
-  let lang = (urlLang && T[urlLang]) ? urlLang : 'en';
-  currentLang = lang;
-  document.body.classList.add('lang-' + lang);
-  document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(b =>
-    b.classList.toggle('active', b.getAttribute('data-lang') === lang));
-  applyLang(lang);
-  renderAll(lang);
-})();
+  var params = new URLSearchParams(window.location.search);
+  var urlLang = params.get('lang');
+  var nav = navigator.language || 'en';
+  var auto = nav.startsWith('zh-TW')||nav.startsWith('zh-HK') ? 'zh-tw' : nav.startsWith('zh') ? 'zh-cn' : nav.startsWith('ko') ? 'ko' : 'en';
+  currentLang = urlLang && T[urlLang] ? urlLang : (T[auto] ? auto : 'en');
+  document.body.className=document.body.className.replace(/\blang-\S+/g,'').trim()+' lang-'+currentLang;
+  document.querySelectorAll('.lang-btn,.mobile-lang-btn').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-lang')===currentLang);});
+  document.querySelectorAll('[data-lang]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();switchLang(el.getAttribute('data-lang'));});});
+  applyLang(currentLang); renderAll(currentLang);
+  var navEl=document.getElementById('main-nav');
+  window.addEventListener('scroll',function(){navEl.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+  var hamburger=document.getElementById('hamburger');
+  var mobileMenu=document.getElementById('mobile-menu');
+  function closeMenu(){mobileMenu.classList.remove('open');mobileMenu.setAttribute('aria-hidden','true');}
+  window.closeMenu=closeMenu;
+  hamburger.addEventListener('click',function(){var o=mobileMenu.classList.toggle('open');mobileMenu.setAttribute('aria-hidden',String(!o));});
+  document.addEventListener('click',function(e){
+    var card=e.target.closest('[data-lb-img][data-series-idx]');
+    if(card){openLightbox(parseInt(card.dataset.seriesIdx),parseInt(card.dataset.prodIdx),currentLang);return;}
+    var lb=document.getElementById('lightbox');
+    if(lb.classList.contains('open')&&!e.target.closest('#lightbox-panel')&&!e.target.closest('#lightbox-close'))closeLightbox();
+    if(mobileMenu.classList.contains('open')&&!mobileMenu.contains(e.target)&&!hamburger.contains(e.target))closeMenu();
+  });
+  document.getElementById('lightbox-close').addEventListener('click',closeLightbox);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+  document.getElementById('filter-bar').addEventListener('click',function(e){
+    var btn=e.target.closest('.filter-btn'); if(!btn)return;
+    document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var sid=btn.getAttribute('data-series');
+    if(sid==='all'){window.scrollTo({top:0,behavior:'smooth'});}
+    else{var sec=document.getElementById('series-'+sid);if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+}());
 </script>
-
 </body>
 </html>
