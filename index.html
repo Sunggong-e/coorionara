@@ -165,6 +165,36 @@
       object-position: right center;
       display: block;
     }
+    /* ── Hero Slideshow ── */
+    .hero-slideshow { position: absolute; inset: 0; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity 1.4s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide img {
+      width: 100%; height: 100%; min-height: 640px;
+      object-fit: cover; object-position: right center; display: block;
+    }
+    .hero-slide[data-type="product"] {
+      background: var(--bg-soft);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-slide[data-type="product"] img {
+      object-fit: contain; object-position: center;
+      padding: 8%; min-height: unset;
+    }
+    .hero-dots {
+      position: absolute; bottom: 1.5rem; right: 1.8rem;
+      display: flex; gap: 0.45rem; z-index: 10;
+    }
+    .hero-dot {
+      width: 7px; height: 7px; border-radius: 50%; border: none; cursor: pointer;
+      background: rgba(44,31,20,0.22); transition: background 0.35s, transform 0.35s;
+      padding: 0;
+    }
+    .hero-dot.active { background: var(--brown); transform: scale(1.3); }
 
     /* ══════════════════════════════════════
        NAVIGATION
@@ -406,6 +436,15 @@
     .btn-ghost:hover { color: var(--dark); }
 
     .hero-image { position: relative; }
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 18%;
+      background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
+      z-index: 6;
+      pointer-events: none;
+    }
     .hero-image > .ph {
       height: 100%;
       min-height: 640px;
@@ -1087,6 +1126,10 @@
         padding: 0;
         background: none;
       }
+      .hero-image::before { display: none; }
+      .hero-slide img { min-height: unset !important; object-position: right top; }
+      .hero-slide[data-type="product"] img { object-position: center; padding: 10%; }
+      .hero-dots { bottom: 1rem; right: 1rem; }
       .hero-badge { display: none; }
       .hero-scroll-hint { display: none; }
       .hero-text {
@@ -1292,9 +1335,29 @@
     </div>
   </div>
   <div class="hero-image">
-    <img src="images/hero%20image.png"
-         alt="COORIONARA – Korean Skincare"
-         class="hero-product-img" />
+    <div class="hero-slideshow">
+      <!-- 슬라이드 1: 브랜드 Hero 이미지 -->
+      <div class="hero-slide active" data-type="cover">
+        <img src="images/hero%20image.png" alt="COORIONARA – Korean Skincare" />
+      </div>
+      <!-- 슬라이드 2: 膜焕新生 시그니처 제품 -->
+      <div class="hero-slide" data-type="product">
+        <img src="images/Sebum%20Enhancing%20Essense%20Glow%20280ml.png" alt="Sebum Enhancing Essence Glow" />
+      </div>
+      <!-- 슬라이드 3: 凝萃芳华 안티에이징 -->
+      <div class="hero-slide" data-type="product">
+        <img src="images/Youth%20Cohesion%20Radiant%20Cream.png" alt="Youth Cohesion Radiant Cream" />
+      </div>
+      <!-- 슬라이드 4: 桃颜悦色 미백 -->
+      <div class="hero-slide" data-type="product">
+        <img src="images/Persica-ro%20Treatment%20Essence.png" alt="Persica-ro Treatment Essence" />
+      </div>
+      <!-- 슬라이드 5: 鲟鱼子酱 진정 -->
+      <div class="hero-slide" data-type="product">
+        <img src="images/Caviar%20Ampoule.png" alt="Caviar Ampoule" />
+      </div>
+    </div>
+    <div class="hero-dots" id="hero-dots"></div>
     <div class="hero-badge">
       <div class="hero-badge-num">200<sup>%</sup></div>
       <div class="hero-badge-label" data-i18n="hero.badge"></div>
@@ -2321,6 +2384,47 @@ function detectInitialLang() {
   applyLang(lang);
   loadNews(lang);
 })();
+
+/* ── Hero Slideshow ── */
+(function () {
+  const slides = Array.from(document.querySelectorAll('.hero-slide'));
+  const dotsEl = document.getElementById('hero-dots');
+  if (slides.length < 2 || !dotsEl) return;
+  let cur = 0;
+  let timer;
+
+  // 도트 생성
+  const dots = slides.map(function (_, i) {
+    const d = document.createElement('button');
+    d.className = 'hero-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Slide ' + (i + 1));
+    d.addEventListener('click', function () { go(i); resetTimer(); });
+    dotsEl.appendChild(d);
+    return d;
+  });
+
+  function go(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(function () { go(cur + 1); }, 4500);
+  }
+
+  // 호버 시 일시정지
+  const heroImg = document.querySelector('.hero-image');
+  if (heroImg) {
+    heroImg.addEventListener('mouseenter', function () { clearInterval(timer); });
+    heroImg.addEventListener('mouseleave', resetTimer);
+  }
+
+  resetTimer();
+}());
 
 /* ── Lightbox ── */
 (function () {
